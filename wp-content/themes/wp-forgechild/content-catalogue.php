@@ -42,9 +42,9 @@
 	if ( $hascontents ) {
 		echo "<li><a href='#contents'>Contents</a></li>";
 	}
-	if ( $hascataloguedetails ) {
+	/*if ( $hascataloguedetails ) {
 		echo "<li><a href='#images'>Catalogue Images</a></li>";
-	}
+	}*/
 	if ( $hasprovenance ) {
 		echo "<li><a href='#provenance'>Provenance</a></li>";
 	}
@@ -72,8 +72,7 @@
 
 	<div class="entry-content">
 
-		<a name="contributors"></a>
-		<h3>Primary Contributors:
+		<h3 id="contributors">Primary Contributors:
 		<em><?php the_field('data_contributors'); ?></em></h3>
 
 		<?php
@@ -131,7 +130,7 @@
 		//check if 'sources and partners' has contents, if not, doesn't display
 		// ***	
 		if ( $haspartners ) {
-		 echo "<a name='partners'></a><hr class='yellow-divider'><h4>Partners and Additional Contributors</h4><p>",the_field('sources_and_partners'),"</p>";
+		 echo "<a name='partners'></a><hr class='yellow-divider'><h4 id='partners'>Partners and Additional Contributors</h4><p>",the_field('sources_and_partners'),"</p>";
 		}
 
 
