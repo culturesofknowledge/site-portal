@@ -31,7 +31,7 @@
 <?php 
 // the side-nav class above is to prepare for the use of foundation
 	if ( $hasbio ) {
-		echo "<li><a href='#summary'>Biographical Summary</a></li>";
+		echo "<li><a href='#summary'>Contextual Summary</a></li>";
 	}
 	if ( $haspartners ) {
 		echo "<li><a href='#partners'>Partners & Contributors</a></li>";
