@@ -24,8 +24,16 @@
 	$hasfootnotes = get_post_meta($post->ID, 'footnotes', true);
 ?>
 
-<div class="small-2 large-4 columns" id="nav">
+	<a name="top"></a>
+<div class="small-12 large-4 columns" id="nav">
+
+	<header class="entry-header hide-for-large-up">
+		<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+	</header><!-- .entry-header -->
+
+
 <ul class="side-nav floating-menu">
+<li class="hide-for-large-up"><h3>Contents</h3></li>
 <li><a href="#top">Top</a></li>
 <li><a href="#contributors">Primary Contributors</a></li>
 <?php 
@@ -64,9 +72,8 @@
 </div>
 
 
-<div class="small-10 large-8 columns" id="catalogue-content">
-	<a name="top"></a>
-	<header class="entry-header">
+<div class="small-12 large-8 columns" id="catalogue-content">
+	<header class="entry-header show-for-large-up">
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 	</header><!-- .entry-header -->
 
