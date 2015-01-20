@@ -214,3 +214,6 @@ input[type="text"]{background-color: #fff; border:#efc319 2px solid; }
 select {background-color: #fff; border:#efc319 2px solid;}
 .yellow-divider{border-top: 1px solid #EFC319;}
 #last-with-button .button{margin-bottom:-5px;}
+
+#content .entry-header h1, .entry-content h3 { color: #172854 !important; }
+.entry-content h3 { font-size: 1.25em;}
