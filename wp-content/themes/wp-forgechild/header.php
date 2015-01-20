@@ -44,18 +44,18 @@
             <!-- Left Nav Section -->
             <ul class="left yellow-bg">
                     
-                <li class="active "><a href="http://emlo-stage.bodleian.ox.ac.uk/home" accesskey="1">Home</a></li>                 
-                <li class=""><a href="http://emlo-stage.bodleian.ox.ac.uk/advanced" accesskey="2">Search+</a></li>                 
-                <li class=""><a href="http://emlo-stage.bodleian.ox.ac.uk/browse/people" accesskey="3">Browse</a></li>                 
+                <li class="active "><a href="http://emlo.bodleian.ox.ac.uk/home" accesskey="1">Home</a></li>                 
+                <li class=""><a href="http://emlo.bodleian.ox.ac.uk/advanced" accesskey="2">Search+</a></li>                 
+                <li class=""><a href="http://emlo.bodleian.ox.ac.uk/browse/people" accesskey="3">Browse</a></li>                 
                 <li class=""><a href="http://emlo.bodleian.ox.ac.uk/blog/?page_id=480" accesskey="4">Catalogues</a></li>                    
-                <li class=""><a href="http://emlo-stage.bodleian.ox.ac.uk/contribute" accesskey="5">Contribute</a></li>                    
-                <li class="red "><a href="http://emlo-stage.bodleian.ox.ac.uk/about" accesskey="6">About</a></li>          </ul>
+                <li class=""><a href="http://emlo.bodleian.ox.ac.uk/contribute" accesskey="5">Contribute</a></li>                    
+                <li class="red "><a href="http://emlo.bodleian.ox.ac.uk/about" accesskey="6">About</a></li>          </ul>
 
             <!-- Right Nav Section -->
             <ul class="right yellow-bg">
                 <!-- search bar -->
                 <li class="has-form">
-                    <form action="http://emlo-stage.bodleian.ox.ac.uk/forms/quick" method="get" id="circle-search">
+                    <form action="http://emlo.bodleian.ox.ac.uk/forms/quick" method="get" id="circle-search">
                         <div class="row collapse">
                             <input name="everything" type="search" placeholder="Keywords..."/>
                             <input name="search_type" type="hidden" value="quick"/>
