@@ -14,7 +14,6 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-	 <div class="row">
       <div class="large-3 columns">
 <?php 
 	$custom_fields = get_post_custom(); 
