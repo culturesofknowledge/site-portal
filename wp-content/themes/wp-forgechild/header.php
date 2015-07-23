@@ -33,7 +33,7 @@
     <nav class="top-bar yellow-bg" data-topbar>
         <ul class="title-area">
             <li class="name">
-                <h1><a class="no-decoration" href="/" accesskey="1"><img src="http://emlo-stage.bodleian.ox.ac.uk/img/emlo_logo.png" alt="EMLO logo" class="show-for-large-up menu-name"/></a>
+                <h1><a class="no-decoration" href="/" accesskey="1"><img src="http://emlo.bodleian.ox.ac.uk/img/emlo_logo.png" alt="EMLO logo" class="show-for-large-up menu-name"/></a>
                 <strong><a class="no-decoration hide-for-large-up" href="/" accesskey="1">EMLO  &nbsp;&nbsp;</a></strong>
                 </h1>
             </li>

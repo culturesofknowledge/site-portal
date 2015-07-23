@@ -22,13 +22,13 @@
        <!-- footer with logos -->
         <div class="footer-divider">
             <div class="row footer">
-              <div class="large-3 medium-6 columns centered"><a href="http://www.culturesofknowledge.org/" target="_blank"><img src="http://emlo-stage.bodleian.ox.ac.uk/img/CofKLogoBlack.png" alt="Cultures of Knowledge Logo" class="hide-for-small"/><span class="hide-for-medium-up">Cultures of Knowledge</span></a></div>
+              <div class="large-3 medium-6 columns centered"><a href="http://www.culturesofknowledge.org/" target="_blank"><img src="http://emlo.bodleian.ox.ac.uk/img/CofKLogoBlack.png" alt="Cultures of Knowledge Logo" class="hide-for-small"/><span class="hide-for-medium-up">Cultures of Knowledge</span></a></div>
 
-              <div class="large-3  medium-6 columns centered"><a href="http://www.bodleian.ox.ac.uk/" target="_blank"><img src="http://emlo-stage.bodleian.ox.ac.uk/img/Bodleian_Libraries_logo.svg" alt="Bodleian Libraries Logo" width= "120" class="hide-for-small" style="margin-left:40px;"/><span class="hide-for-medium-up">Bodleian Libraries</span></a></div>
+              <div class="large-3  medium-6 columns centered"><a href="http://www.bodleian.ox.ac.uk/" target="_blank"><img src="http://emlo.bodleian.ox.ac.uk/img/Bodleian_Libraries_logo.svg" alt="Bodleian Libraries Logo" width= "120" class="hide-for-small" style="margin-left:40px;"/><span class="hide-for-medium-up">Bodleian Libraries</span></a></div>
 
-              <div class="large-3 medium-6 columns centered"><a href="http://www.mellon.org/" target="_blank"><img src="http://emlo-stage.bodleian.ox.ac.uk/img/Andrew_Mellon_Foundation_logo.svg" alt="Andrew Mellon Foundation Logo" width= "140" class="hide-for-small"/><span class="hide-for-medium-up">Andrew Mellon Foundation</span></a></div>
+              <div class="large-3 medium-6 columns centered"><a href="http://www.mellon.org/" target="_blank"><img src="http://emlo.bodleian.ox.ac.uk/img/Andrew_Mellon_Foundation_logo.svg" alt="Andrew Mellon Foundation Logo" width= "140" class="hide-for-small"/><span class="hide-for-medium-up">Andrew Mellon Foundation</span></a></div>
 
-              <div class="large-3 medium-6 columns centered"><a href="http://ox.ac.uk" target="_blank"><img src="http://emlo-stage.bodleian.ox.ac.uk/img/University_of_Oxford_logo.gif" alt="University of Oxford Logo" class="hide-for-small"/><span class="hide-for-medium-up">University of Oxford</span></a></div>
+              <div class="large-3 medium-6 columns centered"><a href="http://ox.ac.uk" target="_blank"><img src="http://emlo.bodleian.ox.ac.uk/img/University_of_Oxford_logo.gif" alt="University of Oxford Logo" class="hide-for-small"/><span class="hide-for-medium-up">University of Oxford</span></a></div>
 
             </div>
         </div>
