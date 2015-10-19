@@ -459,7 +459,9 @@ class ZoomifyFileProcessor
                 $tileFilename = $this->_getFileReference($tier, $column, $row);
                 // $this->saveTile(imageCrop($imageRow, $ul_x, $ul_y, $lr_x, $lr_y), $tier, $column, $row);
 
-                $tileImage = clone $imageRow;
+                //$tileImage = clone $imageRow;
+                $tileImage = $imageRow->clone();
+
                 // Clean the canvas.
                 $tileImage->setImagePage(0, 0, 0, 0);
                 $tileImage->cropImage($width, $height, $ul_x, $ul_y);
@@ -501,7 +503,8 @@ class ZoomifyFileProcessor
                 // imagecopyresampled(resource dst_im, resource src_im, int dst_x, int dst_y, int src_x, int src_y, int dst_w, int dst_h, int src_w, int src_h)
                 // imagecopyresampled($tempImage, $imageRow, 0, 0, 0, 0, $halfWidth, $halfHeight, $imageWidth, $imageHeight);
                 # tempImage.save(root + str(tier) + '-' + str(row) + ext)
-                $tempImage = clone $imageRow;
+                //$tempImage = clone $imageRow;
+								$tempImage = $imageRow->clone();
                 $tempImage->resizeImage($halfWidth, $halfHeight, Imagick::FILTER_LANCZOS, 1, false);
                 $tempImage->writeImage($rowFilename);
                 $tempImage->destroy();
