@@ -43,7 +43,7 @@
 				<div id="header-wrap">
         <header role="banner">
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
-            <div id="site-title"><a href="http://emlo.bodleian.ox.ac.uk/exhibition/baxter/">Baxter</a></div>
+            <div id="site-title"><a href="/exhibition/baxter/"><?php echo option("site_title")?></a></div>
 
             <div id="search-container" role="search">
                 <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
