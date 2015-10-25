@@ -2332,9 +2332,16 @@ margin-bottom: 50px;
 
 /* plugin overwrites */
 
+/* Neatling*/
 body.neatline.show div#neatline-map,body.neatline.fullscreen div#neatline-map {
 	width: 100%;
 }
 body.neatline.show div#neatline-narrative,body.neatline.fullscreen div#neatline-narrative {
 	display: none;
 }
+
+/*openlayers*/
+#open_layers_zoom_map {
+width: auto;
+}
+
