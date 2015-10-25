@@ -7,10 +7,15 @@
         <?php echo all_element_texts('item'); ?>
     </div>
 
-    <h3><?php echo __('Files'); ?></h3>
-    <div id="item-images">
-         <?php echo files_for_item(); ?>
-    </div>
+  	  <h3><?php echo __('Files'); ?></h3>
+		<?php $zoomin = $this->openLayersZoom()->zoom($item);
+			if( $zoomin == "" ) { ?>
+  	  <div id="item-images">
+	         <?php echo files_for_item(); ?>
+	    </div>
+		<?php } else {
+			echo $zoomin;
+		}?>
 
    <?php if(metadata('item','Collection Name')): ?>
       <div id="collection" class="element">
@@ -32,6 +37,7 @@
         <h3><?php echo __('Citation'); ?></h3>
         <div class="element-text"><?php echo metadata('item','citation',array('no_escape'=>true)); ?></div>
     </div>
+
        <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
 
 
