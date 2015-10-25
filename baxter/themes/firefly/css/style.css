@@ -2308,6 +2308,11 @@ nav + .exhibit {
     border-bottom: 1px solid #EFC319
 }
 
+body.items.show .element-set h2,
+body.collections.show .element-set h2 {
+	display: none;	
+}
+
 /* footer */
 
 #footer-wrap {
@@ -2317,5 +2322,19 @@ nav + .exhibit {
 
 #team div { 
 	display: inline-block;
-	padding: 0 10px;
-};
+	padding: 0 20px;
+margin-bottom: 50px;
+}
+
+#team div img {
+/*	background-color: white; */
+}
+
+/* plugin overwrites */
+
+body.neatline.show div#neatline-map,body.neatline.fullscreen div#neatline-map {
+	width: 100%;
+}
+body.neatline.show div#neatline-narrative,body.neatline.fullscreen div#neatline-narrative {
+	display: none;
+}
