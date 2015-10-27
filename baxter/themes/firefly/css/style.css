@@ -2145,12 +2145,22 @@ body.collections.show .element-set h2 {
 .spliter {
     border-bottom: 2px solid #EFC319;
     margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 .element-set {
     width: 45%;
     display: inline-block;
     vertical-align: top;
     padding: 10px
+}
+.element-set-group .element-set {
+    display: block;
+    width: auto;
+    padding: 0;
+}
+.element-set-group {
+    display:inline-block;
+    width: 45%;
 }
 
 .element-set #letters-item-type-metadata-transcription {
@@ -2161,7 +2171,7 @@ body.collections.show .element-set h2 {
 #images {
     width: 45%;
     display: inline-block;
-    height: 500px;
+    height: 600px;
     margin-right: 2%;
     overflow:auto;
 }

@@ -9,14 +9,20 @@
                 drawLetters($this, $item);
                 break; ?>
 
-            <?php //case "Potraits":
+            <?php case "Portraits":
 
-                //drawPotraits($this, $item);
-                //break; ?>
+                drawPortraits($this, $item);
+                break; ?>
 
-            <?php case "something": ?>
+            <?php case "Places":
 
-                <?php break; ?>
+                drawPlaces($this, $item);
+                break; ?>
+
+            <?php case "Watermarks":
+
+                drawWatermarks($this, $item);
+                break; ?>
 
             <?php default:
 
@@ -27,20 +33,32 @@
 
     <?php else: ?>
 
-        <!-- Items metadata -->
-        <div class="spliter">
-            <?php echo all_element_texts('item'); ?>
-
-            <?php //$this->itemRelationsPlugin(); ?>
-        </div>
+        drawDefault($this, $item);
 
     <?php endif; ?>
 
 
-    <!-- The following prints a citation for this item. -->
-    <div id="item-citation" class="element">
-        <h3><?php echo __('Citation'); ?></h3>
-        <div class="element-text"><?php echo metadata('item','citation',array('no_escape'=>true)); ?></div>
+    <div class="spliter">
+        <!-- The following prints a citation for this item. -->
+        <div id="item-citation" class="element">
+            <h3><?php echo __('Citation'); ?></h3>
+            <div class="element-text"><?php echo metadata('item','citation',array('no_escape'=>true)); ?></div>
+        </div>
+
+        <?php if(metadata('item','Collection Name')): ?>
+            <div id="collection" class="element">
+                <h3><?php echo __('Part of Collection'); ?></h3>
+                <div class="element-text"><?php echo link_to_collection_for_item(); ?></div>
+            </div>
+        <?php endif; ?>
+
+        <!-- The following prints a list of all tags associated with the item -->
+        <?php if (metadata('item','has tags')): ?>
+            <div id="item-tags" class="element">
+                <h3><?php echo __('Tags'); ?></h3>
+                <div class="element-text"><?php echo tag_string('item'); ?></div>
+            </div>
+        <?php endif;?>
     </div>
 
        <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
@@ -58,38 +76,80 @@
 <?php function draw( $that, $item ) { ?>
 <?php } ?>
 
-<?php function drawPotraits( $that, $item ) { ?>
-<?php } ?>
+<?php function drawPortraits( $that, $item ) { ?>
 
-<?php function drawDefault( $that, $item ) { ?>
-    <div id="item-metadata">
-        <?php echo all_element_texts('item'); ?>
-    </div>
-
-    <h3><?php echo __('Files'); ?></h3>
-    <?php $zoomin = $that->openLayersZoom()->zoom($item);
-    if( $zoomin == "" ) { ?>
+    <div class="spliter">
         <div id="item-images">
             <?php echo files_for_item(); ?>
         </div>
-    <?php } else {
-        echo $zoomin;
-    }?>
 
-    <?php if(metadata('item','Collection Name')): ?>
-        <div id="collection" class="element">
-            <h3><?php echo __('Collection'); ?></h3>
-            <div class="element-text"><?php echo link_to_collection_for_item(); ?></div>
+        <div id="item-metadata">
+            <?php echo all_element_texts('item'); ?>
         </div>
-    <?php endif; ?>
+    </div>
+<?php } ?>
 
-    <!-- The following prints a list of all tags associated with the item -->
-    <?php if (metadata('item','has tags')): ?>
-        <div id="item-tags" class="element">
-            <h3><?php echo __('Tags'); ?></h3>
-            <div class="element-text"><?php echo tag_string('item'); ?></div>
+<?php function drawWatermarks( $that, $item ) { ?>
+    <div class="spliter">
+        <div id="item-metadata" class="element-set-group">
+            <?php echo all_element_texts('item'); ?>
         </div>
-    <?php endif;?>
+
+        <div id="images" class="element">
+            <h3><?php echo __('Images'); ?></h3>
+            <?php $zoomin = $that->openLayersZoom()->zoom($item);
+            if( $zoomin == "" ) { ?>
+                <div id="item-images">
+                    <?php echo files_for_item(); ?>
+                </div>
+            <?php } else {
+                echo $zoomin;
+            }?>
+        </div>
+    </div>
+
+<?php } ?>
+
+<?php function drawPlaces( $that, $item ) { ?>
+    <div class="spliter">
+        <div id="item-metadata">
+            <?php echo all_element_texts('item'); ?>
+        </div>
+    </div>
+
+    <div class="spliter">
+        <h3><?php echo __('Images'); ?></h3>
+        <?php $zoomin = $that->openLayersZoom()->zoom($item);
+        if( $zoomin == "" ) { ?>
+            <div id="item-images">
+                <?php echo files_for_item(); ?>
+            </div>
+        <?php } else {
+            echo $zoomin;
+        }?>
+    </div>
+
+<?php } ?>
+
+<?php function drawDefault( $that, $item ) { ?>
+    <div class="spliter">
+        <div id="item-metadata">
+            <?php echo all_element_texts('item'); ?>
+        </div>
+    </div>
+
+    <div class="spliter">
+        <h3><?php echo __('Files'); ?></h3>
+        <?php $zoomin = $that->openLayersZoom()->zoom($item);
+        if( $zoomin == "" ) { ?>
+            <div id="item-images">
+                <?php echo files_for_item(); ?>
+            </div>
+        <?php } else {
+            echo $zoomin;
+        }?>
+    </div>
+
 <?php } ?>
 
 <?php function drawLetters( $that, $item ) { ?>
@@ -121,18 +181,4 @@
         </div>
     </div>
 
-    <?php if(metadata('item','Collection Name')): ?>
-        <div id="collection" class="element">
-            <h3><?php echo __('Collection'); ?></h3>
-            <div class="element-text"><?php echo link_to_collection_for_item(); ?></div>
-        </div>
-    <?php endif; ?>
-
-    <!-- The following prints a list of all tags associated with the item -->
-    <?php if (metadata('item','has tags')): ?>
-        <div id="item-tags" class="element">
-            <h3><?php echo __('Tags'); ?></h3>
-            <div class="element-text"><?php echo tag_string('item'); ?></div>
-        </div>
-    <?php endif;?>
 <?php } ?>
