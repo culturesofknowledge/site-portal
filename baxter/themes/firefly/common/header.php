@@ -40,19 +40,13 @@
  <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <a href="#content" id="skipnav"><?php echo __('Skip to main content'); ?></a>
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
-				<div id="header-wrap">
-        <header role="banner">
-            <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
-            <div id="site-title"><a href="/exhibition/baxter/"><?php echo option("site_title")?></a></div>
 
-            <div id="search-container" role="search">
-                <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
-                <?php echo search_form(array('show_advanced' => true)); ?>
-                <?php else: ?>
-                <?php echo search_form(); ?>
-                <?php endif; ?>
-            </div>
-        </header>
+
+<div id="header-wrap">
+                    <header role="banner">
+            <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
+
+
 
          <div id="primary-nav" role="navigation">
              <?php
@@ -65,10 +59,21 @@
                   echo public_nav_main();
              ?>
          </div>
-        
+                            <div id="search-container" role="search">
+                                <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
+                                    <?php echo search_form(array('show_advanced' => true)); ?>
+                                <?php else: ?>
+                                    <?php echo search_form(); ?>
+                                <?php endif; ?>
+                            </div>
+                    </header>
+</div> <!-- header-wrap -->
+
+<header>
         <?php echo theme_header_image(); ?>
-	
-		</div> <!-- header-wrap -->
+        <div id="site-title"><a href="/exhibition/baxter/"><?php echo option("site_title")?></a></div>
+
+                    </header>
                        
     <div id="content" role="main" tabindex="-1">
 

@@ -2028,187 +2028,7 @@ footer nav + p {
 }
 
 /* @end */
-@media screen and (max-width: 768px) {
-  /* @group ----- Generic HTML elements ----- */
-  input[type=text], input[type=password], textarea {
-    width: 100%;
-    display: block;
-  }
 
-  /* @end */
-  /* @group ----- Global selectors ----- */
-  #search-container {
-    clear: both;
-    width: 100%;
-    margin-top: 1.5em;
-    margin-bottom: 0em;
-  }
-
-  /* @end */
-  /* @group ----- Header ----- */
-  #site-title {
-    width: 100%;
-  }
-
-  /* @end */
-  /* @group ----- Navigation ----- */
-  #primary-nav {
-    display: none;
-  }
-
-  #mobile-nav {
-    display: block;
-    clear: both;
-    position: relative;
-    margin: 0 auto;
-    padding: 0;
-    width: 960px;
-    zoom: 1;
-  }
-  #mobile-nav:after {
-    content: "\0020";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-  }
-}
-@media only screen and (max-width: 768px) and (min-width: 768px) and (max-width: 959px) {
-  #mobile-nav {
-    width: 768px;
-  }
-}
-@media only screen and (max-width: 768px) and (max-width: 767px) {
-  #mobile-nav {
-    width: 300px;
-  }
-}
-@media only screen and (max-width: 768px) and (min-width: 480px) and (max-width: 767px) {
-  #mobile-nav {
-    width: 420px;
-  }
-}
-@media screen and (max-width: 768px) {
-  #mobile-nav ul {
-    position: absolute;
-    z-index: 199;
-    background: #fafafa;
-    border-bottom: 1px solid #ccc;
-    width: 100%;
-    padding-left: 0;
-    margin: 0;
-  }
-  #mobile-nav li {
-    text-align: left;
-    display: block;
-    overflow: hidden;
-    width: 100%;
-  }
-  #mobile-nav a {
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-width: 1px 1px 0 1px;
-  }
-  #mobile-nav a:hover {
-    background: #fff;
-  }
-  #mobile-nav > a:first-child {
-    background: #fafafa;
-    cursor: pointer;
-  }
-  #mobile-nav li.current a {
-    background: #fff;
-    color: #ff8000;
-  }
-  #mobile-nav li ul {
-    position: relative;
-  }
-  #mobile-nav li ul a:before {
-    content: "-- ";
-  }
-  #mobile-nav li ul ul a:before {
-    content: "---- ";
-  }
-
-  /* @end */
-  /* @group ----- Footer ----- */
-  footer .navigation {
-    float: none;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 1.5em;
-  }
-
-  /* @end */
-  /* @group ----- Home ----- */
-  #home #primary, #home #secondary {
-    padding: 0;
-    max-width: 100%;
-  }
-
-  #home #primary > div:last-of-type {
-    border-bottom: 1px solid #ccc;
-  }
-
-  /* @end */
-  /* @group ----- Items/Browse ----- */
-  .browse .item img {
-    margin-bottom: 1.5em;
-    margin-top: 1.5em;
-  }
-
-  .browse .item.record h2 {
-    margin-bottom: 0.75em;
-  }
-
-  .browse .item-meta .item-img {
-    width: auto;
-    float: left;
-    margin: 0 1.5em 0 0;
-  }
-  .browse .item-meta .item-img img {
-    margin-top: 0em;
-  }
-
-  .browse .item {
-    padding: 1.5em 0;
-  }
-
-  .browse .item-meta > div {
-    float: none;
-  }
-
-  #sort-links {
-    float: left;
-  }
-
-  /* @end */
-  /* @group ----- Exhibits/Show ----- */
-  .exhibit {
-    clear: both;
-  }
-
-  .exhibit .description {
-    float: none;
-  }
-
-  .exhibit .description ~ * {
-    padding: 0;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
-  /* @end */
-  /* @group ----- Exhibits/Show ----- */
-  #exhibit-pages {
-    width: 100%;
-  }
-
-  /* @end */
-}
 
 /* EMLO SPECIFIC */
 
@@ -2241,6 +2061,9 @@ color: #35495E;
 header {
 	padding: 1em 0;
 }
+header[role=banner] {
+    padding:0;
+}
 
 /* Title and search */
 
@@ -2272,13 +2095,8 @@ header {
 
 /* Nav */
 
-#primary-nav a,
-#mobile-nav > a:first-child {
+#primary-nav a {
 	background-color: #EFC319;
-}
-
-#mobile-nav > a:first-child {
-	border: 0;
 }
 
 #primary-nav .nav-item > a {
@@ -2292,8 +2110,19 @@ header {
 #primary-nav .nav-item:first-child > a {
 	border-left: none;
 }
+#search-container,
+#primary-nav {
+    display: inline-block;
+}
+#search-container {
+    width: 25%;
+    margin-top: 6px;
+}
+#primary-nav {
+     width: auto;
+ }
 
-/* COntent */
+/* Content */
 #content {
 	border: 0;
 }
@@ -2323,7 +2152,7 @@ body.collections.show .element-set h2 {
 #team div { 
 	display: inline-block;
 	padding: 0 20px;
-margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 #team div img {
@@ -2344,4 +2173,205 @@ body.neatline.show div#neatline-narrative,body.neatline.fullscreen div#neatline-
 #open_layers_zoom_map {
 width: auto;
 }
+#neatline-map {
+    height: 900px;
+}
 
+/*end*/
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    /* @group ----- Generic HTML elements ----- */
+    input[type=text], input[type=password], textarea {
+        width: 100%;
+        display: block;
+    }
+
+    /* @end */
+    /* @group ----- Global selectors ----- */
+    #search-container {
+        clear: both;
+        width: 100%;
+        margin-top: 1.5em;
+        margin-bottom: 0em;
+    }
+
+    /* @end */
+    /* @group ----- Header ----- */
+    #site-title {
+        width: 100%;
+    }
+
+    /* @end */
+    /* @group ----- Navigation ----- */
+    #primary-nav {
+        display: none;
+    }
+
+    #mobile-nav {
+        display: block;
+        clear: both;
+        position: relative;
+        margin: 0 auto;
+        padding: 0;
+        width: 960px;
+        zoom: 1;
+    }
+    #mobile-nav:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+@media only screen and (max-width: 768px) and (min-width: 768px) and (max-width: 959px) {
+    #mobile-nav {
+        width: 768px;
+    }
+}
+@media only screen and (max-width: 768px) and (max-width: 767px) {
+    #mobile-nav {
+        width: 300px;
+    }
+}
+@media only screen and (max-width: 768px) and (min-width: 480px) and (max-width: 767px) {
+    #mobile-nav {
+        width: 420px;
+    }
+}
+@media screen and (max-width: 768px) {
+    #mobile-nav ul {
+        position: absolute;
+        z-index: 199;
+        background: #fafafa;
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+        padding-left: 0;
+        margin: 0;
+    }
+    #mobile-nav li {
+        text-align: left;
+        display: block;
+        overflow: hidden;
+        width: 100%;
+    }
+    #mobile-nav a {
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-width: 1px 1px 0 1px;
+    }
+    #mobile-nav a:hover {
+        background: #fff;
+    }
+    #mobile-nav > a:first-child {
+        background: #fafafa;
+        cursor: pointer;
+    }
+    #mobile-nav li.current a {
+        background: #fff;
+        color: #ff8000;
+    }
+    #mobile-nav li ul {
+        position: relative;
+    }
+    #mobile-nav li ul a:before {
+        content: "-- ";
+    }
+    #mobile-nav li ul ul a:before {
+        content: "---- ";
+    }
+
+    /* @end */
+    /* @group ----- Footer ----- */
+    footer .navigation {
+        float: none;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 1.5em;
+    }
+
+    /* @end */
+    /* @group ----- Home ----- */
+    #home #primary, #home #secondary {
+        padding: 0;
+        max-width: 100%;
+    }
+
+    #home #primary > div:last-of-type {
+        border-bottom: 1px solid #ccc;
+    }
+
+    /* @end */
+    /* @group ----- Items/Browse ----- */
+    .browse .item img {
+        margin-bottom: 1.5em;
+        margin-top: 1.5em;
+    }
+
+    .browse .item.record h2 {
+        margin-bottom: 0.75em;
+    }
+
+    .browse .item-meta .item-img {
+        width: auto;
+        float: left;
+        margin: 0 1.5em 0 0;
+    }
+    .browse .item-meta .item-img img {
+        margin-top: 0em;
+    }
+
+    .browse .item {
+        padding: 1.5em 0;
+    }
+
+    .browse .item-meta > div {
+        float: none;
+    }
+
+    #sort-links {
+        float: left;
+    }
+
+    /* @end */
+    /* @group ----- Exhibits/Show ----- */
+    .exhibit {
+        clear: both;
+    }
+
+    .exhibit .description {
+        float: none;
+    }
+
+    .exhibit .description ~ * {
+        padding: 0;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    /* @end */
+    /* @group ----- Exhibits/Show ----- */
+    #exhibit-pages {
+        width: 100%;
+    }
+
+    #search-container {
+        margin-top: 0;
+        margin-bottom: 6px;
+    }
+    /* @end */
+}
+
+/* emlo mobile */
+
+#mobile-nav > a:first-child {
+    border: 0;
+    background-color: #EFC319;
+}
