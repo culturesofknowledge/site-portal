@@ -12,19 +12,22 @@
 					<p><?php echo $copyright; ?></p>
 					<?php endif; ?>
 					<nav><?php //echo public_nav_main()->setMaxDepth(0); ?></nav>
-					<p><?php echo __('Proudly powered by <a href="http://omeka.org">Omeka</a>.'); ?></p>
+
+                <div id="team" class="center-div">
+                    <div><a href="http://www.culturesofknowledge.org/" target="_blank"><img src="/img/CofKLogoBlack.png" alt="Cultures of Knowledge Logo" /></a></div>
+
+                    <div><a href="http://www.mellon.org/" target="_blank"><img width="140" src="/img/Andrew_Mellon_Foundation_logo.svg" alt="Andrew Mellon Foundation Logo" /></a></div>
+
+                    <div> <a href="http://ox.ac.uk" target="_blank"><img src="/img/University_of_Oxford_logo.gif" alt="University of Oxford Logo"/></a></div>
+
+                </div>
+
+                <p><?php echo __('Proudly powered by <a href="http://omeka.org">Omeka</a>.'); ?></p>
 
 			</div><!-- end footer-content -->
 
-		    <div id="team" class="center-div">
-	      	<div><a href="http://www.culturesofknowledge.org/" target="_blank"><img src="/img/CofKLogoBlack.png" alt="Cultures of Knowledge Logo" /></a></div>
 
-	      	<div><a href="http://www.mellon.org/" target="_blank"><img width="140" src="/img/Andrew_Mellon_Foundation_logo.svg" alt="Andrew Mellon Foundation Logo" /></a></div>
 
-	      	<div> <a href="http://ox.ac.uk" target="_blank"><img src="/img/University_of_Oxford_logo.gif" alt="University of Oxford Logo"/></a>
-				</div>
-
-	    </div>
 
 			 <?php fire_plugin_hook('public_footer', array('view'=>$this)); ?>
 
