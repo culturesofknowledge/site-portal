@@ -19,6 +19,11 @@
                 drawPlaces($this, $item);
                 break; ?>
 
+            <?php case "People":
+
+                drawPeople($this, $item);
+                break; ?>
+
             <?php case "Watermarks":
 
                 drawWatermarks($this, $item);
@@ -31,11 +36,11 @@
 
         <?php endswitch; ?>
 
-    <?php else: ?>
+    <?php else:
 
         drawDefault($this, $item);
 
-    <?php endif; ?>
+    endif; ?>
 
 
     <div class="spliter">
@@ -87,6 +92,30 @@
             <?php echo all_element_texts('item'); ?>
         </div>
     </div>
+<?php } ?>
+
+<?php function drawPeople( $that, $item ) { ?>
+    <div class="spliter">
+        <div id="bio" >
+            <div id="item-images">
+                <?php echo files_for_item(); ?>
+            </div>
+
+            <?php if( metadata('item',array('Dublin Core', 'Description') ) ): ?>
+                <div id="biography" class="element">
+                    <h3><?php echo __('Biographical Text'); ?></h3>
+                    <div class="element-text"><?php echo metadata('item',array('Dublin Core', 'Description')); ?></div>
+                </div>
+            <?php endif; ?>
+
+        </div>
+
+        <div id="item-metadata" class="element-set-group flow-right">
+            <?php echo all_element_texts('item'); ?>
+        </div>
+
+    </div>
+
 <?php } ?>
 
 <?php function drawWatermarks( $that, $item ) { ?>

@@ -2125,6 +2125,7 @@ header[role=banner] {
 /* Content */
 #content {
 	border: 0;
+    /*font-family: "Georgia",sans-serif;*/
 }
 
 #sort-links + .item,
@@ -2161,10 +2162,21 @@ body.collections.show .element-set h2 {
 .element-set-group {
     display:inline-block;
     width: 45%;
+    vertical-align: top;
+
 }
 
-.element-set #letters-item-type-metadata-transcription {
+.element-set #letters-item-type-metadata-transcription,
+.flow-right .element-set #dublin-core-description {
     display: none;
+}
+
+#bio {
+    width: 45%;
+    display: inline-block;
+    padding-right: 34px;
+    text-align: justify;
+    line-height: 1.7;
 }
 
 #transcription,
