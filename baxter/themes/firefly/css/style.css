@@ -2142,6 +2142,36 @@ body.collections.show .element-set h2 {
 	display: none;	
 }
 
+.spliter {
+    border-bottom: 2px solid #EFC319;
+    margin-bottom: 20px;
+}
+.element-set {
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px
+}
+
+.element-set #letters-item-type-metadata-transcription {
+    display: none;
+}
+
+#transcription,
+#images {
+    width: 45%;
+    display: inline-block;
+    height: 500px;
+    margin-right: 2%;
+    overflow:auto;
+}
+
+#transcription {
+    line-height: 1.7;
+    padding: 0 10px 0 0;
+    text-align:justify;
+}
+
 /* footer */
 
 #footer-wrap {

@@ -2,35 +2,40 @@
 <div id="primary">
     <h1><?php echo metadata('item', array('Dublin Core','Title')); ?></h1>
 
-    <!-- Items metadata -->
-    <div id="item-metadata">
-        <?php echo all_element_texts('item'); ?>
-    </div>
+    <?php if(metadata('item','Collection Name')): ?>
 
-  	  <h3><?php echo __('Files'); ?></h3>
-		<?php $zoomin = $this->openLayersZoom()->zoom($item);
-			if( $zoomin == "" ) { ?>
-  	  <div id="item-images">
-	         <?php echo files_for_item(); ?>
-	    </div>
-		<?php } else {
-			echo $zoomin;
-		}?>
+        <?php switch(metadata('item','Collection Name')):
+            case "Letters":
+                drawLetters($this, $item);
+                break; ?>
 
-   <?php if(metadata('item','Collection Name')): ?>
-      <div id="collection" class="element">
-        <h3><?php echo __('Collection'); ?></h3>
-        <div class="element-text"><?php echo link_to_collection_for_item(); ?></div>
-      </div>
-   <?php endif; ?>
+            <?php //case "Potraits":
 
-     <!-- The following prints a list of all tags associated with the item -->
-    <?php if (metadata('item','has tags')): ?>
-    <div id="item-tags" class="element">
-        <h3><?php echo __('Tags'); ?></h3>
-        <div class="element-text"><?php echo tag_string('item'); ?></div>
-    </div>
-    <?php endif;?>
+                //drawPotraits($this, $item);
+                //break; ?>
+
+            <?php case "something": ?>
+
+                <?php break; ?>
+
+            <?php default:
+
+                drawDefault($this, $item);
+                break; ?>
+
+        <?php endswitch; ?>
+
+    <?php else: ?>
+
+        <!-- Items metadata -->
+        <div class="spliter">
+            <?php echo all_element_texts('item'); ?>
+
+            <?php //$this->itemRelationsPlugin(); ?>
+        </div>
+
+    <?php endif; ?>
+
 
     <!-- The following prints a citation for this item. -->
     <div id="item-citation" class="element">
@@ -49,3 +54,85 @@
 </div> <!-- End of Primary. -->
 
  <?php echo foot(); ?>
+
+<?php function draw( $that, $item ) { ?>
+<?php } ?>
+
+<?php function drawPotraits( $that, $item ) { ?>
+<?php } ?>
+
+<?php function drawDefault( $that, $item ) { ?>
+    <div id="item-metadata">
+        <?php echo all_element_texts('item'); ?>
+    </div>
+
+    <h3><?php echo __('Files'); ?></h3>
+    <?php $zoomin = $that->openLayersZoom()->zoom($item);
+    if( $zoomin == "" ) { ?>
+        <div id="item-images">
+            <?php echo files_for_item(); ?>
+        </div>
+    <?php } else {
+        echo $zoomin;
+    }?>
+
+    <?php if(metadata('item','Collection Name')): ?>
+        <div id="collection" class="element">
+            <h3><?php echo __('Collection'); ?></h3>
+            <div class="element-text"><?php echo link_to_collection_for_item(); ?></div>
+        </div>
+    <?php endif; ?>
+
+    <!-- The following prints a list of all tags associated with the item -->
+    <?php if (metadata('item','has tags')): ?>
+        <div id="item-tags" class="element">
+            <h3><?php echo __('Tags'); ?></h3>
+            <div class="element-text"><?php echo tag_string('item'); ?></div>
+        </div>
+    <?php endif;?>
+<?php } ?>
+
+<?php function drawLetters( $that, $item ) { ?>
+    <!-- Items metadata -->
+    <div class="spliter">
+        <?php echo all_element_texts('item'); ?>
+
+        <?php //$this->itemRelationsPlugin(); ?>
+    </div>
+
+    <div class="spliter">
+        <?php if( metadata('item',array('Item Type Metadata', 'Transcription') ) ): ?>
+            <div id="transcription" class="element">
+                <h3><?php echo __('Transcription'); ?></h3>
+                <div class="element-text"><?php echo metadata('item',array('Item Type Metadata', 'Transcription')); ?></div>
+            </div>
+        <?php endif; ?>
+
+        <div id="images" class="element">
+            <h4><?php echo __('Images'); ?></h4>
+            <?php $zoomin = $that->openLayersZoom()->zoom($item);
+            if( $zoomin == "" ) { ?>
+                <div id="item-images">
+                    <?php echo files_for_item(); ?>
+                </div>
+            <?php } else {
+                echo $zoomin;
+            }?>
+        </div>
+    </div>
+
+    <?php if(metadata('item','Collection Name')): ?>
+        <div id="collection" class="element">
+            <h3><?php echo __('Collection'); ?></h3>
+            <div class="element-text"><?php echo link_to_collection_for_item(); ?></div>
+        </div>
+    <?php endif; ?>
+
+    <!-- The following prints a list of all tags associated with the item -->
+    <?php if (metadata('item','has tags')): ?>
+        <div id="item-tags" class="element">
+            <h3><?php echo __('Tags'); ?></h3>
+            <div class="element-text"><?php echo tag_string('item'); ?></div>
+        </div>
+    <?php endif;?>
+<?php } ?>
