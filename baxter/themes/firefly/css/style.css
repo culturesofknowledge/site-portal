@@ -2041,7 +2041,7 @@ h1, h2, h3 {
 }
 
 h1 { 
-text-transform: none;
+    text-transform: none;
 }
 
 /* Specifics */
@@ -2049,9 +2049,9 @@ text-transform: none;
 
 #header-wrap {
 	background-color: #EFC319;
-font-family: "adelle",serif;
-font-size: 1.3em;
-color: #35495E;
+    font-family: "adelle",serif;
+    font-size: 1.3em;
+    color: #35495E;
 }
 
 #header-wrap  a {
@@ -2065,11 +2065,7 @@ header[role=banner] {
     padding:0;
 }
 
-/* Title and search */
-
-#site-title {
-	padding-left: 15px;
-}
+/* nav and search */
 
 #query {
 	border-radius: 30px;
@@ -2093,14 +2089,19 @@ header[role=banner] {
 	left: 30px;
 }
 
-/* Nav */
+#search-container button {
+    background: url("http://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png") no-repeat scroll 9px
+}
+#search-container button::after {
+    display:none;
+}
 
 #primary-nav a {
 	background-color: #EFC319;
 }
 
 #primary-nav .nav-item > a {
-	border: 0;
+	border-color: transparent;
   font-weight: bold;
 }
 
@@ -2120,12 +2121,56 @@ header[role=banner] {
 }
 #primary-nav {
      width: auto;
- }
+    margin-left: 160px; /* avoid logo */
+}
+
+/* logo and title */
+
+#logo a {
+    float:left;
+    margin-top: -78px;
+    margin-left: -20px;
+    padding: 0px 15px;
+}
+#logo .text {
+    display:none;
+}
+
+header .text {
+    margin-left: 245px;
+    color: #172854;
+}
+header .text p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #222;
+}
+#site-title {
+    font-family: "adelle",serif !important;
+    font-size: 28px;
+    text-transform: none;
+    width: auto;
+    letter-spacing: normal;
+    float: none;
+    line-height: inherit;
+}
+#site-title a,
+#site-title a:visited {
+    color: #172854;;
+}
+
+header {
+    z-index: 100
+}
 
 /* Content */
 #content {
-	border: 0;
+	border-color: transparent;
     /*font-family: "Georgia",sans-serif;*/
+}
+
+.featured {
+    border: solid 1px #D7D7D7;
 }
 
 #sort-links + .item,
@@ -2198,18 +2243,22 @@ body.collections.show .element-set h2 {
 
 #footer-wrap {
 	background-color: #EFC319;
+    border-top: 2px solid rgb(245, 177, 38);
 }
 
 
 #team div { 
 	display: inline-block;
-	padding: 0 20px;
-    margin-bottom: 50px;
-    margin-top: 50px;
+	padding: 7px 20px 0;
 }
 
 #team div img {
 /*	background-color: white; */
+}
+
+footer p {
+    margin: 5px 0 0;
+    float:right;
 }
 
 /* plugin overwrites */

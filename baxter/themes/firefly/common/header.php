@@ -42,7 +42,7 @@
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
 
 
-<div id="header-wrap">
+    <div id="header-wrap">
                     <header role="banner">
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
 
@@ -67,13 +67,24 @@
                                 <?php endif; ?>
                             </div>
                     </header>
-</div> <!-- header-wrap -->
+    </div> <!-- header-wrap -->
 
-<header>
-        <?php echo theme_header_image(); ?>
-        <div id="site-title"><a href="/exhibition/baxter/"><?php echo option("site_title")?></a></div>
+    <header>
+        <?php //echo theme_header_image(); ?>
 
-                    </header>
+        <h1 id="logo"><a class="no-decoration" href="/" accesskey="1"><img src="/img/emlo_logo.png" alt="EMLO logo" class="show-for-large-up menu-name"/></a>
+            <strong><a class="text no-decoration hide-for-large-up" href="/" accesskey="1">EMLO  &nbsp;&nbsp;</a></strong>
+        </h1>
+
+        <div class="text">
+            <div id="site-title">
+                <a href="/exhibition/baxter/"><?php echo option("site_title")?></a>
+            </div>
+            <?php if ($homepageText = get_theme_option('Homepage Text')): ?>
+                <p><?php echo $homepageText; ?></p>
+            <?php endif; ?>
+        </div>
+    </header>
                        
     <div id="content" role="main" tabindex="-1">
 
