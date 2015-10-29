@@ -2175,11 +2175,8 @@ header .text p {
     color: #172854;;
 }
 
-header {
-    /*z-index: 100*/
-}
-
 /* Content */
+
 #content:focus {
     outline: 0;
 }
@@ -2221,7 +2218,7 @@ body.collections.show .element-set h2 {
     padding-bottom: 20px;
 }
 .element-set {
-    width: 50%;
+    width: 49.5%;
     display: inline-block;
     vertical-align: top;
     padding: 10px
@@ -2291,13 +2288,13 @@ body.collections.show .element-set h2 {
     border-top: 2px solid rgb(245, 177, 38);
 }
 
-footer {
+#footer-wrap {
 	z-index: -1;
 }
 
 #team div { 
 	display: inline-block;
-	padding: 7px 20px 0;
+	padding: 7px 9px 0;
 }
 
 #team div img {
