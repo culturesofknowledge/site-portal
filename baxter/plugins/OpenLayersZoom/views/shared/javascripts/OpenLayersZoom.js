@@ -122,7 +122,7 @@ function open_layers_zoom_add_zoom(file_name_base, width, height, url, req) {
             // This is optional,you may use default values.
             size: new OpenLayers.Size(150, Math.floor(b)),
             autopan: false,
-            maximized: true,
+            maximized: false,
             layers: [overview, overviewVectors]
         });
 
