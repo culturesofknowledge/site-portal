@@ -1,10 +1,15 @@
-<?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'items show')); ?>
-<div id="primary">
+<?php
+    echo head(array('title' => metadata('item', array('Dublin Core', 'Title')),'bodyclass' => 'items show'));
+    $collection = metadata('item','Collection Name');
+?>
+<div id="primary" class="<?php echo 'collection_' . $collection; ?>">
     <h1><?php echo metadata('item', array('Dublin Core','Title')); ?></h1>
 
-    <?php if(metadata('item','Collection Name')): ?>
+    <?php
 
-        <?php switch(metadata('item','Collection Name')):
+    if($collection):
+
+        switch($collection):
             case "Letters":
                 drawLetters($this, $item);
                 break; ?>
@@ -143,21 +148,21 @@
 
 <?php function drawPlaces( $that, $item ) { ?>
     <div class="spliter">
-        <div id="item-metadata">
+        <div id="item-metadata" class="element-set-group">
             <?php echo all_element_texts('item'); ?>
         </div>
-    </div>
 
-    <div class="spliter">
-        <h3><?php echo __('Images'); ?></h3>
-        <?php $zoomin = $that->openLayersZoom()->zoom($item);
-        if( $zoomin == "" ) { ?>
-            <div id="item-images">
-                <?php echo files_for_item(); ?>
-            </div>
-        <?php } else {
-            echo $zoomin;
-        }?>
+        <div id="images" class="element">
+            <h3><?php echo __('Images'); ?></h3>
+            <?php $zoomin = $that->openLayersZoom()->zoom($item);
+            if( $zoomin == "" ) { ?>
+                <div id="item-images">
+                    <?php echo files_for_item(); ?>
+                </div>
+            <?php } else {
+                echo $zoomin;
+            }?>
+        </div>
     </div>
 
 <?php } ?>

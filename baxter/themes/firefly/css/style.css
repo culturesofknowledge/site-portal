@@ -2220,6 +2220,12 @@ body.collections.show .element-set h2 {
     vertical-align: top;
     padding: 10px
 }
+
+.collection_Places .element-set {
+    width: auto;
+    display: block;
+}
+
 .element-set-group .element-set {
     display: block;
     width: auto;
