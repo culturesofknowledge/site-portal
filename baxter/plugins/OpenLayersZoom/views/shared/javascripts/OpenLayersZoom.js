@@ -90,8 +90,8 @@ function open_layers_zoom_add_zoom(file_name_base, width, height, url, req) {
 
         map = new OpenLayers.Map("open_layers_zoom_map", options);
         map.addLayer(zoomify);
-        map.addControl(new OpenLayers.Control.Permalink('permalink', null, {
-        }));
+        //map.addControl(new OpenLayers.Control.Permalink('permalink', null, {
+        //}));
         map.setBaseLayer(zoomify);
 
         if (!map.getCenter()) map.zoomToMaxExtent();
