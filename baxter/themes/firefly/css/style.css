@@ -2215,7 +2215,7 @@ body.collections.show .element-set h2 {
     padding-bottom: 20px;
 }
 .element-set {
-    width: 45%;
+    width: 50%;
     display: inline-block;
     vertical-align: top;
     padding: 10px
@@ -2233,7 +2233,7 @@ body.collections.show .element-set h2 {
 }
 .element-set-group {
     display:inline-block;
-    width: 45%;
+    width: 50%;
     vertical-align: top;
 
 }
