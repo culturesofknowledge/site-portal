@@ -132,7 +132,6 @@
         </div>
 
         <div id="images" class="element">
-            <h3><?php echo __('Images'); ?></h3>
             <?php $zoomin = $that->openLayersZoom()->zoom($item);
             if( $zoomin == "" ) { ?>
                 <div id="item-images">

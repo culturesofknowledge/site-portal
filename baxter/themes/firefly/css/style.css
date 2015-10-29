@@ -2268,10 +2268,9 @@ body.collections.show .element-set h2 {
 
 #transcription,
 #images {
-    width: 45%;
+    width: 49%;
     display: inline-block;
-    height: 600px;
-    margin-right: 2%;
+    height: 600px;;
     overflow:auto;
 }
 
