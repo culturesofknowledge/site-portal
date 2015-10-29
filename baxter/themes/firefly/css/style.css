@@ -2134,6 +2134,12 @@ header[role=banner] {
     margin-left: 160px; /* avoid logo */
 }
 
+#primary-nav .navigation,
+#primary-nav .nav_menu,
+#primary-nav {
+	z-index: auto;
+}
+
 /* logo and title */
 
 #logo a {
@@ -2170,7 +2176,7 @@ header .text p {
 }
 
 header {
-    z-index: 100
+    /*z-index: 100*/
 }
 
 /* Content */
@@ -2285,6 +2291,9 @@ body.collections.show .element-set h2 {
     border-top: 2px solid rgb(245, 177, 38);
 }
 
+footer {
+	z-index: -1;
+}
 
 #team div { 
 	display: inline-block;
