@@ -104,9 +104,6 @@
 <?php function drawPeople( $that, $item ) { ?>
     <div class="spliter">
         <div id="bio" >
-            <div id="item-images">
-                <?php echo files_for_item(); ?>
-            </div>
 
             <?php if( metadata('item',array('Dublin Core', 'Description') ) ): ?>
                 <div id="biography" class="element">
@@ -118,6 +115,9 @@
         </div>
 
         <div id="item-metadata" class="element-set-group flow-right">
+            <div id="item-images">
+                <?php echo files_for_item(); ?>
+            </div>
             <?php echo all_element_texts('item'); ?>
         </div>
 
