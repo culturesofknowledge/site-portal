@@ -44,18 +44,20 @@
 
 
     <div class="spliter">
-        <!-- The following prints a citation for this item. -->
-        <div id="item-citation" class="element">
-            <h3><?php echo __('Citation'); ?></h3>
-            <div class="element-text"><?php echo metadata('item','citation',array('no_escape'=>true)); ?></div>
-        </div>
-
         <?php if(metadata('item','Collection Name')): ?>
             <div id="collection" class="element">
                 <h3><?php echo __('Part of Collection'); ?></h3>
                 <div class="element-text"><?php echo link_to_collection_for_item(); ?></div>
             </div>
         <?php endif; ?>
+    </div>
+
+    <div class="spliter">
+        <!-- The following prints a citation for this item. -->
+        <div id="item-citation" class="element">
+            <h3><?php echo __('Citation'); ?></h3>
+            <div class="element-text"><?php echo metadata('item','citation',array('no_escape'=>true)); ?></div>
+        </div>
 
         <!-- The following prints a list of all tags associated with the item -->
         <?php if (metadata('item','has tags')): ?>
