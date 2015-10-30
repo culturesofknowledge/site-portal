@@ -1,4 +1,5 @@
 var map = null;
+window.maps = window.maps || [];
 
 var open_layers_zoom_total_zooms = 0;
 // keep track of how many zooms we got going on
@@ -11,17 +12,21 @@ var open_layers_zoom_total_zooms = 0;
  */
 function open_layers_zoom_add_zoom(file_name_base, width, height, url, req) {
 
+    var id_number = window.maps.length;
+
     // Is this the first call to this function to add a zoom element?
-    if (! open_layers_zoom_total_zooms) {
+    if (1 || ! open_layers_zoom_total_zooms) {
         // Yes so add the holders
-        jQuery(".openlayerszoom-images").append(jQuery("<div>").attr("id", 'open_layers_zoom_map'));
-        jQuery(".openlayerszoom-images").append(jQuery("<div>").attr("id", 'open_layers_zoom_map_more'));
-        jQuery(".openlayerszoom-images").append(jQuery("<div>").attr("id", 'open_layers_zoom_map_full_window'));
+        var openlayerszoom_images = jQuery(".openlayerszoom-images");
+
+        openlayerszoom_images.append(jQuery("<div>").attr("id", 'open_layers_zoom_map_map'+id_number));
+        openlayerszoom_images.append(jQuery("<div>").attr("id", 'open_layers_zoom_map_more'+id_number));
+        openlayerszoom_images.append(jQuery("<div>").attr("id", 'open_layers_zoom_map_full_window'+id_number));
     }
 
     // If this is not a specific request and it is the first image or it is a
     // specifc request display it.
-    if ((req == -1 && open_layers_zoom_total_zooms == 0) || open_layers_zoom_total_zooms == req) {
+    if (1 || (req == -1 && open_layers_zoom_total_zooms == 0) || open_layers_zoom_total_zooms == req) {
 
         /* Vector layer */
 
@@ -56,12 +61,12 @@ function open_layers_zoom_add_zoom(file_name_base, width, height, url, req) {
             type: OpenLayers.Control.TYPE_TOGGLE,
             eventListeners: {
                 'activate': function () {
-                  open_layers_zoom_toggle_full_window();
+                  open_layers_zoom_toggle_full_window(id_number);
                   map.updateSize();
                   map.zoomToMaxExtent();
                 },
                 'deactivate': function () {
-                  open_layers_zoom_toggle_full_window();
+                  open_layers_zoom_toggle_full_window(id_number);
                   map.updateSize();
                   map.zoomToMaxExtent();
                 }
@@ -88,13 +93,15 @@ function open_layers_zoom_add_zoom(file_name_base, width, height, url, req) {
             ]
         };
 
-        map = new OpenLayers.Map("open_layers_zoom_map", options);
+        var map = new OpenLayers.Map("open_layers_zoom_map_map" + id_number, options);
         map.addLayer(zoomify);
         //map.addControl(new OpenLayers.Control.Permalink('permalink', null, {
         //}));
         map.setBaseLayer(zoomify);
 
         if (!map.getCenter()) map.zoomToMaxExtent();
+
+	    maps.push( map );
 
         // Add overview map
         // workaround based on http://osgeo-org.1803224.n2.nabble.com/zoomify-layer-WITH-overview-map-td5534360.html
@@ -128,19 +135,43 @@ function open_layers_zoom_add_zoom(file_name_base, width, height, url, req) {
 
         // At last,adding it to the map:
         map.addControl(overviewControl);
+
+        if( id_number !== 0 ) {
+            jQuery('#open_layers_zoom_map_map'+id_number).hide();
+            jQuery('#open_layers_zoom_map_more'+id_number).hide();
+            jQuery('#open_layers_zoom_map_full_window'+id_number).hide();
+        }
     }
 
     // Now add in the links.
-    jQuery("#open_layers_zoom_map_more").empty();
-    if (open_layers_zoom_total_zooms > 0) {
-        for (x = 0; x <= open_layers_zoom_total_zooms; x++) {
-            jQuery("#open_layers_zoom_map_more").append(jQuery("<a>").attr("href", '?open_zoom_layer_req=' + x).text("Load Image " + (x + 1)));
-        }
-    }
+    //jQuery("#open_layers_zoom_map_more").empty();
+    //if (open_layers_zoom_total_zooms > 0) {
+    //    for (x = 0; x <= open_layers_zoom_total_zooms; x++) {
+    //        jQuery("#open_layers_zoom_map_more").append(jQuery("<a>").attr("href", '?open_zoom_layer_req=' + x).text("Load Image " + (x + 1)));
+    //    }
+    //}
 
     open_layers_zoom_total_zooms = open_layers_zoom_total_zooms + 1;
 }
 
-function open_layers_zoom_toggle_full_window() {
-    jQuery('#open_layers_zoom_map').toggleClass('open_layers_zoom_map_full_window');
+function open_layers_zoom_toggle_full_window( id_number ) {
+    jQuery('#open_layers_zoom_map_map'+id_number).toggleClass('open_layers_zoom_map_full_window');
+}
+
+function open_layers_switch( id_number_show ) {
+    var number = window.maps.length;
+
+    for( var i=0; i<number; i++ ) {
+
+        if( i == id_number_show ) {
+            jQuery('#open_layers_zoom_map_map' + id_number_show).show();
+            jQuery('#open_layers_zoom_map_more' + id_number_show).show();
+            jQuery('#open_layers_zoom_map_full_window' + id_number_show).show();
+        }
+        else {
+            jQuery('#open_layers_zoom_map_map' + i).hide();
+            jQuery('#open_layers_zoom_map_more' + i).hide();
+            jQuery('#open_layers_zoom_map_full_window' + i).hide();
+        }
+    }
 }

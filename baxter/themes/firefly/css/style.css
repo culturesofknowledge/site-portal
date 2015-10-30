@@ -2270,16 +2270,29 @@ body.collections.show .element-set h2 {
 #images {
     width: 49%;
     display: inline-block;
-    height: 600px;;
+    height: 500px;;
     overflow:auto;
+}
+
+.collection_Letters [id^="open_layers_zoom_map_map"] {
+    height: 500px;
+}
+
+.collection_Letters [id^="open_layers_zoom_map_map_more"] {
+    -display: none;
 }
 
 #transcription {
     line-height: 1.7;
-    padding: 0 10px 0 0;
-    text-align:justify;
+    padding: 0 20px 0 0;
 }
 
+#switch-pages label {
+    margin-left: 10px;
+}
+#switch-pages .switch-page {
+    vertical-align: middle;
+}
 /* footer */
 
 #footer-wrap {
@@ -2316,8 +2329,8 @@ body.neatline.show div#neatline-narrative,body.neatline.fullscreen div#neatline-
 }
 
 /*openlayers*/
-#open_layers_zoom_map {
-width: auto;
+[id^="open_layers_zoom_map_map"] {
+    width: auto;
 }
 #neatline-map {
     height: 900px;

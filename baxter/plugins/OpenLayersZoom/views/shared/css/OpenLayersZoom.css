@@ -1,13 +1,13 @@
-#open_layers_zoom_map {
+[id^="open_layers_zoom_map_map"] {
     width: 712px;
     height: 456px;
     border: 1px solid #ccc;
     clear: both;
 }
-#open_layers_zoom_map_more {
+[id^="open_layers_zoom_map_more"] {
     clear: both;
 }
-#open_layers_zoom_map_more a {
+[id^="open_layers_zoom_map_more"] a {
     margin-right: 5px;
 }
 .olMap.open_layers_zoom_map_full_window {

@@ -195,16 +195,46 @@
         <?php //$this->itemRelationsPlugin(); ?>
     </div>
 
+
     <div class="spliter">
+
+        <h3><?php echo __('Transcriptions and page images'); ?></h3>
+        <?php
+            $transcription_array = metadata('item',array('Item Type Metadata', 'Transcription'), array('all' => true) );
+
+            echo '<form id="switch-pages">';
+            forEach( $transcription_array as $key => $transcription ) {
+                echo '<label for="page'. ($key+1). '"><input class="switch-page" type="radio" name="pages" value="page'.($key+1).'" id="page'.($key+1).'"';
+                if( $key == 0 ) {
+                    echo " checked";
+                }
+                echo "/>\n";
+                echo 'Show page ' . ($key+1) . "</label>";
+            }
+            echo '</form>';
+        ?><br/><br/>
+
         <?php if( metadata('item',array('Item Type Metadata', 'Transcription') ) ): ?>
             <div id="transcription" class="element">
-                <h3><?php echo __('Transcription'); ?></h3>
-                <div class="element-text"><?php echo metadata('item',array('Item Type Metadata', 'Transcription')); ?></div>
+                <?php forEach( $transcription_array as $key => $transcription ) { ?>
+                    <div id="transcription-<?php echo $key; ?>" class="element-text"
+                <?php
+                    if( $key != 0) {
+                        echo ' style="display:none"';
+                    }
+                ?>
+                        ><?php echo $transcription; ?>
+                    </div>
+                <?php } ?>
+
+                <div id="transcription-not-available" class="element-text" style="display:none">
+                    <p>No transcription available</p>
+                </div>
+
             </div>
         <?php endif; ?>
 
         <div id="images" class="element">
-            <h4><?php echo __('Images'); ?></h4>
             <?php $zoomin = $that->openLayersZoom()->zoom($item);
             if( $zoomin == "" ) { ?>
                 <div id="item-images">
@@ -214,6 +244,54 @@
                 echo $zoomin;
             }?>
         </div>
+
+
+        <script>
+            jQuery( function() {
+
+                var trans_number = jQuery( "[id^=transcription-]").length - 1,
+                    image_number = window.maps.length;
+
+                console.log(trans_number, image_number);
+
+                if( trans_number < image_number ) {
+                    var form = jQuery("form#switch-pages");
+                    for( var i = trans_number+1; i<=image_number; i++) {
+                        var radio = jQuery('<label for="page' + i + '"><input class="switch-page" name="pages" value="page' + i + '" id="page' + i + '" type="radio"/> Other</label>');
+                        form.append( radio );
+                    }
+                }
+
+                jQuery("input.switch-page").click( function() {
+                    var number = this.id.replace("page","");
+                    var id_number = (number*1)-1;
+                    open_layers_switch( id_number );
+                    transcript_switch( id_number );
+                });
+
+                function transcript_switch( id_number ) {
+
+                    for( var i=0; i<trans_number; i++ ){
+                        if( i == id_number ) {
+                            jQuery( "#transcription-" + i).show();
+                        }
+                        else {
+                            jQuery( "#transcription-" + i).hide();
+                        }
+                    }
+
+                    if( id_number >= trans_number ) {
+                        jQuery( "#transcription-not-available").show();
+                    }
+                    else {
+                        jQuery( "#transcription-not-available").hide();
+                    }
+
+                }
+            })
+
+        </script>
+
     </div>
 
 <?php } ?>
