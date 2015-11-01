@@ -92,7 +92,11 @@
 
     <div class="spliter">
         <div id="item-images">
-            <?php echo files_for_item(); ?>
+            <?php echo files_for_item(
+							array(
+            		'imageSize' => 'thumbnail'
+        			)
+						); ?>
         </div>
 
         <div id="item-metadata">
