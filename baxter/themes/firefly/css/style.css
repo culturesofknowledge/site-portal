@@ -2176,6 +2176,38 @@ header .text p {
 }
 
 /* Content */
+#home #secondary {
+	border: 1px solid rgb(215, 215, 215); 
+	background: rgb(238, 238, 238) none repeat scroll 0% 0%;
+	padding-left: 0;
+
+	max-height: 777px;
+	overflow: hidden;
+}
+
+#secondary a {
+    text-decoration: none;
+    color: black;
+}
+
+#secondary h2 {
+  margin-bottom:0;
+}
+
+#secondary h3 {
+  color: #369;
+  margin:0;
+}
+
+
+#home #secondary div {
+	margin: 10px;
+}
+
+
+#home #secondary img {
+	width: 100%;
+}
 
 #content:focus {
     outline: 0;
@@ -2187,7 +2219,12 @@ header .text p {
 
 .featured {
     border: solid 1px #D7D7D7;
-		min-height: 320px;
+		min-height: 380px;
+}
+
+.featured img, #featured-exhibit img,
+.collection .image img, .exhibit .image img {
+	height: auto;
 }
 
 #sort-links + .item,
