@@ -73,7 +73,7 @@
         <?php //echo theme_header_image(); ?>
 
         <h1 id="logo"><a class="no-decoration" href="/" accesskey="1"><img src="/img/emlo_logo.png" alt="EMLO logo" class="show-for-large-up menu-name"/></a>
-            <strong><a class="text no-decoration hide-for-large-up" href="/" accesskey="1">EMLO  &nbsp;&nbsp;</a></strong>
+            <!-- <strong><a class="text no-decoration hide-for-large-up" href="/" accesskey="1">EMLO  &nbsp;&nbsp;</a></strong> -->
         </h1>
 
         <div class="text">

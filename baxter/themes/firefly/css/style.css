@@ -2149,7 +2149,7 @@ header[role=banner] {
     padding: 0px 15px;
 }
 #logo .text {
-    display:none;
+    /*display:none;*/
 }
 
 header .text {
@@ -2168,7 +2168,7 @@ header .text p {
     width: auto;
     letter-spacing: normal;
     float: none;
-    line-height: inherit;
+    line-height: 1.;
 }
 #site-title a,
 #site-title a:visited {
@@ -2187,6 +2187,7 @@ header .text p {
 
 .featured {
     border: solid 1px #D7D7D7;
+		min-height: 320px;
 }
 
 #sort-links + .item,
@@ -2336,6 +2337,20 @@ body.neatline.show div#neatline-narrative,body.neatline.fullscreen div#neatline-
     height: 900px;
 }
 
+
+
+
+/* mobile views */
+
+
+.hide-for-large-up {
+	display:none;
+}
+
+.show-for-large-up {
+	display:block;
+}
+
 /*end*/
 
 
@@ -2386,6 +2401,21 @@ body.neatline.show div#neatline-narrative,body.neatline.fullscreen div#neatline-
         clear: both;
         visibility: hidden;
     }
+		.show-for-large-up {
+			display:none
+		}
+		.hide-for-large-up {
+			display: block;
+    }
+
+		header .text {
+    	margin-left: 0;
+		}
+
+		#site-title {
+			text-align: center;
+		}
+
 }
 @media only screen and (max-width: 768px) and (min-width: 768px) and (max-width: 959px) {
     #mobile-nav {
