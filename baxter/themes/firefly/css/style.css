@@ -2110,8 +2110,13 @@ header[role=banner] {
     display:none;
 }
 
+#primary-nav {
+    width: auto;
+    margin-left: 150px; /* avoid logo */
+}
 #primary-nav a {
 	background-color: #EFC319;
+	padding: 0.55em 15px;
 }
 
 #primary-nav .nav-item > a {
@@ -2130,12 +2135,8 @@ header[role=banner] {
     display: inline-block;
 }
 #search-container {
-    width: 25%;
+    width: 23%;
     margin-top: 6px;
-}
-#primary-nav {
-     width: auto;
-    margin-left: 160px; /* avoid logo */
 }
 
 #primary-nav .navigation,
