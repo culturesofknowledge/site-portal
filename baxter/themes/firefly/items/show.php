@@ -202,7 +202,7 @@
 
     <div class="spliter">
 
-        <h3><?php echo __('Transcriptions and page images'); ?></h3>
+        <h3><?php echo __('Transcription and MS'); ?></h3>
         <?php
             $transcription_array = metadata('item',array('Item Type Metadata', 'Transcription'), array('all' => true) );
 
@@ -213,10 +213,10 @@
                     echo " checked";
                 }
                 echo "/>\n";
-                echo 'Show page ' . ($key+1) . "</label>";
+                echo 'Show ' . ($key+1) . "</label>";
             }
             echo '</form>';
-        ?><br/><br/>
+        ?>
 
         <?php if( metadata('item',array('Item Type Metadata', 'Transcription') ) ): ?>
             <div id="transcription" class="element">
@@ -256,15 +256,16 @@
                 var trans_number = jQuery( "[id^=transcription-]").length - 1,
                     image_number = window.maps.length;
 
-                console.log(trans_number, image_number);
-
                 if( trans_number < image_number ) {
                     var form = jQuery("form#switch-pages");
                     for( var i = trans_number+1; i<=image_number; i++) {
-                        var radio = jQuery('<label for="page' + i + '"><input class="switch-page" name="pages" value="page' + i + '" id="page' + i + '" type="radio"/> Other</label>');
+                        var radio = jQuery('<label for="page' + i + '"><input class="switch-page" name="pages" value="page' + i + '" id="page' + i + '" type="radio"/> Show ' + i + '</label>');
                         form.append( radio );
                     }
                 }
+								else if( trans_number === 1) {
+									jQuery("form#switch-pages").hide(); // I can't work out how to get the number of images before we output the page... so hiding it after in javascript
+								}
 
                 jQuery("input.switch-page").click( function() {
                     var number = this.id.replace("page","");
