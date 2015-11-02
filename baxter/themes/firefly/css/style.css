@@ -2245,6 +2245,11 @@ nav + .exhibit {
     border-bottom: 1px solid #EFC319
 }
 
+.collections.browse #sort-links,
+.items.browse #sort-links {
+	display:none;
+}
+
 .collections .item {
     border-top: 0;
     padding-bottom: 22px;
