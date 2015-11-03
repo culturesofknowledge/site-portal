@@ -52,7 +52,7 @@
 			<h3>Interactive Timeline and Map</h3>
 			<p>Click anywhere in this section to view an interactive timeline and map which shows when and from where the letters in the exhibit were sent and recieved.</p>
 		</div>
-		<img src="/exhibition/baxter/themes/firefly/images/map-screenshot.png"/>
+		<img src="/exhibition/baxter/themes/firefly/images/map-screenshot.png" alt="Screenshot of map control"/>
 
 	</a>
 </div>
