@@ -2359,8 +2359,8 @@ body.collections.show .element-set h2 {
 }
 
 #footer-wrap {
-	z-index: -1;
-	position: relative;
+	/*z-index: -1;
+	position: relative;*/
 }
 
 #team div { 
@@ -2375,6 +2375,9 @@ body.collections.show .element-set h2 {
 footer p {
     margin: 5px 0 0;
     float:right;
+}
+footer {
+    position: inherit;
 }
 
 /* plugin overwrites */
