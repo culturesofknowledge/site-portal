@@ -2269,7 +2269,11 @@ body.collections.show .element-set h2 {
     width: 49.5%;
     display: inline-block;
     vertical-align: top;
-    padding: 10px
+    padding: 0;
+}
+
+.element-set:nth-of-type(2) {
+    padding-left: 10px;
 }
 
 .collection_Places .element-set {
@@ -2341,6 +2345,9 @@ body.collections.show .element-set h2 {
 #switch-pages .switch-page {
     vertical-align: middle;
 }
+
+
+
 /* footer */
 
 #footer-wrap {
@@ -2463,6 +2470,10 @@ body.neatline.show div#neatline-narrative,body.neatline.fullscreen div#neatline-
 		#site-title {
 			text-align: center;
 		}
+
+    .element-set:nth-of-type(2) {
+        padding-left: 0;
+    }
 
 }
 @media only screen and (max-width: 768px) and (min-width: 768px) and (max-width: 959px) {
