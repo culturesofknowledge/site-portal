@@ -85,19 +85,23 @@
 
  <?php echo foot(); ?>
 
-<?php function draw( $that, $item ) { ?>
+
+<?php function draw_files() { ?>
+    <?php $files = files_for_item( array( 'imageSize' => 'thumbnail' ) ); ?>
+    <?php if( $files ) : ?>
+        <div id="item-images">
+            <?php echo $files ?>
+        </div>
+    <? endif; ?>
+<?php } ?>
+
+<?php function drawSOMETHING( $that, $item ) { ?>
 <?php } ?>
 
 <?php function drawPortraits( $that, $item ) { ?>
 
     <div class="spliter">
-        <div id="item-images">
-            <?php echo files_for_item(
-							array(
-            		'imageSize' => 'thumbnail'
-        			)
-						); ?>
-        </div>
+        <?php draw_files(); ?>
 
         <div id="item-metadata">
             <?php echo all_element_texts('item'); ?>
@@ -119,9 +123,7 @@
         </div>
 
         <div id="item-metadata" class="element-set-group flow-right">
-            <div id="item-images">
-                <?php echo files_for_item(); ?>
-            </div>
+            <?php draw_files(); ?>
             <?php echo all_element_texts('item'); ?>
         </div>
 
@@ -138,9 +140,7 @@
         <div id="images" class="element">
             <?php $zoomin = $that->openLayersZoom()->zoom($item);
             if( $zoomin == "" ) { ?>
-                <div id="item-images">
-                    <?php echo files_for_item(); ?>
-                </div>
+                <?php draw_files(); ?>
             <?php } else {
                 echo $zoomin;
             }?>
@@ -156,12 +156,10 @@
         </div>
 
         <div id="images" class="element">
-            <h3><?php echo __('Images'); ?></h3>
+            <h3><?php echo __('Image'); ?></h3>
             <?php $zoomin = $that->openLayersZoom()->zoom($item);
             if( $zoomin == "" ) { ?>
-                <div id="item-images">
-                    <?php echo files_for_item(); ?>
-                </div>
+                <?php draw_files(); ?>
             <?php } else {
                 echo $zoomin;
             }?>
@@ -181,9 +179,7 @@
         <h3><?php echo __('Files'); ?></h3>
         <?php $zoomin = $that->openLayersZoom()->zoom($item);
         if( $zoomin == "" ) { ?>
-            <div id="item-images">
-                <?php echo files_for_item(); ?>
-            </div>
+            <?php draw_files(); ?>
         <?php } else {
             echo $zoomin;
         }?>
@@ -241,9 +237,7 @@
         <div id="images" class="element">
             <?php $zoomin = $that->openLayersZoom()->zoom($item);
             if( $zoomin == "" ) { ?>
-                <div id="item-images">
-                    <?php echo files_for_item(); ?>
-                </div>
+                <?php draw_files(); ?>
             <?php } else {
                 echo $zoomin;
             }?>
