@@ -2346,7 +2346,9 @@ body.collections.show .element-set h2 {
     vertical-align: middle;
 }
 
-
+#simple-pages-breadcrumbs {
+    display:none;
+}
 
 /* footer */
 
