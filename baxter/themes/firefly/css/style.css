@@ -2165,6 +2165,7 @@ header .text p {
     font-size: 16px;
     line-height: 1.5;
     color: #222;
+    margin-bottom: 0;
 }
 #site-title {
     font-family: "adelle",serif !important;
@@ -2362,9 +2363,13 @@ body.collections.show .element-set h2 {
 	position: relative;*/
 }
 
+#team {
+	height: 99px;
+}
+
 #team div { 
 	display: inline-block;
-	padding: 7px 9px 0;
+	padding: 0 8px;
 }
 
 #team div img {
@@ -2394,7 +2399,7 @@ body.neatline.show div#neatline-narrative,body.neatline.fullscreen div#neatline-
     width: auto;
 }
 #neatline-map {
-    height: 900px;
+    height: 700px;
 }
 
 
