@@ -16,7 +16,7 @@
                 <div id="team" class="center-div">
                     <div><a href="http://www.culturesofknowledge.org/" target="_blank"><img src="/img/CofKLogoBlack.png" alt="Cultures of Knowledge Logo" /></a></div>
 
-                    <div><a href="http://dwlib.co.uk/" target="_blank"><img width="300" src="/exhibition/baxter/themes/firefly/images/Dr Williams Library.png" alt="Dr Williams's Library"/></a></div>
+                    <div><a href="http://dwlib.co.uk/" target="_blank"><img width="300" src="/exhibition/baxter/themes/firefly/images/Dr%20Williams%20Library.png" alt="Dr Williams's Library"/></a></div>
 
                     <div><a href="http://www.mellon.org/" target="_blank"><img width="140" src="/img/Andrew_Mellon_Foundation_logo.svg" alt="Andrew Mellon Foundation Logo" /></a></div>
 
@@ -24,7 +24,7 @@
 
                 </div>
                 <p></p>
-                <p><?php echo __('Powered by <a href="http://omeka.org">Omeka</a>.'); ?></p>
+                <!-- <p><?php echo __('Powered by <a href="http://omeka.org">Omeka</a>.'); ?></p> -->
 
 			</div><!-- end footer-content -->
 
