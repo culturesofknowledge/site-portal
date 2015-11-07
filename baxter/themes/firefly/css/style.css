@@ -2056,6 +2056,12 @@ h1, h2, h3 {
 
 h1 { 
     text-transform: none;
+
+    font-size: 28px;
+    line-height: 36px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    word-break: break-word;
 }
 
 /* Specifics */
