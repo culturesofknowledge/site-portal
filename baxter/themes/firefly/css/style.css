@@ -2371,6 +2371,10 @@ body.collections.show .element-set h2 {
     display:none;
 }
 
+body#about #primary p {
+	font-size: 13px;
+}
+
 /* footer */
 
 #footer-wrap {
