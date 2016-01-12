@@ -149,7 +149,7 @@
 			 	// loop through the rows of data
 			    while ( have_rows('catalogue_logo') ) : the_row();
 			        // display a sub field value (in this case all logos on repeatable field)
-			       echo "<p><img src='",the_sub_field('logo_image'),"'</p>";
+			       echo "<p><img src='",the_sub_field('logo_image'),"'></p>";
 			    endwhile;
 			endif;
 		}
