@@ -1666,7 +1666,7 @@ ul.title-list {
   display: inline;
   margin-left: 10px;
   margin-right: 10px;
-  width: 520px;
+  width: 480px;
 }
 @media only screen and (max-width: 767px) {
   .collection-meta {
@@ -2197,6 +2197,7 @@ header .text p {
 
 #content {
 	overflow:visible; /* Correction so openlayers works in full screen */
+	font-size: 14px;
 }
 
 #home #secondary {
