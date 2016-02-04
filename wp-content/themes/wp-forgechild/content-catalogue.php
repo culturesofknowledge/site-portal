@@ -84,42 +84,42 @@
 
 		<?php
 
-		// repeatable field check for catalogue images	
-		// ***	
-		if ( $hascatalogueimages ) {	
-			// check if the repeater field has rows of data
-			if( have_rows('catalogue_main_image') ):
-				echo "<div class='small-4 large-6 columns'>";
-			 	// loop through the rows of data
-			    while ( have_rows('catalogue_main_image') ) : the_row();
-			        // display a sub field value (in this case all logos on repeatable field)
-			       echo "<figure class='embed dark'><img src='",the_sub_field('catalogue_images'),"'>
-			       <figcaption>",the_sub_field('image_caption'),"</figcaption></figure>";
-			    endwhile;
-			   
-			endif;
-		} else {
-			echo "<div class='large-12 columns'>";
-		}
- 			echo "</div>";
+
 		if ($hastitleindividual or $hastitlecollection or $hasbio){
-			if ($hascatalogueimages){
-				echo "<div class='small-8 large-6 columns'>";
-			} else {
-				echo "<div class='large-12 columns'>";
-			}
+			//if ($hascatalogueimages){
+			//	echo "<div class='small-8 large-6 columns'>";
+			//} else {
+				echo "<div class='-large-12 -columns'>";
+			//}
 			
-		
+			echo "<hr class='yellow-divider'>";
+			// repeatable field check for catalogue images	
+			// ***	
+			if ( $hascatalogueimages ) {	
+				// check if the repeater field has rows of data
+				if( have_rows('catalogue_main_image') ):
+					echo "<div id='catalogue-images' class='left'>";
+					// loop through the rows of data
+						while ( have_rows('catalogue_main_image') ) : the_row();
+								// display a sub field value (in this case all logos on repeatable field)
+							 echo "<figure class='embed dark'><img src='",the_sub_field('catalogue_images'),"'>
+							 <figcaption>",the_sub_field('image_caption'),"</figcaption></figure>";
+						endwhile;
+					echo "</div>"; 
+				endif;
+			}
+
+	
 			//check if biographical section title (for individual) has content if not doesn't display
 			// ***	
 			if ( $hastitleindividual ) {
-			 echo "<hr class='yellow-divider'><h3>",the_field('biographical_section_title_individual'),"</h3>";
+			 echo "<h3>",the_field('biographical_section_title_individual'),"</h3>";
 			}
 
 			//check if biographical section title (for collection) has content if not doesn't display
 			// ***	
 			if ( $hastitlecollection ) {
-			 echo "<hr class='yellow-divider'><h3>",the_field('biographical_section_title_collection'),"</h3>";
+			 echo "<h3>",the_field('biographical_section_title_collection'),"</h3>";
 			}
 				
 			//check if short_bio has content if not doesn't display

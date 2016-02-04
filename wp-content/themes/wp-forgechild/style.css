@@ -222,27 +222,44 @@ select {background-color: #fff; border:#efc319 2px solid;}
 .entry-content h3 { font-size: 1.25em;}
 .entry-content h4 { font-size: 1em; font-weight:bold; }
 
-#post-1945 li {
+#post-480 li /*, 
+#post-1945 li*/ {
 	list-style: none;
 	display: inline-block;
-}
-
-#post-1945 li a {
-	border: 3px solid #fd0;
-	width: 200px;
-	text-align: center;
 	height: 160px;
-	display: block;
+	width: 200px;
 	margin: 10px;
-	vertical-align: middle;
-	font-size: 20px;
-	padding: 50px 0 0;
-	transition: 3s 0s ease all;
+	text-align:center;
+	border: 3px solid #efc319;
+
+	line-height: 150px;
 }
 
-#content #post-1945 li a:hover { /* specifity override */
-	background-color: #fd0;
-	text-decoration: none !important;
-	color: black !important;
-	transition: 0.5s 0s ease all;
+#post-480 li a /*, 
+#post-1945 li a */{
+	width: 100%;
+	text-align: center;
+	height: 100%;
+	display: block;
+	text-decoration: none;
+
+	color: #35495e !important;
+	background-color: #efc319;
+
+	line-height: 150px;
+}
+
+/*#content #post-1945 li a:hover { */ /* specifity override */
+/*  text-decoration: none !important;
+	color: #35495e !important;
+} */ 
+
+#catalogue-images {
+	width: 40%;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+#catalogue-images figure {
+	margin-bottom: 20px;
 }
