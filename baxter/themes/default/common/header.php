@@ -103,7 +103,7 @@
 
         <header role="banner">
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
-            <div id="site-title"><a href="http://emlo.bodleian.ox.ac.uk/exhibition/baxter/">Baxter</a><?php echo //link_to_home_page(theme_logo()); ?></div>
+            <div id="site-title"><?php echo link_to_home_page(theme_logo()); ?></div>
         </header>
             
         <div class="menu-button button">Menu</div>
