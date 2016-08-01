@@ -1,0 +1,305 @@
+# Translation for the BulkMetadataEditor plugin for Omeka.
+# Copyright (C) 2015 BibLibre
+# This file is distributed under the same license as the Omeka package.
+# Julian Maurice <julian.maurice@biblibre.com>, 2015.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: BulkMetadataEditor\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-08 15:10+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: BulkMetadataEditorPlugin.php:47
+msgid "Please wait..."
+msgstr ""
+
+#: BulkMetadataEditorPlugin.php:52
+msgid "Field"
+msgstr ""
+
+#: BulkMetadataEditorPlugin.php:53
+msgid "Old Value"
+msgstr ""
+
+#: BulkMetadataEditorPlugin.php:54
+msgid "New Value"
+msgstr ""
+
+#: BulkMetadataEditorPlugin.php:55
+msgid "Error generating preview! :("
+msgstr ""
+
+#: BulkMetadataEditorPlugin.php:56
+msgid ""
+"Apologies, but we could not generate a preview at this time. You may be "
+"asking for too many changes at once."
+msgstr ""
+
+#: BulkMetadataEditorPlugin.php:57
+msgid ""
+"The items preview request is taking too long! You must be trying to select a "
+"ton of fields at once. Sorry we can't preview them all for you."
+msgstr ""
+
+#: BulkMetadataEditorPlugin.php:58
+msgid ""
+"The fields preview request is taking too long! You must be trying to select "
+"a ton of fields at once. Sorry we can't preview them all for you."
+msgstr ""
+
+#: BulkMetadataEditorPlugin.php:59
+msgid ""
+"The changes preview request is taking too long! You must be trying to make a "
+"ton of changes at once. Sorry we can't preview them all for you."
+msgstr ""
+
+#: BulkMetadataEditorPlugin.php:91
+msgid "Bulk Editor"
+msgstr ""
+
+#: controllers/IndexController.php:38
+msgid "The requested changes have been applied to the database"
+msgstr ""
+
+#: controllers/IndexController.php:47
+msgid "Error loading metadata editing form: "
+msgstr ""
+
+#: controllers/IndexController.php:248 forms/Main.php:352
+msgid "All Collections"
+msgstr ""
+
+#: controllers/IndexController.php:276 views/admin/FormRulebox.php:34
+msgid "is not exactly"
+msgstr ""
+
+#: controllers/IndexController.php:278 views/admin/FormRulebox.php:36
+msgid "matches regular expression"
+msgstr ""
+
+#: controllers/IndexController.php:317
+msgid "Please select an action to perform"
+msgstr ""
+
+#: controllers/IndexController.php:390
+msgid "Please define search and replace terms"
+msgstr ""
+
+#: controllers/IndexController.php:442
+msgid "Error retrieving item data for deletion."
+msgstr ""
+
+#: controllers/IndexController.php:465
+msgid "Please input some text to append"
+msgstr ""
+
+#: controllers/IndexController.php:506
+msgid "Please input some text to add."
+msgstr ""
+
+#: controllers/IndexController.php:592
+#, php-format
+msgid "...and changes for %s more items"
+msgstr ""
+
+#: controllers/IndexController.php:594 controllers/IndexController.php:786
+#: controllers/IndexController.php:927
+msgid "Show More"
+msgstr ""
+
+#: controllers/IndexController.php:725
+msgid "Unable to parse regular expression"
+msgstr ""
+
+#: controllers/IndexController.php:798
+msgid "No matching items found"
+msgstr ""
+
+#: controllers/IndexController.php:817
+msgid "Cannot pull item data from a non-item"
+msgstr ""
+
+#: controllers/IndexController.php:818
+msgid "untitled"
+msgstr ""
+
+#: controllers/IndexController.php:819
+msgid "no description given"
+msgstr ""
+
+#: controllers/IndexController.php:820
+msgid "undefined"
+msgstr ""
+
+#: controllers/IndexController.php:925
+#, php-format
+msgid "...and corresponding fields from %s more items.  "
+msgstr ""
+
+#: forms/Main.php:55
+msgid "Edit items from this collection"
+msgstr ""
+
+#: forms/Main.php:65
+msgid "Select Items by Metadata"
+msgstr ""
+
+#: forms/Main.php:67
+msgid "Select items to edit based on their associated metadata elements"
+msgstr ""
+
+#: forms/Main.php:91
+msgid "Preview Selected Items"
+msgstr ""
+
+#: forms/Main.php:99
+msgid "Hide Item Preview"
+msgstr ""
+
+#: forms/Main.php:121
+msgid "Metadata elements"
+msgstr ""
+
+#: forms/Main.php:122
+msgid ""
+"Select the metadata elements you would like to edit. You can select multiple "
+"values. (default: all)"
+msgstr ""
+
+#: forms/Main.php:131
+msgid "Preview Selected Fields"
+msgstr ""
+
+#: forms/Main.php:139
+msgid "Hide Field Preview"
+msgstr ""
+
+#: forms/Main.php:161
+msgid "Edit Type"
+msgstr ""
+
+#: forms/Main.php:162
+msgid "Choose the type of edit you would like to perform"
+msgstr ""
+
+#: forms/Main.php:174
+msgid "Search and replace text"
+msgstr ""
+
+#: forms/Main.php:175
+msgid "Add a new metadatum in the selected field"
+msgstr ""
+
+#: forms/Main.php:176
+msgid "Append text to existing metadata in the selected fields"
+msgstr ""
+
+#: forms/Main.php:177
+msgid "Deduplicate and remove empty metadata in the selected fields"
+msgstr ""
+
+#: forms/Main.php:178
+msgid "Deduplicate files of selected items by hash"
+msgstr ""
+
+#: forms/Main.php:179
+msgid "Delete all existing metadata in the selected fields"
+msgstr ""
+
+#: forms/Main.php:186
+msgid "Preview Changes"
+msgstr ""
+
+#: forms/Main.php:194
+msgid "Hide Change Preview"
+msgstr ""
+
+#: forms/Main.php:221 views/admin/index/index_old.php:105
+msgid "Search for:"
+msgstr ""
+
+#: forms/Main.php:224 views/admin/index/index_old.php:109
+msgid "Input text you want to search for "
+msgstr ""
+
+#: forms/Main.php:227 views/admin/index/index_old.php:114
+msgid "Replace with:"
+msgstr ""
+
+#: forms/Main.php:230 views/admin/index/index_old.php:118
+msgid "Input text you want to replace with "
+msgstr ""
+
+#: forms/Main.php:233
+msgid "Use regular expressions"
+msgstr ""
+
+#: forms/Main.php:239
+msgid "Text to Add"
+msgstr ""
+
+#: forms/Main.php:242 views/admin/index/index_old.php:136
+msgid "Input text you want to add as metadata"
+msgstr ""
+
+#: forms/Main.php:245
+msgid "Text to Append"
+msgstr ""
+
+#: forms/Main.php:248 views/admin/index/index_old.php:151
+msgid "Input text you want to append to metadata"
+msgstr ""
+
+#: forms/Main.php:264
+msgid "Step 1: Select Items"
+msgstr ""
+
+#: forms/Main.php:275
+msgid "Step 2: Select Fields"
+msgstr ""
+
+#: forms/Main.php:291
+msgid "Step 3: Define Changes"
+msgstr ""
+
+#: forms/Main.php:292
+msgid "Define Edits to Apply"
+msgstr ""
+
+#: forms/Main.php:301
+msgid "Apply Edits Now"
+msgstr ""
+
+#: views/admin/index/index.php:4
+msgid "Bulk Metadata Editor"
+msgstr ""
+
+#: views/admin/index/index_old.php:132
+msgid "Text to Add:"
+msgstr ""
+
+#: views/admin/index/index_old.php:147
+msgid "Text to Append:"
+msgstr ""
+
+#: views/admin/FormRulebox.php:43
+msgid ""
+"Only select items which also meet the following criteria: (use * as a "
+"wildcard character)"
+msgstr ""
+
+#: views/admin/FormRulebox.php:58
+msgid "Match Case"
+msgstr ""
+
+#: views/admin/FormRulebox.php:65
+msgid "Add Another Rule"
+msgstr ""
