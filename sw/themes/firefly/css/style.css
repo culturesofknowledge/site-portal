@@ -2137,6 +2137,19 @@ header[role=banner] {
   font-weight: bold;
 }
 
+#primary-nav .nav-item > a.open {
+	background:transparent;
+	border: 0;
+}
+
+#primary-nav li.active a {
+	color : black;
+}
+
+#primary-nav .sub-nav {
+	top: 45px;
+}
+
 #primary-nav a:hover, #primary-nav a:focus, #primary-nav li.active a {
 	color: white;
 }
