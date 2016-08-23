@@ -2168,8 +2168,23 @@ header[role=banner] {
 #primary-nav .navigation,
 #primary-nav .nav_menu,
 #primary-nav {
-	z-index: initial;
+/*	z-index: initial;*/ /*This breaks sub menu itmes */
 }
+
+#primary-nav .sub-nav > li {
+	border:0;
+}
+
+#primary-nav li.active li a {
+  color:black;
+}
+#primary-nav li.active li a:hover {
+  color:white;
+}
+#primary-nav li.active li.active a {
+  color:white;
+}
+
 
 /* logo and title */
 
