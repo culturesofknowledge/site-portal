@@ -2173,8 +2173,12 @@ header[role=banner] {
 #primary-nav .navigation,
 #primary-nav .nav_menu,
 #primary-nav {
-/*	z-index: initial;*/ /*This breaks sub menu itmes */
+	z-index: initial;
 }
+.sub-nav.open {
+	z-index: 100;
+}
+
 
 #primary-nav .sub-nav > li {
 	border:0;
