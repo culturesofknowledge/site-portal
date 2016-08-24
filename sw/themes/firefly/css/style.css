@@ -2051,6 +2051,11 @@ footer nav + p {
 
 /* General */
 
+body {
+	line-height: 20px;
+}
+
+
 h1, h2, h3 {
 		color: #35495E;
 		font-family: "adelle",serif !important;
@@ -2409,6 +2414,15 @@ body.collections.show .element-set h2 {
 
 body#about #primary p {
 	font-size: 13px;
+}
+
+
+.layout-file-text .exhibit-items > * {
+	margin-bottom: 0.5em;
+}
+.exhibit-item-caption {
+  line-height: 14px;
+	margin-left: 10px;
 }
 
 /* footer */
