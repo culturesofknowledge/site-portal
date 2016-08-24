@@ -113,19 +113,42 @@
     <div class="spliter">
         <div id="bio" >
 
-            <?php if( metadata('item',array('Dublin Core', 'Description') ) ): ?>
                 <div id="biography" class="element">
                     <h3><?php echo __('Biographical Text'); ?></h3>
-                    <div class="element-text"><?php echo metadata('item',array('Dublin Core', 'Description')); ?></div>
+											<div class="element-text">
+            						<?php if( metadata('item',array('Item Type Metadata', 'Biographical Text') ) ): ?>
+                    			<?php echo metadata('item',array('Item Type Metadata', 'Biographical Text')); ?>
+												<?php else: ?>
+													No Biography available									
+            						<?php endif; ?>
+										</div>
                 </div>
-            <?php endif; ?>
 
         </div>
 
         <div id="item-metadata" class="element-set-group flow-right">
-            <?php draw_files(); ?>
-            <?php echo all_element_texts('item'); ?>
-        </div>
+
+					<?php draw_files(); ?>
+					<?php echo all_element_texts('item',  array('show_element_sets' => array('Dublin Core')) ); ?>	
+					<?php 
+						$items = item_type_elements($item);
+						$keys = array_keys($items);
+            foreach($keys as $key){
+							if( $key != 'Biographical Text' ) {
+							?>
+								<div class="element">
+									<h3><?php echo __($key); ?></h3>
+									<div class="element-text">
+										<?php echo metadata('item',array('Item Type Metadata', $key ) ); ?>
+									</div>
+								</div>
+							<?php
+							}
+						}
+						//print_r($items); 
+					?>
+
+        </div>				
 
     </div>
 
