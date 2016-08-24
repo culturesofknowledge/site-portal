@@ -81,7 +81,7 @@
 
         <div class="text">
             <div id="site-title">
-                <a href="/wemlo/"><?php echo option("site_title")?></a>
+                <a href="/exhibition/sw/"><?php echo option("site_title")?></a>
             </div>
             <?php if ($homepageText = get_theme_option('Homepage Text')): ?>
                 <p><?php echo $homepageText; ?></p>
