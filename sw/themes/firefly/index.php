@@ -45,7 +45,7 @@
 
 </div> end secondary -->
 
-<!-- <div id="secondary">
+<div id="secondary">
 	<a href="/exhibition/baxter/neatline/show/interactive-map">
 		<div>
 			<h2><?php echo __('Map'); ?></h2>
@@ -55,5 +55,5 @@
 		<img src="/exhibition/baxter/themes/firefly/images/map-screenshot.png" alt="Screenshot of map control"/>
 
 	</a>
-</div> -->
+</div>
 <?php echo foot(); ?>

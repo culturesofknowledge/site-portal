@@ -1094,11 +1094,11 @@ nav + .exhibit {
 /* @end */
 /* @group ----- Home Page ----- */
 #home #primary {
-  /*float: left;*/
+  float: left;
   display: inline;
   margin-left: 10px;
   margin-right: 10px;
-  /*width: 460px;*/
+  width: 460px;
   margin-left: 0;
   margin-right: 0;
   padding-right: 10px;
@@ -1165,8 +1165,8 @@ nav + .exhibit {
   padding: 1.5em 20px;
   margin-bottom: 1.5em;
 
-	display: inline-block;
-	width: 401px;
+	-display: inline-block;
+	-width: 401px;
 }
 .featured h2,
 #featured-exhibit h2 {
