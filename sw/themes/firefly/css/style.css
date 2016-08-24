@@ -2489,7 +2489,10 @@ body.neatline.show div#neatline-narrative,body.neatline.fullscreen div#neatline-
     height: 700px;
 }
 
-
+/* geolocation */
+#map_browse {
+	height: 1000px;
+}
 
 
 /* mobile views */
