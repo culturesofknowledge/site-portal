@@ -2433,6 +2433,11 @@ body#about #primary p {
 	margin-left: 10px;
 }
 
+
+#item-images {
+  margin-right: 0px;
+}
+
 /* footer */
 
 #footer-wrap {
