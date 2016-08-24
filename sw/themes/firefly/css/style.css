@@ -2384,7 +2384,7 @@ body.collections.show .element-set h2 {
 #images {
     width: 49%;
     display: inline-block;
-    max-height: 500px;;
+    height: 500px;;
     overflow:auto;
 }
 
@@ -2403,6 +2403,10 @@ body.collections.show .element-set h2 {
     line-height: 1.5;
     padding: 0 20px 0 0;
     font-size: 14px;
+}
+
+#switch-pages {
+	margin-bottom: 10px;
 }
 
 #switch-pages label {
