@@ -271,17 +271,24 @@
             jQuery( function() {
 
                 var trans_number = jQuery( "[id^=transcription-]").length - 1,
-                    image_number = window.maps.length;
+                    image_number = (window.maps) ? window.maps.length : 0;
 
-                if( trans_number < image_number ) {
-                    var form = jQuery("form#switch-pages");
-                    for( var i = trans_number+1; i<=image_number; i++) {
-                        var radio = jQuery('<label for="page' + i + '"><input class="switch-page" name="pages" value="page' + i + '" id="page' + i + '" type="radio"/> Show ' + i + '</label>');
-                        form.append( radio );
-                    }
-                }
-								else if( trans_number === 1) {
-									jQuery("form#switch-pages").hide(); // I can't work out how to get the number of images before we output the page... so hiding it after in javascript
+								if( image_number == 0 ) {
+									jQuery("form#switch-pages").append("<p>No images found</p>");
+								}
+								else {
+
+									if( trans_number < image_number ) {
+											var form = jQuery("form#switch-pages");
+											for( var i = trans_number+1; i<=image_number; i++) {
+													var radio = jQuery('<label for="page' + i + '"><input class="switch-page" name="pages" value="page' + i + '" id="page' + i + '" type="radio"/> Show ' + i + '</label>');
+													form.append( radio );
+											}
+									}
+									else if( trans_number === 1) {
+										jQuery("form#switch-pages").hide(); // I can't work out how to get the number of images before we output the page... so hiding it after in javascript
+									}
+								
 								}
 
                 jQuery("input.switch-page").click( function() {
