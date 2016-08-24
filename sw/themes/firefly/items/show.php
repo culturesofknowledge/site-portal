@@ -291,6 +291,8 @@
 								
 								}
 
+								jQuery("#letter-item-type-metadata-transcription").hide();
+
                 jQuery("input.switch-page").click( function() {
                     var number = this.id.replace("page","");
                     var id_number = (number*1)-1;
