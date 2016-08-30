@@ -2715,9 +2715,16 @@ body.neatline.show div#neatline-narrative,body.neatline.fullscreen div#neatline-
         margin-bottom: 6px;
     }
     /* @end */
+
 }
 
 /* emlo mobile */
+
+@media screen and (min-width: 768px) {
+    #map-links {
+      height: 1000px;
+    }
+}
 
 #mobile-nav > a:first-child {
     border: 0;
