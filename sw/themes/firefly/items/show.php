@@ -86,8 +86,10 @@
  <?php echo foot(); ?>
 
 
-<?php function draw_files() { ?>
-    <?php $files = files_for_item( array( 'imageSize' => 'thumbnail' ) ); ?>
+<?php function draw_files( $imageSize = 'thumbnail' ) { 
+	/* imageSize: Takes a value of the image size to be displayed. Valid values are fullsize, thumbnail, and square_thumbnail. */ 
+?>		
+    <?php $files = files_for_item( array( 'imageSize' => $imageSize ) ); ?>
     <?php if( $files ) : ?>
         <div id="item-images">
             <?php echo $files ?>
@@ -123,6 +125,16 @@
             						<?php endif; ?>
 										</div>
                 </div>
+                <div id="bibliography" class="element">
+                    <h3><?php echo __('Bibliography'); ?></h3>
+											<div class="element-text">
+            						<?php if( metadata('item',array('Item Type Metadata', 'Bibliography') ) ): ?>
+                    			<?php echo metadata('item',array('Item Type Metadata', 'Bibliography')); ?>
+												<?php else: ?>
+													No bibliography available									
+            						<?php endif; ?>
+										</div>
+                </div>
 
         </div>
 
@@ -134,15 +146,18 @@
 						$items = item_type_elements($item);
 						$keys = array_keys($items);
             foreach($keys as $key){
-							if( $key != 'Biographical Text' ) {
-							?>
-								<div class="element">
-									<h3><?php echo __($key); ?></h3>
-									<div class="element-text">
-										<?php echo metadata('item',array('Item Type Metadata', $key ) ); ?>
+							if( $key != 'Biographical Text' && $key != 'Bibliography' ) {
+								$metadata = metadata('item',array('Item Type Metadata', $key ) );
+								if( $metadata ) {
+								?>
+									<div class="element">
+										<h3><?php echo __($key); ?></h3>
+										<div class="element-text">
+											<?php echo metadata('item',array('Item Type Metadata', $key ) ); ?>
+										</div>
 									</div>
-								</div>
-							<?php
+								<?php
+								}
 							}
 						}
 						//print_r($items); 
@@ -182,7 +197,7 @@
             <h3><?php echo __('Image'); ?></h3>
             <?php $zoomin = $that->openLayersZoom()->zoom($item);
             if( $zoomin == "" ) { ?>
-                <?php draw_files(); ?>
+                <?php draw_files('fullsize'); ?>
             <?php } else {
                 echo $zoomin;
             }?>
