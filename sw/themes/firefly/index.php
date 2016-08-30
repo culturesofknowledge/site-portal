@@ -46,13 +46,13 @@
 </div> end secondary -->
 
 <div id="secondary">
-	<a href="/exhibition/baxter/neatline/show/interactive-map">
+	<a href="/exhibition/sw/geolocation/map/browse">
 		<div>
 			<h2><?php echo __('Map'); ?></h2>
-			<h3>Interactive Timeline and Map</h3>
-			<p>Click anywhere in this section to view an interactive timeline and map which shows when and from where the letters in the exhibit were sent and received.</p>
+			<h3>Interactive Map</h3>
+			<p>Click anywhere in this section to view an interactive map which shows the different locations associated with the people and items in the exhibit.</p>
 		</div>
-		<img src="/exhibition/baxter/themes/firefly/images/map-screenshot.png" alt="Screenshot of map control"/>
+		<img src="/exhibition/sw/themes/firefly/images/map-screenshot.png" alt="Screenshot of map control"/>
 
 	</a>
 </div>
