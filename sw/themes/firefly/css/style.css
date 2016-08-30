@@ -2451,12 +2451,12 @@ body#about #primary p {
 }
 
 #team {
-	height: 99px;
+	/*height: 99px;*/
 }
 
 #team div { 
 	display: inline-block;
-	padding: 0 8px;
+	padding: 0 15px 10px;
 }
 
 #team div img {

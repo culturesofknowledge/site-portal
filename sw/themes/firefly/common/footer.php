@@ -17,9 +17,8 @@
                     <div><a href="http://www.culturesofknowledge.org/" target="_blank"><img src="http://emlo.bodleian.ox.ac.uk/img/CofKLogoBlack.png" alt="Cultures of Knowledge Logo" /></a></div>
 
 
-                    <div><a href="http://www.britac.ac.uk/" target="_blank"><img width="160" src="/wemlo/themes/firefly/images/logo-british-academy.png" alt="British Academy"/></a></div>
-                    <div><a href="https://www.leverhulme.ac.uk/" target="_blank"><img width="120" src="/wemlo/themes/firefly/images/leverhulme-trans.png" alt="Leverhulme Trust"/></a></div>
-                    <div><a href="http://www.mellon.org/" target="_blank"><img width="140" src="http://emlo.bodleian.ox.ac.uk/img/Andrew_Mellon_Foundation_logo.svg" alt="Andrew Mellon Foundation Logo" /></a></div>
+                    <div><!-- <a href="http://www.britac.ac.uk/" target="_blank"> --><img width="220" src="/exhibition/sw/themes/firefly/images/kv_logo_trans.png" alt="Koninklijke Verzamelingen"/><!-- </a> --></div>
+                    <div><a href="https://www.huygens.knaw.nl/" target="_blank"><img width="150" src="/exhibition/sw/themes/firefly/images/huygenslogo.png" alt="Huygens ING"/></a></div>
 
                     <div> <a href="http://ox.ac.uk" target="_blank"><img src="http://emlo.bodleian.ox.ac.uk/img/University_of_Oxford_logo.gif" alt="University of Oxford Logo"/></a></div>
 
