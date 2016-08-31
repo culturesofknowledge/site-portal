@@ -17,7 +17,7 @@
                     <div><a href="http://www.culturesofknowledge.org/" target="_blank"><img src="http://emlo.bodleian.ox.ac.uk/img/CofKLogoBlack.png" alt="Cultures of Knowledge Logo" /></a></div>
 
 
-                    <div><!-- <a href="http://www.britac.ac.uk/" target="_blank"> --><img width="220" src="/exhibition/sw/themes/firefly/images/kv_logo_trans.png" alt="Koninklijke Verzamelingen"/><!-- </a> --></div>
+                    <div><a href="http://www.koninklijkeverzamelingen.nl" target="_blank"><img width="220" src="/exhibition/sw/themes/firefly/images/kv_logo_trans.png" alt="Koninklijke Verzamelingen"/></div>
                     <div><a href="https://www.huygens.knaw.nl/" target="_blank"><img width="150" src="/exhibition/sw/themes/firefly/images/huygenslogo.png" alt="Huygens ING"/></a></div>
 
                     <div> <a href="http://ox.ac.uk" target="_blank"><img src="http://emlo.bodleian.ox.ac.uk/img/University_of_Oxford_logo.gif" alt="University of Oxford Logo"/></a></div>
