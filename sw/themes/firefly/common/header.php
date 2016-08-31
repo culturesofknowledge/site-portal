@@ -75,7 +75,7 @@
     <header>
         <?php //echo theme_header_image(); ?>
 
-        <h1 id="logo"><a class="no-decoration" href="//emlo-portal.bodleian.ox.ac.uk/exhibition/sw/" accesskey="1"><img src="http://emlo.bodleian.ox.ac.uk/img/emlo_logo.png" alt="EMLO logo" class="show-for-large-up menu-name"/></a>
+        <h1 id="logo"><a class="no-decoration" href="//emlo.bodleian.ox.ac.uk/" accesskey="1"><img src="http://emlo.bodleian.ox.ac.uk/img/emlo_logo.png" alt="EMLO logo" class="show-for-large-up menu-name"/></a>
             <!-- <strong><a class="text no-decoration hide-for-large-up" href="/" accesskey="1">EMLO  &nbsp;&nbsp;</a></strong> -->
         </h1>
 
