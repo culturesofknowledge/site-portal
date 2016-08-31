@@ -2384,8 +2384,9 @@ body.collections.show .element-set h2 {
 #images {
     width: 49%;
     display: inline-block;
-    height: 500px;;
+    -height: 500px;
     overflow:auto;
+		vertical-align: top;
 }
 
 .collection_Letters [id^="open_layers_zoom_map_map"] {
@@ -2406,7 +2407,7 @@ body.collections.show .element-set h2 {
 }
 
 #switch-pages {
-	margin-bottom: 10px;
+	margin-bottom: 18px;
 }
 
 #switch-pages label {
