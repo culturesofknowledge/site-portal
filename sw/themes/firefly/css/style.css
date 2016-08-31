@@ -2208,7 +2208,7 @@ header[role=banner] {
 }
 
 header .text {
-    margin-left: 245px;
+    margin-left: 200px;
     color: #172854;
 }
 header .text p {
@@ -2297,7 +2297,7 @@ header .text p {
 #sort-links + .item,
 #sort-links + .collection,
 nav + .exhibit {
-  border-top: 1px solid #EFC319;
+  border-top: 0; /*1px solid #EFC319;*/
 }
 #secondary-nav, .secondary-nav,
 .browse .collection,
@@ -2513,7 +2513,7 @@ body.neatline.show div#neatline-narrative,body.neatline.fullscreen div#neatline-
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     /* @group ----- Generic HTML elements ----- */
     input[type=text], input[type=password], textarea {
         width: 100%;
@@ -2577,22 +2577,43 @@ body.neatline.show div#neatline-narrative,body.neatline.fullscreen div#neatline-
     }
 
 }
-@media only screen and (max-width: 768px) and (min-width: 768px) and (max-width: 959px) {
+@media screen and (min-width: 768px) {
+    #map-links {
+      height: 1000px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 959px) {
     #mobile-nav {
         width: 768px;
     }
+
+
+		header .text {
+			margin: 0 11px;
+			
+		}
+
+		#primary-nav {
+			margin-left: 0;
+		}
+
+		header #logo {
+			display: none;
+		}
+
+		#home #primary, #home #secondary {
+			width: 100%;
+		}
 }
-@media only screen and (max-width: 768px) and (max-width: 767px) {
-    #mobile-nav {
-        width: 300px;
-    }
-}
-@media only screen and (max-width: 768px) and (min-width: 480px) and (max-width: 767px) {
+@media only screen and (min-width: 480px) and (max-width: 767px) {
     #mobile-nav {
         width: 420px;
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
+		#mobile-nav {
+			width: 100%;
+		}
     #mobile-nav ul {
         position: absolute;
         z-index: 199;
@@ -2716,16 +2737,29 @@ body.neatline.show div#neatline-narrative,body.neatline.fullscreen div#neatline-
         margin-bottom: 6px;
     }
     /* @end */
+		.element-set {
+			width: auto;
+		}
+		#transcription, #images {
+			width: 100%;
+		}
+
+		#transcription::before {
+			content: "Transcription:";
+			font-weight: bold;
+			margin-bottom: 5px;
+			display: block;
+	}
+	#images::before {
+			content: "Image:";
+			font-weight: bold;
+			margin-bottom: 5px;
+			display: block;
+	}
 
 }
 
 /* emlo mobile */
-
-@media screen and (min-width: 768px) {
-    #map-links {
-      height: 1000px;
-    }
-}
 
 #mobile-nav > a:first-child {
     border: 0;
