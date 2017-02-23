@@ -31,7 +31,7 @@
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 	</header><!-- .entry-header -->
 
-
+<div class="side-nav-anchor"></div>
 <ul class="side-nav floating-menu">
 <li class="hide-for-large-up"><h3>Contents</h3></li>
 <li><a href="#top">Top</a></li>
@@ -219,4 +219,72 @@
 	</div><!-- .entry-content -->	
 	</div><!-- columns main content foundation -->
 
+
 </article><!-- #post -->
+<script type='text/javascript'>
+/* <![CDATA[ */
+var foundation_strings = {"nav_back":"Back"};
+/* ]]> */
+</script>
+
+<script src="http://emlo.bodleian.ox.ac.uk/bower_components/jquery/dist/jquery.min.js"></script>
+<script type='text/javascript' src='http://emlo-portal.bodleian.ox.ac.uk/collections/wp-content/themes/wp-forge/js/foundation.min.js'></script>
+
+<script>
+    function sticky_relocate() {
+        var window_top = $(window).scrollTop();
+        var div_top = $('.side-nav-anchor').offset().top;
+        if (window_top > div_top) {
+            $('.side-nav').addClass('stick');
+        } else {
+            $('.side-nav').removeClass('stick');
+        }
+    }
+
+    $(document).foundation( );
+
+    $(function() {
+      var stickOn = false;
+      if( Foundation.utils.is_large_up() ) {
+
+        $(window).scroll(sticky_relocate);
+        //$('.side-nav').css("position", "inherit");
+				$(".side-nav-anchor").css("margin-top","150px");
+        sticky_relocate();
+        stickOn = true;
+      }
+
+      $( window ).resize( function() {
+        if( Foundation.utils.is_large_up() ) {
+          if( !stickOn ) {
+            //$('.side').css("position", "initial");
+            $(window).scroll(sticky_relocate);
+		        $(".side-nav-anchor").css("margin-top","150px");
+            sticky_relocate();
+            stickOn = true;
+          }
+        }
+        else {
+          if( stickOn ) {
+            $(window).off( "scroll" );
+            $('.side-nav').removeClass('stick');
+		        $(".side-nav-anchor").css("margin-top","0");
+            stickOn = false;
+          }
+        }
+      });
+    });
+	</script>
+
+	  <style>
+  .side-nav.stick {
+      margin-top: 0 !important;
+      position: fixed;
+      top: 0;
+      z-index: 10000;
+      border-radius: 0 0 0.5em 0.5em;
+  }
+  </style>
+
+
+
