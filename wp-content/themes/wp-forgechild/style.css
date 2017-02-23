@@ -172,13 +172,13 @@ h6 {font-size:1rem;}
 	cursor: pointer;
 }
 
-@-moz-document url-prefix() { 
+/*@-moz-document url-prefix() {  */
   /* Target Firefox only */
-	#circle-search input[type=search] {
+	/*#circle-search input[type=search] {
 		width: 35px;
 		height: 30px;
 	}
-}
+}*/
 
 #circle-search input[type=search]:hover {
 	background-color: #fff;
