@@ -247,6 +247,9 @@ select {background-color: #fff; border:#efc319 2px solid;}
 	background-color: #efc319;
 
 	line-height: 150px;
+
+  font-weight: bold;
+  font-family: "adelle", serif;
 }
 
 /*#content #post-1945 li a:hover { */ /* specifity override */
