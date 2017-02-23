@@ -245,13 +245,18 @@ select {background-color: #fff; border:#efc319 2px solid;}
 
 	color: #35495e !important;
 	background-color: #efc319;
-
+	border: 3px solid #efc319;
 	line-height: 150px;
 
   font-weight: bold;
   font-family: "adelle", serif;
 }
 
+#post-480 li a:hover:not(.button) {
+	color: #35495e !important;
+	text-decoration: none;
+	border-color: #35495e;
+}
 /*#content #post-1945 li a:hover { */ /* specifity override */
 /*  text-decoration: none !important;
 	color: #35495e !important;
