@@ -24,7 +24,7 @@ get_header(); ?>
 		echo '<ul class="side-nav floating-menu">';
 		foreach( $custom_fields["catalogue_contents"] as $menuitem ) {
 			$items = explode("|", $menuitem );
-			echo '<li><a href="#' . $items[0] . '">' . $items[1] . '</a></li>';
+			echo '<li><a class="' . $items[2] . '" href="' . $items[0] . '">' . $items[1] . '</a></li>';
     }
 		echo "</ul>";
 	}
