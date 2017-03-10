@@ -245,7 +245,7 @@ select {background-color: #fff; border:#efc319 2px solid;}
 
 	color: #35495e !important;
 	background-color: #efc319;
-	border: 3px solid #efc319;
+	-border: 3px solid #efc319;
 	line-height: 150px;
 
   font-weight: bold;
@@ -255,7 +255,8 @@ select {background-color: #fff; border:#efc319 2px solid;}
 #post-480 li a:hover:not(.button) {
 	color: #35495e !important;
 	text-decoration: none;
-	border-color: #35495e;
+	-border-color: #35495e;
+  background-color: #ffd320;
 }
 /*#content #post-1945 li a:hover { */ /* specifity override */
 /*  text-decoration: none !important;
