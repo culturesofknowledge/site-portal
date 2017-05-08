@@ -1,0 +1,274 @@
+/*
+Theme Name: WP-Forge Child
+Theme URI: http://themeawesome.com/responsive-wordpress-theme/
+Author: Monica Messaggi Kaya
+Author URI: http://monicams.com
+Description: Child theme for EMLO, using the WP-Forge (based on Foundation 5)
+Template: wp-forge
+Version: 1.0
+*/
+
+@import "../wp-forge/style.css";
+@import "captionss.min.css";
+
+.navbar{background-color: #220c10;}
+
+
+.label{color:#1ABC9C;}
+
+
+.floating-menu {
+	top:260px;
+	border-top:1px solid #ffcc00;
+	border-bottom:1px solid #ffcc00;
+	z-index:100; 
+	padding-top:15px;
+}
+
+.floating-menu ul li{list-style-type: none;}
+.floating-menu:last-child{padding-bottom:0px;}
+
+@media only screen and (min-width: 64.063em) {  /* min-width 1025px, large screens */
+	.floating-menu {
+		position:fixed;
+		max-width: 222px;
+	}
+	.side-nav li {
+		margin: 0;
+	}
+}
+//----------------------
+// colours
+//----------------------
+.red{color: red;}
+.yellow{color: #efc319;}
+.yellow-bg{background-color: #efc319 !important;}
+.dark-grey-bg{background-color: #ececec !important;}
+.top-bottom-divider{border-top:1px solid #ececec;border-bottom:1px solid #ececec;}
+
+//----------------------
+// links
+//----------------------
+#content a:not(.button) {color: #008cba !important;}
+#content a:not(.button):hover{color: #007ba0 !important; text-decoration: underline;}
+.page-links a:not(.button) {	color: #008cba !important;}
+.entry-content a:not(.button) { color: #008cba !important;}
+.side-nav li a:not(.button) {color: #008cba !important;}
+
+//----------------------
+// button
+//----------------------
+.button, .button a{
+	text-decoration: none !important;
+	background-color: #EFC319;
+	color: #172854;
+	padding: 0.75rem 1.5rem 0.75rem;
+	font-size: 1.25rem;
+	font-weight: bolder;
+}
+.button:hover, .button a:hover{
+	text-decoration: none !important;
+	text-align: center;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	display: inline-block;
+	padding-top: 1rem;
+	padding-right: 2rem;
+	padding-bottom: 1.0625rem;
+	padding-left: 2rem;
+	font-size: 1rem;
+	background-color: #008cba;
+	border-color: #007295;
+	color: #ffffff !important;
+	transition: background-color 300ms ease-out
+}
+
+//----------------------
+// top bar/menu
+//----------------------
+.top-bar-section ul li > a {color: #35495e !important; font-family:"adelle", serif; font-weight: bold; font-size:1em;}
+.top-bar-section ul li {background-color: #efc319 !important;}
+.top-bar-section li:not(.has-form) a:not(.button){background-color: #efc319 !important;}
+.top-bar input{background-color: white !important;}
+.top-bar .name h1{font-size: 1.5rem; font-weight: bold;}
+.top-bar input[type="submit"]{background-color: #ddd; color: #35495E;}
+.title-area {width: 180px;}
+
+.header_container ul li > a {color: #35495e !important; font-family:"adelle", serif; font-weight: bold; font-size:1em;}
+.header_container ul li {background-color: #efc319 !important;}
+.header_container input{background-color: white !important;}
+.header_container .name h1{font-size: 1.5rem; font-weight: bold;}
+
+
+//----------------------
+// fonts
+//----------------------
+h1,h2,h3,h4,h5,h6{
+	color: #288089; 
+	font-family: "adelle",serif !important;
+}
+#content h1,h2,h3,h4,h5,h6{	font-family: "adelle",serif !important;}
+p {font-family: "adelle-sans",sans-serif !important;}
+article{border-bottom:none;}
+
+//----------------------
+// sizes
+//----------------------
+h1 ,h2 ,h3 ,h4 ,h5 ,h6 {line-height:1.4; font-weight: bold;}
+h1 {font-size:1.75em !important;}
+h2 {font-size:1.6875rem;}
+h3 {font-size:1.5rem;}
+h4 {font-size:1.4375rem;}
+h5 {font-size:1.125rem;}
+h6 {font-size:1rem;}
+
+
+
+//----------------------
+// circle search input
+//----------------------
+#circle-search input {
+	outline: none;
+}
+#circle-search input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 0.75rem;
+}
+#circle-search input::-webkit-search-decoration,
+#circle-search input::-webkit-search-cancel-button {
+	display: none; 
+}
+
+#circle-search input[type=search] {
+	background: #ededed url(http://emlo.bodleian.ox.ac.uk/img/search-icon.png) no-repeat 9px center;
+	padding: 9px 10px 9px 32px;
+	width: 55px;
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+
+
+#circle-search input:-moz-placeholder {
+	color: #999;
+}
+#circle-search input::-webkit-input-placeholder {
+	color: #999;
+}
+
+#circle-search input[type=search] {
+	width: 15px;
+	height: 15px;
+	padding-left: 10px;
+	border:none !important;
+	color: transparent;
+	cursor: pointer;
+}
+
+/*@-moz-document url-prefix() {  */
+  /* Target Firefox only */
+	/*#circle-search input[type=search] {
+		width: 35px;
+		height: 30px;
+	}
+}*/
+
+#circle-search input[type=search]:hover {
+	background-color: #fff;
+	border: none !important;
+}
+#circle-search input[type=search]:focus {
+	width: 120px;
+	padding-left: 32px;
+	color: #000;
+	background-color: #fff;
+	border: none !important;
+	cursor: auto;
+}
+
+#circle-search input:-moz-placeholder {
+	color: transparent;
+}
+#circle-search input::-webkit-input-placeholder {
+	color: transparent;
+}
+
+
+
+
+
+
+
+
+
+//----------------------
+// tweaks
+//----------------------
+input[type="text"]{background-color: #fff; border:#efc319 2px solid; }
+.pad10{padding: 10px;}
+.footer {height: 110px;} 
+select {background-color: #fff; border:#efc319 2px solid;}
+.yellow-divider{border-top: 1px solid #EFC319;}
+#last-with-button .button{margin-bottom:-5px;}
+
+#content .entry-header h1, .entry-content h3 { color: #172854 !important; }
+.entry-content h3 { font-size: 1.25em;}
+.entry-content h4 { font-size: 1em; font-weight:bold; }
+
+#post-480 li /*, 
+#post-1945 li*/ {
+	list-style: none;
+	display: inline-block;
+	height: 160px;
+	width: 200px;
+	margin: 10px;
+	text-align:center;
+	border: 3px solid #efc319;
+
+	line-height: 150px;
+}
+
+#post-480 li a /*, 
+#post-1945 li a */{
+	width: 100%;
+	text-align: center;
+	height: 100%;
+	display: block;
+	text-decoration: none;
+
+	color: #35495e !important;
+	background-color: #efc319;
+	-border: 3px solid #efc319;
+	line-height: 150px;
+
+  font-weight: bold;
+  font-family: "adelle", serif;
+}
+
+#post-480 li a:hover:not(.button) {
+	color: #35495e !important;
+	text-decoration: none;
+	-border-color: #35495e;
+  background-color: #ffd320;
+}
+/*#content #post-1945 li a:hover { */ /* specifity override */
+/*  text-decoration: none !important;
+	color: #35495e !important;
+} */ 
+
+#catalogue-images {
+	width: 40%;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+#catalogue-images figure {
+	margin-bottom: 20px;
+}
