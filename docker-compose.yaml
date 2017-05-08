@@ -1,0 +1,32 @@
+
+mysql:
+  build: ./mysql-emlo
+  restart: always
+
+  environment:
+    MYSQL_ROOT_PASSWORD: apasswordofsometype
+
+  ports:
+    - "3306:3306"
+
+  volumes:
+    - ./vol-mysql/data:/var/lib/mysql
+
+catalogues:
+  build: ./wp-emlo-catalogues
+
+  ports:
+    - "80:80"
+
+  links:
+    - mysql
+
+#nginx:
+#  build: ./nginx-emlo
+#  restart: always
+
+#  links:
+#    - catalogues
+
+#  ports:
+#    - "80:80"
