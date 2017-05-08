@@ -1,2 +1,6 @@
+# Wordpress
 wp-catalogues/wp-config.php
 wp-catalogues/wp-content/uploads/*
+
+# Omekas
+*/db.ini
