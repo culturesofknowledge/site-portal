@@ -16,17 +16,17 @@ catalogues:
   build: ./wp-emlo-catalogues
 
   ports:
-    - "80:80"
+    - "8080:80"
 
   links:
     - mysql
 
-#nginx:
-#  build: ./nginx-emlo
-#  restart: always
+nginx:
+  build: ./nginx-emlo
+  restart: always
 
-#  links:
-#    - catalogues
+  links:
+    - catalogues
 
-#  ports:
-#    - "80:80"
+  ports:
+    - "80:80"

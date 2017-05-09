@@ -12,3 +12,4 @@ omk-sw/db.ini
 omk-wemlo/db.ini
 
 /mysql-emlo/data/*
+/vol-mysql/
