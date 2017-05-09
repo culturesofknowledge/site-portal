@@ -1,6 +1,6 @@
 # Catalogue Wordpress
-wp-catalogues/wp-config.php
-wp-catalogues/wp-content/uploads/*
+wp-emlo-catalogues/wp-catalogues/wp-config.php
+wp-emlo-catalogues/wp-catalogues/wp-content/uploads/*
 
 # Baxter Omeka
 omk-baxter/db.ini
@@ -10,3 +10,5 @@ omk-sw/db.ini
 
 # WEMLO Omeka
 omk-wemlo/db.ini
+
+/mysql-emlo/data/*
