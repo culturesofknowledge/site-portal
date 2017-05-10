@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%files` (
   `filename` text collate utf8_unicode_ci NOT NULL,
   `original_filename` text collate utf8_unicode_ci NOT NULL,
   `modified` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  `added` timestamp NOT NULL default '0000-00-00 00:00:00',
+  `added` timestamp NOT NULL default CURRENT_TIMESTAMP,
   `stored` tinyint(1) NOT NULL default '0',
   `metadata` text collate utf8_unicode_ci NOT NULL,
   PRIMARY KEY  (`id`),
