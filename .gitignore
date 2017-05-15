@@ -2,9 +2,6 @@
 wp-emlo-catalogues/wp-catalogues/wp-config.php
 wp-emlo-catalogues/wp-catalogues/wp-content/uploads/*
 
-# Omeka
-/omeka/db.ini
-
 # Baxter Omeka
 omk-baxter/db.ini
 
