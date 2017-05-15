@@ -1,10 +1,9 @@
-
 mysql:
   build: ./mysql-emlo
   restart: always
 
   environment:
-    MYSQL_ROOT_PASSWORD: apasswordofsometype
+    MYSQL_ROOT_PASSWORD: jbnslbsbpsjb
 
   ports:
     - "3306:3306"
@@ -12,21 +11,39 @@ mysql:
   volumes:
     - ./vol-mysql/data:/var/lib/mysql
 
-catalogues:
-  build: ./wp-emlo-catalogues
+omeka:
+  build: ./omeka
+
+  environment:
+    OMEKA_DB_HOST: mysql
+    OMEKA_DB_PORT: 3306
+    OMEKA_DB_USER: root
+    OMEKA_DB_PASSWORD: jbnslbsbpsjb
+    OMEKA_DB_DATABASE: omeka
+    OMEKA_DB_PREFIX: omeka_
 
   ports:
-    - "8080:80"
+    - "80:80"
 
   links:
     - mysql
 
-nginx:
-  build: ./nginx-emlo
-  restart: always
 
-  links:
-    - catalogues
+#catalogues:
+#  build: ./wp-emlo-catalogues
+#
+#  ports:
+#    - "8080:80"
+#
+#  links:
+#    - mysql
 
-  ports:
-    - "80:80"
+#nginx:
+#  build: ./nginx-emlo
+#  restart: always
+#
+#  links:
+#    - catalogues
+#
+#  ports:
+#    - "80:80"
