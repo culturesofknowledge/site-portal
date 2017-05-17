@@ -39,7 +39,7 @@ ENV OMEKA_DB_PREFIX omeka_
 RUN a2enmod rewrite
 
 # Put this at the end so if we change it, it won't wipe out the cache and have to rebuild everything!
-LABEL version="1.0.0"
+LABEL version="1.1.0"
 LABEL omeka-version="2.5"
 
 ENTRYPOINT ["docker-entrypoint.sh"]
