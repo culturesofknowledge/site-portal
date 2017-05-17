@@ -21,6 +21,7 @@ or Use your own Omeka files
 
     docker run --name my-omeka --link mysql:mysql -e "OMEKA_DB_PASSWORD=mysouperparsleyword" -v /my-omkea-files:/var/www/html/ bdlss/omeka
 
+You should at least store the Omeka "files" directory in a volume so anything your users add persists beyond the life of the container.
 
 ## debugging
 To turn on debugging in Omeka, inside the container do this:
