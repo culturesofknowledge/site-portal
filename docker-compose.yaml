@@ -30,6 +30,26 @@ baxter:
   volumes:
     - ./omk-baxter/html:/var/www/html/baxter
 
+
+sw:
+  build: ./omk-sw
+
+  environment:
+    OMEKA_WEB_ROOT: /sw/
+    OMEKA_DB_USER: root
+    OMEKA_DB_PASSWORD: jbnslbsbpsjb
+    OMEKA_DB_PREFIX: omeka_sw_
+
+  ports:
+    - "8083:80"
+
+  links:
+    - mysql
+
+  volumes:
+    - ./omk-sw/html:/var/www/html/sw
+
+
 #omeka:
 #  build: ./omeka
 #
@@ -64,6 +84,7 @@ nginx:
   links:
     - catalogues
     - baxter
+    - sw
 
   ports:
     - "80:80"
