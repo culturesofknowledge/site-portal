@@ -18,8 +18,7 @@ ADD /omeka-2.0/ /var/www/html/
 RUN chown -R www-data:www-data /var/www/html
 
 # Add config files
-ADD /db-template.ini /omeka/
-ADD /docker-entrypoint.sh /omeka/
+ADD /configs/ /omeka/
 
 RUN ln -s /omeka/docker-entrypoint.sh /usr/local/bin/
 RUN chmod u+x /usr/local/bin/docker-entrypoint.sh
