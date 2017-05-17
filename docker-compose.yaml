@@ -11,39 +11,59 @@ mysql:
   volumes:
     - ./vol-mysql/data:/var/lib/mysql
 
-omeka:
-  build: ./omeka
+
+baxter:
+  build: ./omk-baxter
 
   environment:
-    OMEKA_DB_HOST: mysql
-    OMEKA_DB_PORT: 3306
+    OMEKA_WEB_ROOT: /baxter/
     OMEKA_DB_USER: root
     OMEKA_DB_PASSWORD: jbnslbsbpsjb
-    OMEKA_DB_DATABASE: omeka
-    OMEKA_DB_PREFIX: omeka_
+    OMEKA_DB_PREFIX: omeka_baxter_
 
   ports:
-    - "80:80"
+    - "8082:80"
 
   links:
     - mysql
 
+  volumes:
+    - ./omk-baxter/html:/var/www/html/baxter
 
-#catalogues:
-#  build: ./wp-emlo-catalogues
+#omeka:
+#  build: ./omeka
+#
+#  environment:
+#    OMEKA_DB_HOST: mysql
+#    OMEKA_DB_PORT: 3306
+#    OMEKA_DB_USER: root
+#    OMEKA_DB_PASSWORD: jbnslbsbpsjb
+#    OMEKA_DB_DATABASE: omeka
+#    OMEKA_DB_PREFIX: omeka_
 #
 #  ports:
-#    - "8080:80"
+#    - "8081:80"
 #
 #  links:
 #    - mysql
 
-#nginx:
-#  build: ./nginx-emlo
-#  restart: always
-#
-#  links:
-#    - catalogues
-#
-#  ports:
-#    - "80:80"
+
+catalogues:
+  build: ./wp-emlo-catalogues
+
+  ports:
+    - "8080:80"
+
+  links:
+    - mysql
+
+nginx:
+  build: ./nginx-emlo
+  restart: always
+
+  links:
+    - catalogues
+    - baxter
+
+  ports:
+    - "80:80"
