@@ -3,7 +3,7 @@
 # ============================
 
 # Take the environment variables and produce a db.ini
-envsubst < /var/www/html/db-template.ini > /var/www/html/db.ini
+envsubst < /omeka/db-template.ini > /var/www/html/$(OMEKA_WEB_ROOT)/db.ini
 
 # Attempt to create the database OMEKA will use, borrowed from: https://github.com/docker-library/wordpress/blob/716fe2fabb0be1bcd46626fad83d8c345946d343/php5.6/apache/docker-entrypoint.sh
 php -- <<'EOPHP'

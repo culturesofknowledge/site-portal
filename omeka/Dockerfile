@@ -21,13 +21,15 @@ RUN find /var/www/html/ -type f | xargs chmod 664
 RUN find /var/www/html/files -type d | xargs chmod 777
 RUN find /var/www/html/files -type f | xargs chmod 666
 
-# Set up config files
-ADD /db-template.ini /var/www/html/
-ADD /docker-entrypoint.sh /usr/local/bin/
+# Add config files
+ADD /db-template.ini /omeka/
+ADD /docker-entrypoint.sh /omeka/
 
+RUN ln -s /omeka/docker-entrypoint.sh /usr/local/bin/
 RUN chmod u+x /usr/local/bin/docker-entrypoint.sh
 
 # Set some defaults (change them at run time if you like)
+ENV OMEKA_WEB_ROOT ""
 ENV OMEKA_DB_HOST mysql
 ENV OMEKA_DB_PORT 3306
 ENV OMEKA_DB_USER omeka
@@ -38,8 +40,7 @@ ENV OMEKA_DB_PREFIX omeka_
 # Turn on rewrite
 RUN a2enmod rewrite
 
-# Put this at the end so if we change it, it won't wipe out the cache and have to rebuild everything!
-LABEL version="1.1.0"
+LABEL version="1.1.2"
 LABEL omeka-version="2.5"
 
 ENTRYPOINT ["docker-entrypoint.sh"]
