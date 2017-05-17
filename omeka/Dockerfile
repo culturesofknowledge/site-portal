@@ -16,10 +16,6 @@ ADD /omeka-2.0/ /var/www/html/
 
 # Set up file and directory permissions
 RUN chown -R www-data:www-data /var/www/html
-RUN find /var/www/html/ -mindepth 1 -type d | xargs chmod 775
-RUN find /var/www/html/ -type f | xargs chmod 664
-RUN find /var/www/html/files -type d | xargs chmod 777
-RUN find /var/www/html/files -type f | xargs chmod 666
 
 # Add config files
 ADD /db-template.ini /omeka/
@@ -40,7 +36,7 @@ ENV OMEKA_DB_PREFIX omeka_
 # Turn on rewrite
 RUN a2enmod rewrite
 
-LABEL version="1.1.2"
+LABEL version="1.1.3"
 LABEL omeka-version="2.5"
 
 ENTRYPOINT ["docker-entrypoint.sh"]
