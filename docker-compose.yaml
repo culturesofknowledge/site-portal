@@ -31,6 +31,24 @@ baxter:
     - ./omk-baxter/html:/var/www/html/baxter
 
 
+wemlo:
+  build: ./omk-wemlo
+
+  environment:
+    OMEKA_WEB_ROOT: /wemlo/
+    OMEKA_DB_USER: root
+    OMEKA_DB_PASSWORD: jbnslbsbpsjb
+    OMEKA_DB_PREFIX: omeka_wemlo_
+
+  ports:
+    - "8084:80"
+
+  links:
+    - mysql
+
+  volumes:
+    - ./omk-wemlo/html:/var/www/html/wemlo
+
 sw:
   build: ./omk-sw
 
@@ -85,6 +103,7 @@ nginx:
     - catalogues
     - baxter
     - sw
+    - wemlo
 
   ports:
     - "80:80"
