@@ -6,13 +6,13 @@ mysql:
     MYSQL_ROOT_PASSWORD: jbnslbsbpsjb
 
   ports:
-    - "3306:3306"
+    - "3305:3306"
 
   volumes:
     - ./vol-mysql/data:/var/lib/mysql
 
 
-baxter:
+omk-baxter:
   build: ./omk-baxter
 
   environment:
@@ -31,7 +31,7 @@ baxter:
     - ./omk-baxter/html:/var/www/html/baxter
 
 
-wemlo:
+omk-wemlo:
   build: ./omk-wemlo
 
   environment:
@@ -49,7 +49,7 @@ wemlo:
   volumes:
     - ./omk-wemlo/html:/var/www/html/wemlo
 
-sw:
+omk-sw:
   build: ./omk-sw
 
   environment:
@@ -80,30 +80,39 @@ sw:
 #    OMEKA_DB_PREFIX: omeka_
 #
 #  ports:
-#    - "8081:80"
+#    - "8080:80"
 #
 #  links:
 #    - mysql
 
 
-catalogues:
+wp-catalogues:
   build: ./wp-emlo-catalogues
 
   ports:
-    - "8080:80"
+    - "8081:80"
 
   links:
     - mysql
+
+  environment:
+    WORDPRESS_DB_HOST: mysql
+    WORDPRESS_DB_USER: root
+    WORDPRESS_DB_PASSWORD: jbnslbsbpsjb
+    WORDPRESS_DB_NAME: wordpress
+
+  volumes:
+    - ./wp-emlo-catalogues/wp-catalogues:/var/www/html
 
 nginx:
   build: ./nginx-emlo
   restart: always
 
   links:
-    - catalogues
-    - baxter
-    - sw
-    - wemlo
+    - wp-catalogues
+    - omk-baxter
+    - omk-sw
+    - omk-wemlo
 
   ports:
     - "80:80"
