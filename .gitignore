@@ -3,13 +3,13 @@ wp-emlo-catalogues/wp-catalogues/wp-config.php
 wp-emlo-catalogues/wp-catalogues/wp-content/uploads/*
 
 # Baxter Omeka
-omk-baxter/db.ini
+omk-baxter/html/db.ini
 
 # SW Omeka
-omk-sw/db.ini
+omk-sw/html/db.ini
 
 # WEMLO Omeka
-omk-wemlo/db.ini
+omk-wemlo/html/db.ini
 
 # MySQL
 /mysql-emlo/data/*
