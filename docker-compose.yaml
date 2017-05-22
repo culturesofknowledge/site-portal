@@ -3,7 +3,7 @@ mysql:
   restart: always
 
   environment:
-    MYSQL_ROOT_PASSWORD: jbnslbsbpsjb
+    MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
 
   ports:
     - "3305:3306"
@@ -18,7 +18,7 @@ omk-baxter:
   environment:
     OMEKA_WEB_ROOT: /baxter/
     OMEKA_DB_USER: root
-    OMEKA_DB_PASSWORD: jbnslbsbpsjb
+    OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     OMEKA_DB_PREFIX: omeka_baxter_
 
   ports:
@@ -28,7 +28,7 @@ omk-baxter:
     - mysql
 
   volumes:
-    - ./omk-baxter/html:/var/www/html/baxter
+    - ./omk-baxter/html:/var/www/html/exhibition/baxter
 
 
 omk-wemlo:
@@ -37,7 +37,7 @@ omk-wemlo:
   environment:
     OMEKA_WEB_ROOT: /wemlo/
     OMEKA_DB_USER: root
-    OMEKA_DB_PASSWORD: jbnslbsbpsjb
+    OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     OMEKA_DB_PREFIX: omeka_wemlo_
 
   ports:
@@ -55,7 +55,7 @@ omk-sw:
   environment:
     OMEKA_WEB_ROOT: /sw/
     OMEKA_DB_USER: root
-    OMEKA_DB_PASSWORD: jbnslbsbpsjb
+    OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     OMEKA_DB_PREFIX: omeka_sw_
 
   ports:
@@ -65,7 +65,7 @@ omk-sw:
     - mysql
 
   volumes:
-    - ./omk-sw/html:/var/www/html/sw
+    - ./omk-sw/html:/var/www/html/exhibition/sw
 
 
 #omeka:
@@ -75,7 +75,7 @@ omk-sw:
 #    OMEKA_DB_HOST: mysql
 #    OMEKA_DB_PORT: 3306
 #    OMEKA_DB_USER: root
-#    OMEKA_DB_PASSWORD: jbnslbsbpsjb
+#    OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
 #    OMEKA_DB_DATABASE: omeka
 #    OMEKA_DB_PREFIX: omeka_
 #
@@ -98,7 +98,7 @@ wp-catalogues:
   environment:
     WORDPRESS_DB_HOST: mysql
     WORDPRESS_DB_USER: root
-    WORDPRESS_DB_PASSWORD: jbnslbsbpsjb
+    WORDPRESS_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     WORDPRESS_DB_NAME: wordpress
 
   volumes:
