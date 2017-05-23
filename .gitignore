@@ -4,12 +4,18 @@ wp-emlo-catalogues/wp-catalogues/wp-content/uploads/*
 
 # Baxter Omeka
 omk-baxter/html/db.ini
+omk-baxter/html/files/
+
 
 # SW Omeka
 omk-sw/html/db.ini
+omk-sw/html/files/
+
 
 # WEMLO Omeka
 omk-wemlo/html/db.ini
+omk-wemlo/html/files/
+
 
 # MySQL
 /mysql-emlo/data/*
