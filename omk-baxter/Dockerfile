@@ -1,4 +1,4 @@
-FROM omeka:1.1.3
+FROM bdlss/omeka:1.1.3
 MAINTAINER matthew
 
 LABEL version="0.1.0"
