@@ -6,5 +6,5 @@ LABEL omeka-version="2.5"
 
 RUN rm -rf /var/www/html
 
-ENV OMEKA_WEB_ROOT "/sw/"
+ENV OMEKA_WEB_ROOT "/exhibition/sw/"
 ENV OMEKA_DB_PREFIX omeka_sw_
