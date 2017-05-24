@@ -7,3 +7,6 @@
 FROM mysql:5.7.18
 
 ADD /data /data
+ADD insertData.sh /data/
+
+RUN chmod +x /data/insertData.sh
