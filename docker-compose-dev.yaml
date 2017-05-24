@@ -1,6 +1,5 @@
 mysql:
   build: ./mysql-emlo
-  restart: always
 
   environment:
     MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
@@ -16,7 +15,7 @@ omk-baxter:
   build: ./omk-baxter
 
   environment:
-    OMEKA_WEB_ROOT: /baxter/
+    OMEKA_WEB_ROOT: /exhibition/baxter/
     OMEKA_DB_USER: root
     OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     OMEKA_DB_PREFIX: omeka_baxter_
@@ -53,7 +52,7 @@ omk-sw:
   build: ./omk-sw
 
   environment:
-    OMEKA_WEB_ROOT: /sw/
+    OMEKA_WEB_ROOT: /exhibition/sw/
     OMEKA_DB_USER: root
     OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     OMEKA_DB_PREFIX: omeka_sw_
