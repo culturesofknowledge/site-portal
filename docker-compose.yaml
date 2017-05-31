@@ -1,3 +1,6 @@
+# Setup the MYSQL_ROOT_PASSWORD
+# export MYSQL_ROOT_PASSWORD="PASSWORD-HERE"
+#
 mysql:
   build: ./mysql-emlo
   restart: always
