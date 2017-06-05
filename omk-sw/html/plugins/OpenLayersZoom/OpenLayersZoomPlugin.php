@@ -114,11 +114,8 @@ class OpenLayersZoomPlugin extends Omeka_Plugin_AbstractPlugin
         $post = $args['post'];
 
         $post['openlayerszoom_tiles_dir'] = realpath(trim($post['openlayerszoom_tiles_dir']));
-
-        foreach ($this->_options as $optionKey => $optionValue) {
-            if (isset($post[$optionKey])) {
-                set_option($optionKey, $post[$optionKey]);
-            }
+        foreach ($post as $key => $value) {
+            set_option($key, $value);
         }
     }
 
@@ -189,9 +186,9 @@ class OpenLayersZoomPlugin extends Omeka_Plugin_AbstractPlugin
                 && $request->getActionName() == 'show'
                 && $view->openLayersZoom()->zoomedFilesCount($view->item) > 0
             ) {
-            queue_css_file('ol');
+            queue_css_file('OpenLayersZoom');
             queue_js_file(array(
-                'ol',
+                'OpenLayers',
                 'OpenLayersZoom',
             ));
         }
@@ -386,8 +383,8 @@ class OpenLayersZoomPlugin extends Omeka_Plugin_AbstractPlugin
 
         $html = $view->openLayersZoom()->zoom($record);
         if ($html) {
-            $html = '<link href="' . css_src('ol') . '" media="all" rel="stylesheet" type="text/css" >'
-                . js_tag('ol')
+            $html = '<link href="' . css_src('OpenLayersZoom') . '" media="all" rel="stylesheet" type="text/css" >'
+                . js_tag('OpenLayers')
                 . js_tag('OpenLayersZoom')
                 . $html;
             return $html;

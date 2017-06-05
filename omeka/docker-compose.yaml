@@ -1,0 +1,29 @@
+# Setup the MYSQL_ROOT_PASSWORD
+# export MYSQL_ROOT_PASSWORD="PASSWORD-HERE"
+#
+mysql:
+  build: ./mysql-emlo
+  restart: always
+
+  environment:
+    MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+
+  volumes:
+    - ./vol-mysql-omeka/data:/var/lib/mysql
+
+omeka:
+  build: ./omeka
+
+  environment:
+    OMEKA_DB_HOST: mysql
+    OMEKA_DB_PORT: 3306
+    OMEKA_DB_USER: root
+    OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    OMEKA_DB_DATABASE: omeka
+    OMEKA_DB_PREFIX: omeka_
+
+  ports:
+    - 80:80
+
+  links:
+    - mysql
