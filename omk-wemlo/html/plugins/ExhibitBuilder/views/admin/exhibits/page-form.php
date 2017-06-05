@@ -9,6 +9,9 @@ echo head(array('title'=> $title, 'bodyclass'=>'exhibits'));
 </div>
 <?php echo flash(); ?>
 <form id="exhibit-page-form" method="post">
+    <?php if($exhibit_page->exists()): ?>
+    <input type='hidden' name='record_last_modified' value='<?php echo $exhibit_page->modified; ?>'></input>
+    <?php endif; ?>
     <div class="seven columns alpha">
     <fieldset>
         <div class="field">
@@ -43,7 +46,7 @@ echo head(array('title'=> $title, 'bodyclass'=>'exhibits'));
         <div class="add-block">
             <h2><?php echo __('New Block'); ?></h2>
             <div class="layout-select">
-                <h4><?php echo __('Select layout'); ?></h3>
+                <h3><?php echo __('Select layout'); ?></h3>
                 <div class="layout-thumbs">
                 <?php
                     $layouts = ExhibitLayout::getLayouts();
@@ -117,7 +120,7 @@ echo head(array('title'=> $title, 'bodyclass'=>'exhibits'));
 jQuery(document).ready(function () {
     Omeka.ExhibitBuilder.setUpBlocks(<?php echo json_encode(url('exhibits/block-form')); ?>);
     Omeka.ExhibitBuilder.setUpItemsSelect(<?php echo js_escape(url('exhibits/attachment-item-options')); ?>);
-    Omeka.ExhibitBuilder.setUpAttachments(<?php echo js_escape(url('exhibits/attachment')); ?>);
+    Omeka.ExhibitBuilder.setUpAttachments(<?php echo js_escape(url('exhibits/attachment')); ?>, <?php echo js_escape(url('exhibits/attachment-item-options')); ?>);
     <?php
     if ($exhibit_page->exists()) {
         $validateUrl = url(
