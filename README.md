@@ -5,7 +5,8 @@ Omeka based virtual exhibitions for EMLO
 ## Instructions
 Choose "docker-compose.yaml" or "docker-compose-dev.yaml"
 
-- export MYSQL_ROOT_PASSWORD="PASSWORD-HERE"
+- export won't work with sudo, so if you need to use sudo with docker change into root first, then:
+export MYSQL_ROOT_PASSWORD="PASSWORD-HERE"
 - docker-compose build 
 - docker-compose up
 - Load the database if you have old data
