@@ -45,3 +45,12 @@ If the database is completely empty you might want to add some data in. Get on t
     zcat /path/to/file.sql.gz | mysql --user='root' --password=$MYSQL_ROOT_PASSWORD your_database
     
  
+ 
+ ## Omeka Upgrade
+ - Replace files
+ - copy over, db.ini, firefly theme, and plugins
+ - git add html (so it adds new files)
+ - git commit html -m "Upgrade"  (To delete old, and update files)
+ - go to admin and upgrade database
+ - goto plugins and upgrade changed ones
+ 
