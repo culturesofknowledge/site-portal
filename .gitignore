@@ -20,3 +20,4 @@ omk-wemlo/html/files/
 # MySQL
 /mysql-emlo/data/*
 /vol-mysql/
+!/mysql-emlo/data/.git-keep
