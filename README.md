@@ -6,14 +6,33 @@ Omeka based virtual exhibitions for EMLO
 Choose "docker-compose.yaml" or "docker-compose-dev.yaml"
 
 - Install git, docker and docker-compose
-- export won't work with sudo, so if you need to use sudo with docker change into root first, then:
+- Clone this code. (You might want to add read only access for the server)
+- Create a password. Export won't work with sudo, so if you need to use sudo with docker change into root first. Then type:
 export MYSQL_ROOT_PASSWORD="PASSWORD-HERE"
+- Add any old databases to mysql-emlo/data
 - docker-compose build 
-- docker-compose up
-- Load the database if you have old data
-- Copy any added files to omkea/files and wordpress/wp-content/uploads
+- docker-compose up -d
+  - the timing may be a little off creating databases so you may need to docker-compose stop and docker-compse start everything again.
+- If you are moving from another server:
+  - Copy any added files to omkea/files and wordpress/wp-content/uploads
+      (e.g.)
+      tar -zcvf wordpress-uploads.tar.gz uploads
+      tar -zxvf wordpress-uploads-2017-07-17_12-57.tar.gz -C ../wp-emlo-catalogues/wp-catalogues/wp-content/uploads
+     
+  - Load the databases (see below)
+  - You may need to visit the omeka admin pages to upgrade the database
+  - You may need to upgrade the plugins too.
 
-# Install docker and compose on RedHat
+## Cleaning an already installed server
+To delete all data and start clean (this will destroy the mysql database, so only do if you have a backup):
+
+	docker-compose down
+    rm -rf vol-mysql/data  # remove mysql database
+    docker-compose build --no-cache
+	
+
+
+## Install docker and compose on RedHat
 
 Docker-engine:
 
@@ -42,7 +61,10 @@ Start services:
 
 ## Database load
 If the database is completely empty you might want to add some data in. Get on the container, and import it (this assumes the data is already on the container in sql.gz type):
+
+    docker-compose exec mysql bash
     zcat /path/to/file.sql.gz | mysql --user='root' --password=$MYSQL_ROOT_PASSWORD your_database
+    # Or checker out the helper file at /data/insertData.sh
     
  
  
