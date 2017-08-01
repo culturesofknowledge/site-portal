@@ -76,7 +76,7 @@ wp-catalogues:
     WORDPRESS_DB_NAME: wordpress
 
   volumes:
-    - ./wp-emlo-catalogues/wp-catalogues:/var/www/html
+    - ./wp-emlo-catalogues/wp-catalogues:/var/www/html/collections
 
 nginx:
   build: ./nginx-emlo
