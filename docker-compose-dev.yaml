@@ -8,7 +8,7 @@ mysql:
     MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
 
   ports:
-    - "3305:3306"
+    - "43306:3306"
 
   volumes:
     - ./vol-mysql/data:/var/lib/mysql
@@ -32,7 +32,7 @@ omk-baxter:
     OMEKA_DB_PREFIX: omeka_baxter_
 
   ports:
-    - "8082:80"
+    - "40081:80"
 
   links:
     - mysql
@@ -51,7 +51,7 @@ omk-wemlo:
     OMEKA_DB_PREFIX: omeka_wemlo_
 
   ports:
-    - "8084:80"
+    - "40082:80"
 
   links:
     - mysql
@@ -69,7 +69,7 @@ omk-sw:
     OMEKA_DB_PREFIX: omeka_sw_
 
   ports:
-    - "8083:80"
+    - "40083:80"
 
   links:
     - mysql
@@ -82,7 +82,7 @@ wp-catalogues:
   build: ./wp-emlo-catalogues
 
   ports:
-    - "8081:80"
+    - "40084:80"
 
   links:
     - mysql

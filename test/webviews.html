@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title></title>
+    <meta content="">
+    <style></style>
+</head>
+<body>
+<h1>Wp and Omk</h1>
+<div id="views"></div>
+</body>
+<foot>
+    <script src="webviews.min.js" charset="utf-8"></script>
+    <script>
+		var config = {
+			element : document.getElementById("views"),
+			views : [
+				{
+					url: "http://127.0.0.1/collections/?page_id=480",
+					title : "WP Collections",
+                    textCheck: "Explore Collections"
+				},
+				{
+					url: "http://127.0.0.1/exhibition/baxter/",
+					title : "OMK Baxter",
+					textCheck: "Baxter Quatercentenary Exhibition"
+				},
+				{
+					url: "http://127.0.0.1/exhibition/sw/",
+					title : "OMK SW",
+					textCheck: "The Wives of the Stadtholders: an exhibition"
+				},
+				{
+					url: "http://127.0.0.1/wemlo/",
+					title : "OMK WEMLO",
+					textCheck: "WEMLO Networks and Resources"
+				}
+			]
+		};
+		akademy.webviews( config );
+    </script>
+</foot>
+</html>
