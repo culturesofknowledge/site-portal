@@ -5,9 +5,9 @@ Omeka based virtual exhibitions for EMLO
 ## Instructions
 Choose "docker-compose.yaml" or "docker-compose-dev.yaml"
 
-- export MYSQL_ROOT_PASSWORD="PASSWORD-HERE"
+- add MYSQL_ROOT_PASSWORD="PASSWORD-HERE" to /etc/environment and create a new shell
 - docker-compose build 
-- docker-compose up
+- docker-compose up -d
 - Load the database if you have old data
 - Copy any added files to omkea/files and wordpress/wp-content/uploads
 
