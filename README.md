@@ -7,8 +7,7 @@ Choose "docker-compose.yaml" or "docker-compose-dev.yaml"
 
 - Install git, docker and docker-compose
 - Clone this code. (You might want to add read only access for the server)
-- Create a password. Export won't work with sudo, so if you need to use sudo with docker change into root first. Then type:
-export MYSQL_ROOT_PASSWORD="PASSWORD-HERE"
+- Create a password. Add MYSQL_ROOT_PASSWORD="PASSWORD-HERE" to /etc/environment then open a new shell.
 - Add any old databases to mysql-emlo/data
 - docker-compose build 
 - docker-compose up -d
