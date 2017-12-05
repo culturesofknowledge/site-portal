@@ -46,7 +46,8 @@ omk-wemlo:
 
 omk-sw:
   build: ./omk-sw
-
+  restart: always
+  
   environment:
     OMEKA_WEB_ROOT: /exhibition/sw/
     OMEKA_DB_USER: root
@@ -62,7 +63,8 @@ omk-sw:
 
 wp-catalogues:
   build: ./wp-emlo-catalogues
-
+  restart: always
+  
   ports:
     - "8081:80"
 
