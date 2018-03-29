@@ -8,7 +8,7 @@ backup_rotate_store () {
 
         local DAY=`date +%A`
 
-        echo mv $1/$2 $1/$DAY.$2
+        mv $1/$2 $1/$DAY.$2
 
         local DATE=`date +%d`
         if (( $DATE == 7 || $DATE == 14 || $DATE == 21 || $DATE == 28 )); then
