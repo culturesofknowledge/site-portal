@@ -1,10 +1,10 @@
 #!/bin/bash
 
+cd /data/emlo-portal-compose
 . backup-helper.sh
 
 DEST=/data/backups
 
-cd /data/emlo-portal-compose
 
 # Get a list of databases. | Remove warnings | Remove carriage returns.
 DATABASES=`docker-compose exec mysql sh -c 'exec mysql -uroot -p$MYSQL_ROOT_PASSWORD -e"show databases;" -Bs 2>&1'|grep -v "Warning"|tr -d '\r'`
