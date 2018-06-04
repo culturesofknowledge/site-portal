@@ -86,7 +86,7 @@ Version: 1.0
 //----------------------
 // top bar/menu
 //----------------------
-.top-bar-section ul li > a {color: #35495e !important; font-family:"adelle", serif; font-weight: bold; font-size:1em;}
+.top-bar-section ul li > a {color: #35495e !important; font-family:"Arvo", serif; font-weight: bold; font-size:1em;}
 .top-bar-section ul li {background-color: #efc319 !important;}
 .top-bar-section li:not(.has-form) a:not(.button){background-color: #efc319 !important;}
 .top-bar input{background-color: white !important;}
@@ -94,7 +94,7 @@ Version: 1.0
 .top-bar input[type="submit"]{background-color: #ddd; color: #35495E;}
 .title-area {width: 180px;}
 
-.header_container ul li > a {color: #35495e !important; font-family:"adelle", serif; font-weight: bold; font-size:1em;}
+.header_container ul li > a {color: #35495e !important; font-family:"Arvo", serif; font-weight: bold; font-size:1em;}
 .header_container ul li {background-color: #efc319 !important;}
 .header_container input{background-color: white !important;}
 .header_container .name h1{font-size: 1.5rem; font-weight: bold;}
@@ -105,10 +105,10 @@ Version: 1.0
 //----------------------
 h1,h2,h3,h4,h5,h6{
 	color: #288089; 
-	font-family: "adelle",serif !important;
+	font-family: "Arvo",serif !important;
 }
-#content h1,h2,h3,h4,h5,h6{	font-family: "adelle",serif !important;}
-p {font-family: "adelle-sans",sans-serif !important;}
+#content h1,h2,h3,h4,h5,h6{	font-family: "Arvo",serif !important;}
+p {font-family: "Arvo-sans",sans-serif !important;}
 article{border-bottom:none;}
 
 //----------------------
@@ -162,7 +162,7 @@ h6 {font-size:1rem;}
 #circle-search input::-webkit-input-placeholder {
 	color: #999;
 }
-
+LinguisticsProRegular
 #circle-search input[type=search] {
 	width: 15px;
 	height: 15px;
@@ -249,7 +249,7 @@ select {background-color: #fff; border:#efc319 2px solid;}
 	line-height: 150px;
 
   font-weight: bold;
-  font-family: "adelle", serif;
+  font-family: "Arvo", serif;
 }
 
 #post-480 li a:hover:not(.button) {

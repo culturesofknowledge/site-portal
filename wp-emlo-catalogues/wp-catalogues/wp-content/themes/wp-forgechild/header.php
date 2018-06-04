@@ -11,14 +11,11 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
-<!-- typekit main EMLO -->
-<script src="//use.typekit.net/axz4cgy.js"></script>
-<script>try{Typekit.load();}catch(e){}</script>
-<!-- typekit -->
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
 <?php wp_head(); ?>
 </head>
 
