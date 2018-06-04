@@ -26,7 +26,7 @@ Version: 1.0
 }
 
 .floating-menu ul li{list-style-type: none;}
-.floating-menu:last-child{padding-bottom:0px;}
+.floating-menu:last-child{padding-bottom:0;}
 
 @media only screen and (min-width: 64.063em) {  /* min-width 1025px, large screens */
 	.floating-menu {
@@ -37,27 +37,27 @@ Version: 1.0
 		margin: 0;
 	}
 }
-//----------------------
-// colours
-//----------------------
+/*----------------------*/
+/* colours*/
+/*----------------------*/
 .red{color: red;}
 .yellow{color: #efc319;}
 .yellow-bg{background-color: #efc319 !important;}
 .dark-grey-bg{background-color: #ececec !important;}
 .top-bottom-divider{border-top:1px solid #ececec;border-bottom:1px solid #ececec;}
 
-//----------------------
-// links
-//----------------------
+/*----------------------*/
+/* links*/
+/*----------------------*/
 #content a:not(.button) {color: #008cba !important;}
 #content a:not(.button):hover{color: #007ba0 !important; text-decoration: underline;}
 .page-links a:not(.button) {	color: #008cba !important;}
 .entry-content a:not(.button) { color: #008cba !important;}
 .side-nav li a:not(.button) {color: #008cba !important;}
 
-//----------------------
-// button
-//----------------------
+/*----------------------*/
+/* button*/
+/*----------------------*/
 .button, .button a{
 	text-decoration: none !important;
 	background-color: #EFC319;
@@ -83,9 +83,9 @@ Version: 1.0
 	transition: background-color 300ms ease-out
 }
 
-//----------------------
-// top bar/menu
-//----------------------
+/*----------------------*/
+/* top bar/menu*/
+/*----------------------*/
 .top-bar-section ul li > a {color: #35495e !important; font-family:"Arvo", serif; font-weight: bold; font-size:1em;}
 .top-bar-section ul li {background-color: #efc319 !important;}
 .top-bar-section li:not(.has-form) a:not(.button){background-color: #efc319 !important;}
@@ -100,9 +100,9 @@ Version: 1.0
 .header_container .name h1{font-size: 1.5rem; font-weight: bold;}
 
 
-//----------------------
-// fonts
-//----------------------
+/*----------------------*/
+/* fonts*/
+/*----------------------*/
 h1,h2,h3,h4,h5,h6{
 	color: #288089; 
 	font-family: "Arvo",serif !important;
@@ -111,9 +111,9 @@ h1,h2,h3,h4,h5,h6{
 p {font-family: "Arvo-sans",sans-serif !important;}
 article{border-bottom:none;}
 
-//----------------------
-// sizes
-//----------------------
+/*----------------------*/
+/* sizes*/
+/*----------------------*/
 h1 ,h2 ,h3 ,h4 ,h5 ,h6 {line-height:1.4; font-weight: bold;}
 h1 {font-size:1.75em !important;}
 h2 {font-size:1.6875rem;}
@@ -124,9 +124,9 @@ h6 {font-size:1rem;}
 
 
 
-//----------------------
-// circle search input
-//----------------------
+/*----------------------*/
+/* circle search input*/
+/*----------------------*/
 #circle-search input {
 	outline: none;
 }
@@ -162,7 +162,7 @@ h6 {font-size:1rem;}
 #circle-search input::-webkit-input-placeholder {
 	color: #999;
 }
-LinguisticsProRegular
+
 #circle-search input[type=search] {
 	width: 15px;
 	height: 15px;
@@ -208,9 +208,9 @@ LinguisticsProRegular
 
 
 
-//----------------------
-// tweaks
-//----------------------
+/*----------------------*/
+/* tweaks*/
+/*----------------------*/
 input[type="text"]{background-color: #fff; border:#efc319 2px solid; }
 .pad10{padding: 10px;}
 .footer {height: 110px;} 
@@ -245,18 +245,16 @@ select {background-color: #fff; border:#efc319 2px solid;}
 
 	color: #35495e !important;
 	background-color: #efc319;
-	-border: 3px solid #efc319;
 	line-height: 150px;
 
-  font-weight: bold;
-  font-family: "Arvo", serif;
+	font-weight: bold;
+	font-family: "Arvo", serif;
 }
 
 #post-480 li a:hover:not(.button) {
 	color: #35495e !important;
 	text-decoration: none;
-	-border-color: #35495e;
-  background-color: #ffd320;
+	background-color: #ffd320;
 }
 /*#content #post-1945 li a:hover { */ /* specifity override */
 /*  text-decoration: none !important;
