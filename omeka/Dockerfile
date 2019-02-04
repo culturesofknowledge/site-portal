@@ -1,5 +1,4 @@
-#FROM php:7.1.4-apache
-FROM php:5.6.30-apache
+FROM php:7.3-apache
 MAINTAINER matthew
 
 # Following the instructions at
@@ -7,12 +6,12 @@ MAINTAINER matthew
 
 # Install imagemagick and mysqli
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
-     && apt-get -y --force-yes install imagemagick php5-mysql gettext-base
+     && apt-get -y --force-yes install imagemagick gettext-base
 RUN docker-php-ext-install mysqli exif
 
-# Copy over the omeka files (from : http://omeka.org/files/omeka-2.0.zip )
+# Copy over the omeka files (from : http://omeka.org/files/omeka-2.6.1.zip )
 # You'll want to edit the db.ini with your own settings
-ADD /omeka-2.0/ /var/www/html/
+ADD /omeka-2.6.1/ /var/www/html/
 
 # Set up file and directory permissions
 RUN chown -R www-data:www-data /var/www/html
@@ -35,8 +34,8 @@ ENV OMEKA_DB_PREFIX omeka_
 # Turn on rewrite
 RUN a2enmod rewrite
 
-LABEL version="1.1.3"
-LABEL omeka-version="2.5"
+LABEL version="1.2.0"
+LABEL omeka-version="2.6.1"
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["apache2-foreground"]

@@ -2,6 +2,8 @@
 # Create the stuff omeka needs
 # ============================
 
+echo "Setting up Omeka files..."
+
 # Take the environment variables and produce a db.ini
 envsubst < /omeka/db-template.ini > /var/www/html/${OMEKA_WEB_ROOT}/db.ini
 

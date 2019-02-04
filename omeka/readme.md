@@ -2,7 +2,7 @@
 
 This container uses the official PHP with Apache docker build.
 
-It has the 2.5 version of Omeka. If you'd like to use your own Omeka build just inherit this container and delete the folder and replace it. Alternatively, use a volume to overwrite the folder.
+It has the 2.6.1 version of Omeka. If you'd like to use your own Omeka build just inherit this container and delete the folder and replace it. Alternatively, use a volume to overwrite the folder.
 
 You'll also need a mysql server. Pass these environment variables when running the Omeka docker, or they'll default too:
 - ENV OMEKA_DB_HOST mysql
