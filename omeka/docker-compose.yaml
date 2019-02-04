@@ -2,17 +2,17 @@
 # export MYSQL_ROOT_PASSWORD="PASSWORD-HERE"
 #
 mysql:
-  build: ./mysql-emlo
+  build: ../mysql-emlo
   restart: always
 
   environment:
     MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
 
   volumes:
-    - ./vol-mysql-omeka/data:/var/lib/mysql
+    - ../vol-mysql-omeka/data:/var/lib/mysql
 
 omeka:
-  build: ./omeka
+  build: ../omeka
 
   environment:
     OMEKA_DB_HOST: mysql
