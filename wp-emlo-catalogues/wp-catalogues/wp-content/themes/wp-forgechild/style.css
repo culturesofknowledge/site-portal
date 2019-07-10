@@ -94,6 +94,8 @@ Version: 1.0
 .top-bar input[type="submit"]{background-color: #ddd; color: #35495E;}
 .title-area {width: 180px;}
 
+.top-bar .name h1 a {padding-top: 8px; margin-left: -32px;}
+
 .header_container ul li > a {color: #35495e !important; font-family:"Arvo", serif; font-weight: bold; font-size:1em;}
 .header_container ul li {background-color: #efc319 !important;}
 .header_container input{background-color: white !important;}
@@ -164,8 +166,8 @@ h6 {font-size:1rem;}
 }
 
 #circle-search input[type=search] {
-	width: 15px;
 	height: 15px;
+    top: 7px;
 	padding-left: 10px;
 	border:none !important;
 	color: transparent;
