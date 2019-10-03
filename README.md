@@ -75,3 +75,7 @@ If the database is completely empty you might want to add some data in. Get on t
  - go to admin and upgrade database
  - goto plugins and upgrade changed ones
  
+ ## Acknowledgements
+
+EMLO has received funding from the Andrew W. Mellon Foundation, the UK Arts and Humanities Research Council, and the Unibersity of Oxford's John Fell Fund.
+ 
