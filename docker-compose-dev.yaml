@@ -77,6 +77,21 @@ omk-sw:
   volumes:
     - ./omk-sw/html:/var/www/html/exhibition/sw
 
+omeka-s:
+  build: ./omeka-s
+
+  environment:
+    OMEKA_DB_USER: root
+    OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+
+  ports:
+    - "40085:80"
+
+  links:
+    - mysql
+
+  volumes:
+    - ./omeka-s/omeka-s:/var/www/html/omeka-s
 
 wp-catalogues:
   build: ./wp-emlo-catalogues
@@ -105,6 +120,7 @@ nginx:
     - omk-baxter
     - omk-sw
     - omk-wemlo
+    - omeka-s
 
   ports:
     - "80:80"
