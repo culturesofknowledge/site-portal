@@ -13,7 +13,7 @@ find /var/www/html/${OMEKA_WEB_ROOT}/files -type d -print0 | xargs --null chmod 
 find /var/www/html/${OMEKA_WEB_ROOT}/files -type f -print0 | xargs --null chmod 666
 
 # Attempt to create the database OMEKA will use, borrowed from: https://github.com/docker-library/wordpress/blob/716fe2fabb0be1bcd46626fad83d8c345946d343/php5.6/apache/docker-entrypoint.sh
-#php -f /omeka/createDatabase.php
+php -f /omeka/createDatabase.php
 
 # Start using the Docker CMD setting
 exec "$@"

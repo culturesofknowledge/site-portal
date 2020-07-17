@@ -8,7 +8,7 @@ RUN a2enmod rewrite
 # Install dependencies
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
      && apt-get -y --force-yes install libgd-dev gettext-base
-RUN docker-php-ext-install pdo_mysql gd
+RUN docker-php-ext-install pdo_mysql gd mysqli
 
 #ADD --chown=www-data:www-data omeka-s/ /var/www/html/
 
