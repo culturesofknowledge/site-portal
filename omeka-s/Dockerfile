@@ -7,13 +7,14 @@ RUN a2enmod rewrite
 
 # Install dependencies
 RUN DEBIAN_FRONTEND=noninteractive apt-get update \
-     && apt-get -y --force-yes install libgd-dev gettext-base
+     && apt-get -y --force-yes install libgd-dev gettext-base msmtp-mta
 RUN docker-php-ext-install pdo_mysql gd mysqli
 
 #ADD --chown=www-data:www-data omeka-s/ /var/www/html/
 
 # Add config files
 ADD /config/ /omeka/
+ADD msmtprc /etc/
 
 RUN ln -s /omeka/docker-entrypoint.sh /usr/local/bin/
 RUN chmod u+x /usr/local/bin/docker-entrypoint.sh
