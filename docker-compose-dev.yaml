@@ -91,7 +91,7 @@ omeka-s:
     - mysql
 
   volumes:
-    - ./omeka-s/omeka-s:/var/www/html/omeka-s
+    - ./omeka-s/omeka-s:/var/www/html/exhibitions
 
 wp-catalogues:
   build: ./wp-emlo-catalogues

@@ -20,7 +20,7 @@ RUN ln -s /omeka/docker-entrypoint.sh /usr/local/bin/
 RUN chmod u+x /usr/local/bin/docker-entrypoint.sh
 
 # Set some defaults (change them at run time if you like)
-ENV OMEKA_WEB_ROOT "omeka-s"
+ENV OMEKA_WEB_ROOT "exhibitions"
 ENV OMEKA_DB_HOST mysql
 ENV OMEKA_DB_PORT 3306
 ENV OMEKA_DB_USER omeka
