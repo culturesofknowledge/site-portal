@@ -70,3 +70,6 @@ RewriteRule .* index.php
     php_flag register_globals off
     php_flag magic_quotes_gpc off
 </IfModule>
+
+php_value upload_max_filesize 16M
+

@@ -16,6 +16,11 @@ omk-sw/html/files/
 omk-wemlo/html/db.ini
 omk-wemlo/html/files/
 
+# USPG Omeka
+omk-uspg/html/db.ini
+omk-uspg/html/files/
+
+
 
 # MySQL
 /mysql-emlo/data/*
