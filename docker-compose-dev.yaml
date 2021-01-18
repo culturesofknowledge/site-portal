@@ -59,6 +59,25 @@ omk-wemlo:
   volumes:
     - ./omk-wemlo/html:/var/www/html/wemlo
 
+omk-uspg:
+  build: ./omk-uspg
+  restart: always
+
+  environment:
+    OMEKA_WEB_ROOT: /exhibition/uspg/
+    OMEKA_DB_USER: root
+    OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    OMEKA_DB_PREFIX: omeka_uspg_
+
+  ports:
+    - "40086:80"
+
+  links:
+    - mysql
+
+  volumes:
+    - ./omk-uspg/html:/var/www/html/exhibition/uspg
+
 omk-sw:
   build: ./omk-sw
 
@@ -120,6 +139,7 @@ nginx:
     - omk-baxter
     - omk-sw
     - omk-wemlo
+    - omk-uspg
     - omeka-s
 
   ports:
