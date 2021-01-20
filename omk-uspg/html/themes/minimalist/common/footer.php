@@ -11,7 +11,7 @@
                 <?php if ((get_theme_option('Display Footer Copyright') == 1) && $copyright = option('copyright')): ?>
                     <p><?php echo $copyright; ?></p>
                 <?php endif; ?>
-                <img src="http://emlo-portal.bodleian.ox.ac.uk/exhibition/uspg/files/original/1f3eca52e43d40e998d8036371513feb.png" width="943" height="150" />
+                <img src="http://emlo-portal.bodleian.ox.ac.uk/exhibition/uspg/files/original/646b92a77af2973fc079efba69c323a4.jpg" width="943" height="150" />
                 <p><?php echo __('Proudly powered by <a href="http://omeka.org">Omeka</a>.'); ?></p>
             </div>
 
