@@ -28,6 +28,9 @@
         Omeka.showAdvancedForm();
         Omeka.skipNav();
         Omeka.megaMenu('#top-nav');
+
+        <?php // remove link from Map menu item ?>
+        jQuery('.nav-menu li:eq(3) > a').removeAttr('href'); 
     });
     </script>
 </body>
