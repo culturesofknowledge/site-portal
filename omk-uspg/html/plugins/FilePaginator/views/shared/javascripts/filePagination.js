@@ -8,6 +8,10 @@ jQuery(function($) {
     var perPage = 1;
     var theme = pagination.data("theme");
 
+    if (numItems == 1) {
+        // Hide pagination interface if only one item
+        pagination.hide();
+    }
     items.slice(perPage).hide();
 
     pagination.pagination({

@@ -1652,3 +1652,13 @@ body.files .item-file {
   blockquote {
     margin: 10pt 0 0 0;
     font-style: italic; } }
+
+/* Extras */
+.simple-pagination .current {
+  background: #bbb;
+  border-color: #999; }
+
+.element-set {
+  width: 49%;
+  display: inline-block;
+  vertical-align: top; }

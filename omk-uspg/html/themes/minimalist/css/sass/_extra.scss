@@ -1,0 +1,14 @@
+/* Extras */
+
+/* lighten colour of disabled pagination buttons */
+.simple-pagination .current {
+    background: #bbb;
+    border-color: #999;
+}
+
+/* Put metadata into 2 columns */
+.element-set {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+}
