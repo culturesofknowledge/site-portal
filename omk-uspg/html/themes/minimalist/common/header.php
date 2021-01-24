@@ -21,7 +21,8 @@
 
     <!-- Stylesheets -->
     <?php
-    queue_css_url('//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+    //queue_css_url('//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+    queue_css_url('https://use.typekit.net/euh5qes.css');
     queue_css_file(array('iconfonts','style'));
     echo head_css();
     ?>

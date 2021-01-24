@@ -2,7 +2,7 @@
 // Basic Grid
 
 $total-columns  : 12;
-$column-width   : 4em;
+$column-width   : 4.5em;
 $gutter-width   : 1em;
 $grid-padding   : $gutter-width;
 
@@ -25,7 +25,7 @@ $text-color: #444;
 //$accent-dark: #5C3F8D; // Slightly darker Purple for title and visited links.
 $accent-dark: #166325; //Not Slightly darker Purple for title and visited links.
 //$accent-main: #684B98; // Purple
-$accent-main: #59a140; // Not Purple
+$accent-main: #2d862d; // Green
 //$accent-light: #BE75CB; // Pink
 $accent-light: #aad744; // Not Pink
 
@@ -36,9 +36,9 @@ $grey-light: #ddd; // Primary accent
 // ---------------------------------------------------------------------------
 // Typography
 
-$font-family-main: 'Lato', Verdana, Arial, sans-serif;
-$base-font-size: 16px;
+$font-family-main: 'Lato', sans-serif;
+$base-font-size: 14px;
 $base-line-height: 24px;
-$font-family-title: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+$font-family-title: 'garamond-premier-pro-subhead', 'garmond', serif;
 
 $spacing-unit: $base-line-height;

@@ -7,8 +7,13 @@
 }
 
 /* Put metadata into 2 columns */
-.element-set {
+.element-set, .half-view {
     width: 49%;
     display: inline-block;
     vertical-align: top;
+}
+
+/* Hide transciptions from metadata section*/
+#text-item-type-metadata-text, #letter-item-type-metadata-diplomatic-transcription {
+    display: none;
 }
