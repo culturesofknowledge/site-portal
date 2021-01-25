@@ -32,39 +32,40 @@
         <div id="trans-pagination" data-theme="light-theme"></div>
     <?php
         if ($transcription_array) {
-        forEach( $transcription_array as $key => $transcription ) { ?>
-            <div class="transcription-page">
-                <div id="transcription-<?php echo $key; ?>" class="half-view element-text">
-                    <?php echo $transcription; ?>
+            forEach( $transcription_array as $key => $transcription ) { ?>
+                <div class="transcription-page">
+                    <div id="transcription-<?php echo $key; ?>" class="half-view element-text">
+                        <?php echo $transcription; ?>
+                    </div>
+    
+                    <div id="image-<?php echo $key; ?>" class="half-view element">
+                        <?php $zoomin = $this->openLayersZoom()->zoom($files[$key]);
+                        if( $zoomin == "" ) { ?>
+                            <?php // draw_files(); ?>
+                        <?php } else {
+                            echo $zoomin;
+                        }?>
+                    </div>
+    
                 </div>
-
-                <div id="image-<?php echo $key; ?>" class="half-view element">
-                    <?php $zoomin = $this->openLayersZoom()->zoom($files[$key]);
-                    if( $zoomin == "" ) { ?>
-                        <?php // draw_files(); ?>
-                    <?php } else {
-                        echo $zoomin;
-                    }?>
-                </div>
-
-            </div>
     <?php
-        }
+            }
         } else {
-        forEach( $files as $key => $file ) { ?>
-            <div class="transcription-page">
-                <div id="image-<?php echo $key; ?>" class="half-view element">
-                    <?php $zoomin = $this->openLayersZoom()->zoom($file);
-                    if( $zoomin == "" ) { ?>
-                        <?php // draw_files(); ?>
-                    <?php } else {
-                        echo $zoomin;
-                    }?>
+            forEach( $files as $key => $file ) { ?>
+                <div class="transcription-page">
+                    <div id="image-<?php echo $key; ?>" class="element">
+                        <?php $zoomin = $this->openLayersZoom()->zoom($file);
+                        if( $zoomin == "" ) { ?>
+                            <?php // draw_files(); ?>
+                        <?php } else {
+                            echo $zoomin;
+                        }?>
+                    </div>
                 </div>
-            </div>
-      <?php
+    <?php
+            }
         }
-        } ?>
+    ?>
 </div>
 
 <!-- The following returns all of the files associated with an item. -->

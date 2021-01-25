@@ -13,6 +13,10 @@
     vertical-align: top;
 }
 
+.collections .element-set {
+    width: 100%;
+}
+
 .element-set:nth-of-type(2),
 .half-view:nth-of-type(2) {
     padding-left: 35px;
@@ -57,4 +61,24 @@
 /* don't want output formats to show */
 .browse #outputs {
     display: none;
+}
+
+// Adjust width in browse items list
+.browse .item-description,
+.collections .item-description {
+    width: 45em;
+}
+
+// Front page image
+.fp-img img {
+    margin-left:auto;
+    margin-right:auto;
+    display: block;
+}
+.fp-heading {
+    font-family: $font-family-title;
+    font-weight: 400;
+    line-height: normal;
+    font-size: 24px;
+    padding: 0px;
 }
