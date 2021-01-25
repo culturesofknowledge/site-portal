@@ -10,14 +10,14 @@
 ?>
 
 <?php echo head(array(
-  'title' => __('Neatline | Browse Exhibits'),
+  'title' => __('Browse Historical Maps'),
   'content_class' => 'neatline'
 )); ?>
 
 <div id="primary">
 
   <?php echo flash(); ?>
-  <h1><?php echo __('Neatline | Browse Exhibits'); ?></h1>
+  <h1><?php echo __('Browse Historical Maps'); ?></h1>
 
   <?php if (nl_exhibitsHaveBeenCreated()): ?>
 

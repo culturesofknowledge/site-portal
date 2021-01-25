@@ -1,5 +1,15 @@
 <?php echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show')); ?>
 
+<?php
+    $itemtype = metadata('item','item_type_name');
+    if ($itemtype == "Letter") {
+        $trans_field = "Diplomatic Transcription";
+        $trans_title = "Diplomatic Transcription";
+    } else {
+        $trans_field = "Text";
+        $trans_title = "Transcription";
+    }
+?>
 <h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
 
 <?php if ((get_theme_option('Item FileGallery') == 0) && metadata('item', 'has files')): ?>
@@ -12,10 +22,10 @@
 
 <!-- Section for paged transcriptions and images -->
 <div class="spliter">
-    <h2><?php echo __('Transcription'); ?></h2>
+    <h2><?php echo __($trans_title . ' and MS'); ?></h2>
 
     <?php
-        $transcription_array = metadata('item',array('Item Type Metadata', 'Diplomatic Transcription'), array('all' => true) );
+        $transcription_array = metadata('item',array('Item Type Metadata', $trans_field), array('all' => true) );
         $files = $item->Files; ?>
        <div> <?php //echo var_dump($files) ?> </div>
 
@@ -53,7 +63,7 @@
 <!-- If the item belongs to a collection, the following creates a link to that collection. -->
 <?php if (metadata('item', 'Collection Name')): ?>
 <div id="collection" class="element">
-    <h3><?php echo __('Collection'); ?></h3>
+    <h3><?php echo __('Part of Collection'); ?></h3>
     <div class="element-text"><p><?php echo link_to_collection_for_item(); ?></p></div>
 </div>
 <?php endif; ?>

@@ -50,3 +50,7 @@
     height: 500px;
 }
 
+/* don't want output formats to show */
+.browse #outputs {
+    display: none;
+}

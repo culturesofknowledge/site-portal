@@ -1687,5 +1687,10 @@ body.files .item-file {
 .items .spliter {
   border-top: 4px solid #ddd; }
 
+/* change map size */
 .transcription-page .map {
   height: 500px; }
+
+/* don't want output formats to show */
+.browse #outputs {
+  display: none; }
