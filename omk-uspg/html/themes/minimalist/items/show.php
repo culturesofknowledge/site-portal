@@ -26,11 +26,12 @@
 
     <?php
         $transcription_array = metadata('item',array('Item Type Metadata', $trans_field), array('all' => true) );
-        $files = $item->Files; ?>
-       <div> <?php //echo var_dump($files) ?> </div>
+        $files = $item->Files;
+    ?>
 
         <div id="trans-pagination" data-theme="light-theme"></div>
     <?php
+        if ($transcription_array) {
         forEach( $transcription_array as $key => $transcription ) { ?>
             <div class="transcription-page">
                 <div id="transcription-<?php echo $key; ?>" class="half-view element-text">
@@ -48,6 +49,21 @@
 
             </div>
     <?php
+        }
+        } else {
+        forEach( $files as $key => $file ) { ?>
+            <div class="transcription-page">
+                <div id="image-<?php echo $key; ?>" class="half-view element">
+                    <?php $zoomin = $this->openLayersZoom()->zoom($file);
+                    if( $zoomin == "" ) { ?>
+                        <?php // draw_files(); ?>
+                    <?php } else {
+                        echo $zoomin;
+                    }?>
+                </div>
+            </div>
+      <?php
+        }
         } ?>
 </div>
 
