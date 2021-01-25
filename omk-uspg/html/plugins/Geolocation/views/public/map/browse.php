@@ -17,7 +17,10 @@ echo pagination_links();
 ?>
 
 <div id="geolocation-browse">
-    <?php echo $this->geolocationMapBrowse('map_browse', array('list' => 'map-links', 'params' => $params)); ?>
+    <?php echo $this->geolocationMapBrowse('map_browse', array('list' => 'map-links', 'params' => $params), array(),
+        array('latitude' => 53, 'longitude' => -2, 'zoomLevel' => 6) );
+        //array('latitude' => 35, 'longitude' => -42, 'zoomLevel' => 3) );
+     ?>
     <div id="map-links"><h2><?php echo __('Find An Item on the Map'); ?></h2></div>
 </div>
 

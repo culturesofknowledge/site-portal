@@ -4,10 +4,11 @@ class Table_Location extends Omeka_Db_Table
     /**
      * Returns a location (or array of locations) for an item (or array of items)
      * @param array|Item|int $item An item or item id, or an array of items or item ids
+     * @param int location Number for multiple locations per item (0 is original)
      * @param boolean $findOnlyOne Whether or not to return only one location if it exists for the item
      * @return array|Location A location or an array of locations
      **/
-    public function findLocationByItem($item, $findOnlyOne = false)
+    public function findLocationByItem($item, $locationNum, $findOnlyOne = false)
     {
         $db = get_db();
         
@@ -27,9 +28,11 @@ class Table_Location extends Omeka_Db_Table
                 $itemIds[] = (int)(($it instanceof Item) ? $it->id : $it);
             }
             $select->where("$alias.item_id IN (?)", $itemIds);
+            $select->where("$alias.loc_num = ?", $locationNum);
         } else {
             $itemId = (int)(($item instanceof Item) ? $item->id : $item);
             $select->where("$alias.item_id = ?", $itemId);
+            $select->where("$alias.loc_num = ?", $locationNum);
         }
 
         // If only a single location is request, return the first one found.

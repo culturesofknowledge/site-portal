@@ -48,6 +48,7 @@ class GeolocationPlugin extends Omeka_Plugin_AbstractPlugin
         CREATE TABLE IF NOT EXISTS `$db->Location` (
         `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
         `item_id` BIGINT UNSIGNED NOT NULL ,
+        `loc_num` INT NOT NULL ,
         `latitude` DOUBLE NOT NULL ,
         `longitude` DOUBLE NOT NULL ,
         `zoom_level` INT NOT NULL ,
@@ -244,7 +245,7 @@ class GeolocationPlugin extends Omeka_Plugin_AbstractPlugin
         }
 
         // Find the location object for the item
-        $location = $this->_db->getTable('Location')->findLocationByItem($item, true);
+        $location = $this->_db->getTable('Location')->findLocationByItem($item, 0, true);
 
         // If we have filled out info for the geolocation, then submit to the db
         $geolocationPost = $post['geolocation'];
@@ -257,6 +258,7 @@ class GeolocationPlugin extends Omeka_Plugin_AbstractPlugin
                 $location->item_id = $item->id;
             }
             $location->setPostData($geolocationPost);
+            //JPNP $location->loc_num = 0;
             $location->save();
         } else {
             // If the form is empty, then we want to delete whatever location is
@@ -271,7 +273,7 @@ class GeolocationPlugin extends Omeka_Plugin_AbstractPlugin
     {
         $view = $args['view'];
         $item = $args['item'];
-        $location = $this->_db->getTable('Location')->findLocationByItem($item, true);
+        $location = $this->_db->getTable('Location')->findLocationByItem($item, 0, true);
 
         if ($location) {
             $html = ''
@@ -288,7 +290,7 @@ class GeolocationPlugin extends Omeka_Plugin_AbstractPlugin
     {
         $view = $args['view'];
         $item = $args['item'];
-        $location = $this->_db->getTable('Location')->findLocationByItem($item, true);
+        $location = $this->_db->getTable('Location')->findLocationByItem($item, 0, true);
 
         if ($location) {
             $width = get_option('geolocation_item_map_width') ? get_option('geolocation_item_map_width') : '';
@@ -663,7 +665,7 @@ class GeolocationPlugin extends Omeka_Plugin_AbstractPlugin
         $center = $this->_getCenter();
         $center['show'] = false;
 
-        $location = $this->_db->getTable('Location')->findLocationByItem($item, true);
+        $location = $this->_db->getTable('Location')->findLocationByItem($item, 0, true);
 
         if (is_null($post)) {
             $post = $_POST;

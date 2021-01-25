@@ -5,7 +5,7 @@ class Geolocation_View_Helper_GeolocationMapSingle extends Zend_View_Helper_Abst
     public function geolocationMapSingle($item = null, $width = '200px', $height = '200px', $hasBalloonForMarker = false, $markerHtmlClassName = 'geolocation_balloon')
     {
         $divId = "item-map-{$item->id}";
-        $location = get_db()->getTable('Location')->findLocationByItem($item, true);
+        $location = get_db()->getTable('Location')->findLocationByItem($item, 0, true);
         // Only set the center of the map if this item actually has a location
         // associated with it
         if ($location) {

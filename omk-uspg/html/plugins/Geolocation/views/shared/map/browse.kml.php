@@ -17,6 +17,7 @@
         <?php
         foreach(loop('item') as $item):        
         $location = $locations[$item->id];
+        $locationExtra = $locations1[$item->id];
         ?>
         <Placemark>
             <name><![CDATA[<?php echo metadata('item', array('Dublin Core', 'Title'));?>]]></name>
@@ -39,6 +40,29 @@
             <address><![CDATA[<?php echo $location['address']; ?>]]></address>
             <?php endif; ?>
         </Placemark>
+        <?php if ($locationExtra): ?>
+        <Placemark>
+            <name><![CDATA[<?php echo metadata('item', array('Dublin Core', 'Title'));?>]]></name>
+            <namewithlink>EXTRA: <![CDATA[<?php echo link_to_item(metadata('item' , array('Dublin Core', 'Title')), array('class' => 'view-item')); ?>]]></namewithlink>
+            <Snippet maxLines="2"><![CDATA[<?php
+            echo metadata('item', array('Dublin Core', 'Description'), array('snippet' => 150));
+            ?>]]></Snippet>    
+            <description><![CDATA[<?php 
+            // @since 3/26/08: movies do not display properly on the map in IE6, 
+            // so can't use display_files(). Description field contains the HTML 
+            // for displaying the first file (if possible).
+            if (metadata($item, 'has thumbnail')) {
+                echo link_to_item(item_image('thumbnail'), array('class' => 'view-item'));                
+            }
+            ?>]]></description>
+            <Point>
+                <coordinates><?php echo $locationExtra['longitude']; ?>,<?php echo $locationExtra['latitude']; ?></coordinates>
+            </Point>
+            <?php if ($locationExtra['address']): ?>
+            <address><![CDATA[<?php echo $locationExtra['address']; ?>]]></address>
+            <?php endif; ?>
+        </Placemark>
+        <?php endif; ?>
         <?php endforeach; ?>
     </Document>
 </kml>

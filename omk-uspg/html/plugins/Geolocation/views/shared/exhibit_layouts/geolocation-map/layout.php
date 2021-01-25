@@ -10,7 +10,7 @@ $locations = array();
 foreach ($attachments as $attachment):
     $item = $attachment->getItem();
     $file = $attachment->getFile();
-    $location = $locationTable->findLocationByItem($item, true);
+    $location = $locationTable->findLocationByItem($item, 0, true);
     if ($location):
         $titleLink = exhibit_builder_link_to_exhibit_item(null, array(), $item);
 
