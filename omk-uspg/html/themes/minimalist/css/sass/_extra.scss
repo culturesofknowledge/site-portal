@@ -8,12 +8,45 @@
 
 /* Put metadata into 2 columns */
 .element-set, .half-view {
-    width: 49%;
+    width: 49.5%;
     display: inline-block;
     vertical-align: top;
+}
+
+.element-set:nth-of-type(2),
+.half-view:nth-of-type(2) {
+    padding-left: 35px;
 }
 
 /* Hide transciptions from metadata section*/
 #text-item-type-metadata-text, #letter-item-type-metadata-diplomatic-transcription {
     display: none;
 }
+
+/* Avoid metadata showing up in collections pages */
+.collections .element-set h2, .collections #dublin-core-title {
+    display: none;
+}
+
+.items .spliter .element {
+    border-top: none ;
+}
+
+/* Don't show "Dublin Core" headings in items */
+.items .element-set h2 {
+    display: none;
+}
+
+.items h2 {
+    border-top: none;
+}
+
+.items .spliter {
+    border-top: 4px solid $grey-light;
+}
+
+/* change map size */
+.transcription-page .map {
+    height: 500px;
+}
+
