@@ -42,5 +42,12 @@ function open_layers_zoom(target, imgWidth, imgHeight, url)
     });
 
     // Initialize zoom to extent.
-    map.getView().fit(extent, map.getSize());
+    //map.getView().fit(extent, map.getSize());
+    var view = map.getView();
+    view.fit(extent, map.getSize());
+
+    // If 'extrazoom' exists add to default zoom
+    if (window.extrazoom) {
+        view.setZoom(view.getZoom() + window.extrazoom);
+    }
 }
