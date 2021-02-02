@@ -1698,7 +1698,19 @@ body.files .item-file {
 .collections .item-description {
   width: 45em; }
 
-.browse .item {
+.browse .collection h2, .browse .collection #item-filters .collection, #item-filters .browse .collection .collection,
+.browse .item h2,
+.browse .item #item-filters .collection,
+#item-filters .browse .item .collection {
+  width: 18em; }
+
+.show h1 {
+  line-height: 40px; }
+
+
+.browse .item h2,
+.browse .item #item-filters .collection,
+#item-filters .browse .item .collection {
   border-top: 1px solid #ddd; }
 
 .fp-img img {
@@ -1712,3 +1724,6 @@ body.files .item-file {
   line-height: normal;
   font-size: 24px;
   padding: 0px; }
+
+article:focus {
+  outline: none; }
