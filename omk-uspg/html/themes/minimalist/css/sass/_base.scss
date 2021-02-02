@@ -23,11 +23,11 @@ $text-color: #444;
 
 
 //$accent-dark: #5C3F8D; // Slightly darker Purple for title and visited links.
-$accent-dark: #166325; //Not Slightly darker Purple for title and visited links.
 //$accent-main: #684B98; // Purple
-$accent-main: #6a6f2a; // Green
 //$accent-light: #BE75CB; // Pink
-$accent-light: darkgrey; // Not Pink
+$accent-dark: #166325; //
+$accent-main: #6a6f2a; // Green
+$accent-light: darkgrey; //
 
 $grey-dark: #363636; // tag cloud
 $grey-medium: #555; //Headers
@@ -37,7 +37,7 @@ $grey-light: #ddd; // Primary accent
 // Typography
 
 $font-family-main: 'Lato', sans-serif;
-$base-font-size: 14px;
+$base-font-size: 15px;
 $base-line-height: 24px;
 $font-family-title: 'garamond-premier-pro-subhead', 'garmond', serif;
 

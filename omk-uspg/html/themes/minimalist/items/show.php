@@ -4,7 +4,7 @@
     $itemtype = metadata('item','item_type_name');
     if ($itemtype == "Letter") {
         $trans_field = "Diplomatic Transcription";
-        $trans_title = "Diplomatic Transcription";
+        $trans_title = "Transcription";
     } else {
         $trans_field = "Text";
         $trans_title = "Transcription";

@@ -1,12 +1,12 @@
 /* Extras */
 
-/* lighten colour of disabled pagination buttons */
+// lighten colour of disabled pagination buttons
 .simple-pagination .current {
     background: #bbb;
     border-color: #999;
 }
 
-/* Put metadata into 2 columns */
+// Put metadata into 2 columns
 .element-set, .half-view {
     width: 49.5%;
     display: inline-block;
@@ -26,12 +26,12 @@
     padding-top: 16px;
 }
 
-/* Hide transciptions from metadata section*/
+// Hide transciptions from metadata section
 #text-item-type-metadata-text, #letter-item-type-metadata-diplomatic-transcription {
     display: none;
 }
 
-/* Avoid metadata showing up in collections pages */
+// Avoid metadata showing up in collections pages
 .collections .element-set h2, .collections #dublin-core-title {
     display: none;
 }
@@ -40,7 +40,7 @@
     border-top: none ;
 }
 
-/* Don't show "Dublin Core" headings in items */
+// Don't show "Dublin Core" headings in items
 .items .element-set h2 {
     display: none;
 }
@@ -53,12 +53,12 @@
     border-top: 4px solid $grey-light;
 }
 
-/* change map size */
+// change map size
 .transcription-page .map {
     height: 500px;
 }
 
-/* don't want output formats to show */
+// don't want output formats to show
 .browse #outputs {
     display: none;
 }
@@ -67,6 +67,11 @@
 .browse .item-description,
 .collections .item-description {
     width: 45em;
+}
+
+// 
+.browse .item {
+    border-top: 1px solid $grey-light;
 }
 
 // Front page image

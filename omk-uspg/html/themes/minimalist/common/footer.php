@@ -29,8 +29,12 @@
         Omeka.skipNav();
         Omeka.megaMenu('#top-nav');
 
-        <?php // remove link from Map menu item ?>
-        jQuery('.nav-menu li:eq(3) > a').removeAttr('href'); 
+        <?php // Change menu items
+              // Omeka interface doesn't seem flexible enough in config interface
+              // so patch up here
+        ?>
+        jQuery('.nav-menu li:eq(2) > a').removeAttr('href'); 
+        jQuery('.nav-menu li:eq(4) > a').attr('href', '/exhibition/uspg/neatline/show/senex-new-map-of-london'); 
     });
     </script>
 </body>

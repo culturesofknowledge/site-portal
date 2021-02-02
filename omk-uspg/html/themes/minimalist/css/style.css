@@ -440,7 +440,7 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 24px;
   color: #444;
   margin: 0; }
@@ -583,22 +583,22 @@ h1, h2, #item-filters .collection, h3, h4, h5, h6 {
   color: #555; }
 
 h4, h6 {
-  font-style: 16.8px; }
+  font-style: 18px; }
 
 h5, h6 {
   font-weight: bold; }
 
 h1 {
-  font-size: 35px;
+  font-size: 37.5px;
   clear: both;
   word-wrap: break-word; }
 
 h2, #item-filters .collection {
-  font-size: 28px;
+  font-size: 30px;
   border-top: 4px solid #ddd; }
 
 h3 {
-  font-size: 21px; }
+  font-size: 22.5px; }
 
 h6 {
   font-size: italic; }
@@ -606,7 +606,7 @@ h6 {
 #site-title {
   color: #166325;
   font-family: "garamond-premier-pro-subhead", "garmond", serif;
-  font-size: 35px;
+  font-size: 37.5px;
   font-weight: bold;
   line-height: 48px;
   margin: 20px 0; }
@@ -705,7 +705,7 @@ a {
     margin-bottom: .5em;
     border: 0;
     margin-bottom: 0;
-    line-height: 21px; }
+    line-height: 22.5px; }
     .pagination .pagination_next a:hover,
     .pagination .pagination_previous a:hover,
     .pagination .previous-page a:hover,
@@ -866,7 +866,7 @@ select {
   border: 1px solid #ddd;
   height: 36px;
   line-height: 36px;
-  font-size: 14px;
+  font-size: 15px;
   margin-right: 3px !important;
   display: inline-block; }
 
@@ -1651,12 +1651,10 @@ body.files .item-file {
     font-style: italic; } }
 
 /* Extras */
-/* lighten colour of disabled pagination buttons */
 .simple-pagination .current {
   background: #bbb;
   border-color: #999; }
 
-/* Put metadata into 2 columns */
 .element-set, .half-view {
   width: 49.5%;
   display: inline-block;
@@ -1672,18 +1670,15 @@ body.files .item-file {
 .half-view:nth-of-type(2n+1) {
   padding-top: 16px; }
 
-/* Hide transciptions from metadata section*/
 #text-item-type-metadata-text, #letter-item-type-metadata-diplomatic-transcription {
   display: none; }
 
-/* Avoid metadata showing up in collections pages */
 .collections .element-set h2, .collections .element-set #item-filters .collection, #item-filters .collections .element-set .collection, .collections #dublin-core-title {
   display: none; }
 
 .items .spliter .element {
   border-top: none; }
 
-/* Don't show "Dublin Core" headings in items */
 .items .element-set h2, .items .element-set #item-filters .collection, #item-filters .items .element-set .collection {
   display: none; }
 
@@ -1693,17 +1688,18 @@ body.files .item-file {
 .items .spliter {
   border-top: 4px solid #ddd; }
 
-/* change map size */
 .transcription-page .map {
   height: 500px; }
 
-/* don't want output formats to show */
 .browse #outputs {
   display: none; }
 
 .browse .item-description,
 .collections .item-description {
   width: 45em; }
+
+.browse .item {
+  border-top: 1px solid #ddd; }
 
 .fp-img img {
   margin-left: auto;
