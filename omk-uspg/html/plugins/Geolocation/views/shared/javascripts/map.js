@@ -177,13 +177,22 @@ OmekaMapBrowse.prototype = {
         var coordinates = placeMark.find('Point coordinates').text().split(',');
         var longitude = coordinates[0];
         var latitude = coordinates[1];
-        
+        var style = placeMark.find('styleUrl').text(); 
         // Use the KML formatting (do some string sub magic)
         var balloon = this.browseBalloon;
         balloon = balloon.replace('$[namewithlink]', titleWithLink).replace('$[description]', body).replace('$[Snippet]', snippet);
 
+        if (style) {
+            title = title + " (destination)";
+        }
+
         // Build a marker, add HTML for it
-        this.addMarker([latitude, longitude], {title: title}, balloon);
+        if (style && window.extraIcon) {
+            // Style is specified for extra, destination location
+            this.addMarker([latitude, longitude], {title: title, icon: window.extraIcon}, balloon);
+        } else {
+            this.addMarker([latitude, longitude], {title: title}, balloon);
+        }
     },
     
     buildListLinks: function (container) {
@@ -229,6 +238,15 @@ function OmekaMapSingle(mapDivId, center, options) {
     var omekaMap = new OmekaMap(mapDivId, center, options);
     jQuery.extend(true, this, omekaMap);
     this.initMap();
+}
+
+function OmekaMapExtra(mapDivId, center, extraPin, options, pinIcon) {
+    var omekaMap = new OmekaMap(mapDivId, center, options);
+    jQuery.extend(true, this, omekaMap);
+    this.initMap();
+    var title = "Destination: (" + extraPin.latitude + "," + extraPin.longitude + ")";
+    this.addMarker([extraPin.latitude, extraPin.longitude],{title: title, icon: pinIcon}, center.markerHtml);
+    this.fitMarkers();
 }
 
 function OmekaMapForm(mapDivId, center, options) {

@@ -21,7 +21,15 @@ echo pagination_links();
         array('latitude' => 53, 'longitude' => -2, 'zoomLevel' => 6) );
         //array('latitude' => 35, 'longitude' => -42, 'zoomLevel' => 3) );
      ?>
-    <div id="map-links"><h2><?php echo __('Find An Item on the Map'); ?></h2></div>
-</div>
-
+   <script type='text/javascript'>
+    var extraIcon = new L.Icon({
+         iconSize: [25, 41],
+         iconAnchor: [12, 41],
+         popupAnchor: [1, -34],
+         shadowSize: [41, 41],  
+         iconUrl: "<?php echo img("marker-icon-2x-green.png")?>",
+         shadowUrl: "<?php echo img("marker-shadow.png")?>"
+         });
+   </script>
+<div id="map-links"><h2><?php echo __('Find An Item on the Map'); ?></h2></-</div>
 <?php echo foot(); ?>

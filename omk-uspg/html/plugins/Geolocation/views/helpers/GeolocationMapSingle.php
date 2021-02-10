@@ -6,6 +6,7 @@ class Geolocation_View_Helper_GeolocationMapSingle extends Zend_View_Helper_Abst
     {
         $divId = "item-map-{$item->id}";
         $location = get_db()->getTable('Location')->findLocationByItem($item, 0, true);
+        $location1 = get_db()->getTable('Location')->findLocationByItem($item, 1, true);
         // Only set the center of the map if this item actually has a location
         // associated with it
         if ($location) {
@@ -30,7 +31,19 @@ class Geolocation_View_Helper_GeolocationMapSingle extends Zend_View_Helper_Abst
             $html = '<div id="' . $divId . '" class="map geolocation-map" style="' . $style . '"></div>';
             
             $js = "var " . Inflector::variablize($divId) . ";";
-            $js .= "OmekaMapSingle = new OmekaMapSingle(" . js_escape($divId) . ", $center, $options); ";
+            if ($location1) {
+                $center1['latitude']     = $location1->latitude;
+                $center1['longitude']    = $location1->longitude;
+                $center1 = js_escape($center1);
+
+                $js .= "var extraIcon = new L.Icon({ iconSize: [25, 41], iconAnchor: [12, 41], popupAnchor: [1, -34], shadowSize: [41, 41], "
+                     . "iconUrl: '" . img("marker-icon-2x-green.png") . "',"
+                     . "shadowUrl: '" . img("marker-shadow.png") . "'});";
+
+                $js .= "OmekaMapSingle = new OmekaMapExtra(" . js_escape($divId) . ", $center, $center1, $options, extraIcon); ";
+            } else {
+                $js .= "OmekaMapSingle = new OmekaMapSingle(" . js_escape($divId) . ", $center, $options); ";
+            }
             $html .= "<script type='text/javascript'>$js</script>";
         } else {
             $html = '<p class="map-notification">'.__('This item has no location info associated with it.').'</p>';
