@@ -38,6 +38,12 @@ div#geolocation {
     font-size:18px;
     margin-bottom:0px;
 }
+.geolocation_balloon_type {
+    font-weight:bold;
+    font-size:14px;
+    margin-bottom:0px;
+    margin-left:6px;
+}
 
 img.leaflet-tile,
 img.leaflet-marker-icon,

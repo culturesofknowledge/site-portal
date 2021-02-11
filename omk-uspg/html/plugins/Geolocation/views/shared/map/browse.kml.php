@@ -8,6 +8,7 @@
                 <text><![CDATA[
                     <div class="geolocation_balloon">
                         <div class="geolocation_balloon_title">$[namewithlink]</div>
+                        <div class="geolocation_balloon_type">$[markertype]</div>
                         <div class="geolocation_balloon_thumbnail">$[description]</div>
                         <p class="geolocation_balloon_description">$[Snippet]</p>
                     </div>
@@ -19,6 +20,7 @@
         $location = $locations[$item->id];
         $locationExtra = $locations1[$item->id];
         ?>
+        <?php if ($location): ?>
         <Placemark>
             <name><![CDATA[<?php echo metadata('item', array('Dublin Core', 'Title'));?>]]></name>
             <namewithlink><![CDATA[<?php echo link_to_item(metadata('item' , array('Dublin Core', 'Title')), array('class' => 'view-item')); ?>]]></namewithlink>
@@ -40,10 +42,11 @@
             <address><![CDATA[<?php echo $location['address']; ?>]]></address>
             <?php endif; ?>
         </Placemark>
+        <?php endif; ?>
         <?php if ($locationExtra): ?>
         <Placemark>
             <name><![CDATA[<?php echo metadata('item', array('Dublin Core', 'Title'));?>]]></name>
-            <namewithlink>Destination: <![CDATA[<?php echo link_to_item(metadata('item' , array('Dublin Core', 'Title')), array('class' => 'view-item')); ?>]]></namewithlink>
+            <namewithlink><![CDATA[<?php echo link_to_item(metadata('item' , array('Dublin Core', 'Title')), array('class' => 'view-item')); ?>]]></namewithlink>
             <Snippet maxLines="2"><![CDATA[<?php
             echo metadata('item', array('Dublin Core', 'Description'), array('snippet' => 150));
             ?>]]></Snippet>    
@@ -55,7 +58,11 @@
                 echo link_to_item(item_image('thumbnail'), array('class' => 'view-item'));                
             }
             ?>]]></description>
-            <styleUrl>#destination</styleUrl>
+            <?php if ($location): ?>
+                <styleUrl>#destination</styleUrl>
+            <?php else: ?>
+                <styleUrl>#destinationOnly</styleUrl>
+            <?php endif; ?>
             <Point>
                 <coordinates><?php echo $locationExtra['longitude']; ?>,<?php echo $locationExtra['latitude']; ?></coordinates>
             </Point>

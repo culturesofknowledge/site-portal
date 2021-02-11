@@ -291,8 +291,9 @@ class GeolocationPlugin extends Omeka_Plugin_AbstractPlugin
         $view = $args['view'];
         $item = $args['item'];
         $location = $this->_db->getTable('Location')->findLocationByItem($item, 0, true);
+        $location1 = $this->_db->getTable('Location')->findLocationByItem($item, 1, true);
 
-        if ($location) {
+        if ($location || $location1) {
             $width = get_option('geolocation_item_map_width') ? get_option('geolocation_item_map_width') : '';
             $height = get_option('geolocation_item_map_height') ? get_option('geolocation_item_map_height') : '300px';
             $html = "<div id='geolocation'>";

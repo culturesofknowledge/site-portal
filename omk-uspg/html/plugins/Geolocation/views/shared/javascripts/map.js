@@ -82,8 +82,11 @@ OmekaMap.prototype = {
 
         // Show the center marker if we have that enabled.
         if (this.center.show) {
+            var opt = { title: "(" + this.center.latitude + ',' + this.center.longitude + ")" };
+            if (this.center.title) { opt.title = this.center.title; }
+            if (this.center.icon) { opt.icon = this.center.icon; }
             this.addMarker([this.center.latitude, this.center.longitude],
-                           {title: "(" + this.center.latitude + ',' + this.center.longitude + ")"}, 
+                           opt, 
                            this.center.markerHtml);
         }
     }
@@ -178,21 +181,27 @@ OmekaMapBrowse.prototype = {
         var longitude = coordinates[0];
         var latitude = coordinates[1];
         var style = placeMark.find('styleUrl').text(); 
+        var markertype = "origin";
+        if (style) { markertype = "destination"; }
         // Use the KML formatting (do some string sub magic)
         var balloon = this.browseBalloon;
-        balloon = balloon.replace('$[namewithlink]', titleWithLink).replace('$[description]', body).replace('$[Snippet]', snippet);
+        balloon = balloon.replace('$[namewithlink]', titleWithLink).replace('$[description]', body).replace('$[Snippet]', snippet).replace('$[markertype]',markertype);
 
-        if (style) {
-            title = title + " (destination)";
-        }
-
+        //if (style) {
+        //    title = title + " (destination)";
+        //}
+        var mark;
         // Build a marker, add HTML for it
         if (style && window.extraIcon) {
             // Style is specified for extra, destination location
-            this.addMarker([latitude, longitude], {title: title, icon: window.extraIcon}, balloon);
+            mark = this.addMarker([latitude, longitude], {title: title, icon: window.extraIcon}, balloon);
+            mark.isExtra = true;
         } else {
-            this.addMarker([latitude, longitude], {title: title}, balloon);
+            mark = this.addMarker([latitude, longitude], {title: title}, balloon);
         }
+        if ("#destinationOnly" == style) {
+            mark.extraOnly = true;
+	}
     },
     
     buildListLinks: function (container) {
@@ -202,34 +211,37 @@ OmekaMapBrowse.prototype = {
 
         // Loop through all the markers
         jQuery.each(this.markers, function (index, marker) {
-            var listElement = jQuery('<li></li>');
-
-            // Make an <a> tag, give it a class for styling
-            var link = jQuery('<a></a>');
-            link.addClass('item-link');
-
-            // Links open up the markers on the map, clicking them doesn't actually go anywhere
-            link.attr('href', 'javascript:void(0);');
-
-            // Each <li> starts with the title of the item            
-            link.html(marker.options.title);
-
-            // Clicking the link should take us to the map
-            link.bind('click', {}, function (event) {
-                if (that.clusterGroup) {
-                    that.clusterGroup.zoomToShowLayer(marker, function () {
-                        marker.fire('click');
-                    });
-                } else {
-                    that.map.once('moveend', function () {
-                        marker.fire('click');
-                    });
-                    that.map.flyTo(marker.getLatLng());
-                }
-            });
-
-            link.appendTo(listElement);
-            listElement.appendTo(list);
+            // Don't show list entry for extra markers, unless item only has an etra marker
+            if ((!marker.isExtra) || marker.extraOnly) {
+              var listElement = jQuery('<li></li>');
+  
+              // Make an <a> tag, give it a class for styling
+              var link = jQuery('<a></a>');
+              link.addClass('item-link');
+  
+              // Links open up the markers on the map, clicking them doesn't actually go anywhere
+              link.attr('href', 'javascript:void(0);');
+  
+              // Each <li> starts with the title of the item            
+              link.html(marker.options.title);
+  
+              // Clicking the link should take us to the map
+              link.bind('click', {}, function (event) {
+                  if (that.clusterGroup) {
+                      that.clusterGroup.zoomToShowLayer(marker, function () {
+                          marker.fire('click');
+                      });
+                  } else {
+                      that.map.once('moveend', function () {
+                          marker.fire('click');
+                      });
+                      that.map.flyTo(marker.getLatLng());
+                  }
+              });
+  
+              link.appendTo(listElement);
+              listElement.appendTo(list);
+            }
         });
     }
 };
@@ -244,7 +256,8 @@ function OmekaMapExtra(mapDivId, center, extraPin, options, pinIcon) {
     var omekaMap = new OmekaMap(mapDivId, center, options);
     jQuery.extend(true, this, omekaMap);
     this.initMap();
-    var title = "Destination: (" + extraPin.latitude + "," + extraPin.longitude + ")";
+    //var title = "Destination: (" + extraPin.latitude + "," + extraPin.longitude + ")";
+    var title = "Destination";
     this.addMarker([extraPin.latitude, extraPin.longitude],{title: title, icon: pinIcon}, center.markerHtml);
     this.fitMarkers();
 }

@@ -32,7 +32,7 @@
         <div id="trans-pagination" data-theme="light-theme"></div>
        
         <?php //number of extra steps to zoom in images for better fit ?> 
-        <script>var extrazoom = 1; </script>
+        <script>var extrazoom = 0; </script>
     <?php
         if ($transcription_array) {
             forEach( $transcription_array as $key => $transcription ) { ?>

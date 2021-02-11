@@ -33,8 +33,8 @@
               // Omeka interface doesn't seem flexible enough in config interface
               // so patch up here
         ?>
-        jQuery('.nav-menu li:eq(2) > a').removeAttr('href'); 
-        jQuery('.nav-menu li:eq(4) > a').attr('href', '/exhibition/uspg/neatline/show/senex-new-map-of-london'); 
+        jQuery('.nav-menu li:eq(3) > a').removeAttr('href'); 
+        jQuery('.nav-menu li:eq(5) > a').attr('href', '/exhibition/uspg/neatline/show/senex-new-map-of-london'); 
     });
     </script>
 </body>

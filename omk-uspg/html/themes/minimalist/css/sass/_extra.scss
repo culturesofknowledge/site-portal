@@ -103,3 +103,9 @@
 article:focus {
     outline: none;
 }
+
+// Ensure the imageZoom full screen button works on Safari
+:-webkit-full-screen {
+    height: 100% !important;
+    background-color: black;
+}

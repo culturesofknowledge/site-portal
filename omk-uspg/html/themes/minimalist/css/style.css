@@ -1727,3 +1727,7 @@ body.files .item-file {
 
 article:focus {
   outline: none; }
+
+:-webkit-full-screen {
+  height: 100% !important;
+  background-color: black; }
