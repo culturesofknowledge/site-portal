@@ -1,0 +1,22 @@
+
+// Adjust title image width (in small screens)
+#site-title img {
+    width: 100%;
+}
+
+.fp-img img {
+   width: 100%;
+}
+
+// Footer logos
+#footer-text img {
+   height: 60px;
+   display: block;
+//   margin-left: auto;
+//   margin-right: auto;
+   margin: 25px auto;
+}
+
+#footer-text a {
+   //display: block;
+}

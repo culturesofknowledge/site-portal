@@ -1,0 +1,43 @@
+/* Extras customizing for USPG exhibition for wider displays*/
+
+// Put metadata into 2 columns
+.element-set, .half-view {
+    width: 49.5%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.collections .element-set {
+    width: 60%;
+}
+
+.element-set:nth-of-type(2),
+.half-view:nth-of-type(2) {
+    padding-left: 35px;
+}
+
+.half-view:nth-of-type(2n+1) {
+    padding-top: 16px;
+}
+
+// Adjust width in browse items list
+.browse .item-description,
+.collections .item-description {
+    width: 45em;
+}
+
+// Adjust headings
+.browse .collection h2,
+.browse .item h2 {
+    width: 18em;
+}
+
+.collections #collection-items h3 {
+    width: 24em;
+}
+
+#footer-text img {
+   height: 60px;
+   display: inline-block;
+   margin: 25px 50px;
+}

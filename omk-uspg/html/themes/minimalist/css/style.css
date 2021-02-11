@@ -1378,7 +1378,7 @@ body.files .item-file {
 
 /* -------------------------------------------------------------------------*/
 /* Screen - Mobile */
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 41em) {
   /* -------------------------------------------------------------------------*/
   /* Table of Contents 
 -- Layout
@@ -1607,7 +1607,43 @@ body.files .item-file {
     clear: both;
     width: 33%; }
     .exhibits.show #exhibit-page-navigation #exhibit-nav-up .current-page {
-      clear: none; } }
+      clear: none; }
+  /* Extras customizing for USPG exhibition for wider displays*/
+  .element-set, .half-view {
+    width: 49.5%;
+    display: inline-block;
+    vertical-align: top; }
+  .collections .element-set {
+    width: 60%; }
+  .element-set:nth-of-type(2),
+  .half-view:nth-of-type(2) {
+    padding-left: 35px; }
+  .half-view:nth-of-type(2n+1) {
+    padding-top: 16px; }
+  .browse .item-description,
+  .collections .item-description {
+    width: 45em; }
+  .browse .collection h2, .browse .collection #item-filters .collection, #item-filters .browse .collection .collection,
+  .browse .item h2,
+  .browse .item #item-filters .collection,
+  #item-filters .browse .item .collection {
+    width: 18em; }
+  .collections #collection-items h3 {
+    width: 24em; }
+  #footer-text img {
+    height: 60px;
+    display: inline-block;
+    margin: 25px 50px; } }
+
+@media screen and (max-width: 41em) {
+  #site-title img {
+    width: 100%; }
+  .fp-img img {
+    width: 100%; }
+  #footer-text img {
+    height: 60px;
+    display: block;
+    margin: 25px auto; } }
 
 /* -------------------------------------------------------------------------*/
 /* Print */
@@ -1650,25 +1686,10 @@ body.files .item-file {
     margin: 10pt 0 0 0;
     font-style: italic; } }
 
-/* Extras */
+/* Extras customizing for USPG exhibition */
 .simple-pagination .current {
   background: #bbb;
   border-color: #999; }
-
-.element-set, .half-view {
-  width: 49.5%;
-  display: inline-block;
-  vertical-align: top; }
-
-.collections .element-set {
-  width: 60%; }
-
-.element-set:nth-of-type(2),
-.half-view:nth-of-type(2) {
-  padding-left: 35px; }
-
-.half-view:nth-of-type(2n+1) {
-  padding-top: 16px; }
 
 #text-item-type-metadata-text, #letter-item-type-metadata-diplomatic-transcription {
   display: none; }
@@ -1693,16 +1714,6 @@ body.files .item-file {
 
 .browse #outputs {
   display: none; }
-
-.browse .item-description,
-.collections .item-description {
-  width: 45em; }
-
-.browse .collection h2, .browse .collection #item-filters .collection, #item-filters .browse .collection .collection,
-.browse .item h2,
-.browse .item #item-filters .collection,
-#item-filters .browse .item .collection {
-  width: 18em; }
 
 .show h1 {
   line-height: 40px; }

@@ -1,29 +1,9 @@
-/* Extras */
+/* Extras customizing for USPG exhibition */
 
 // lighten colour of disabled pagination buttons
 .simple-pagination .current {
     background: #bbb;
     border-color: #999;
-}
-
-// Put metadata into 2 columns
-.element-set, .half-view {
-    width: 49.5%;
-    display: inline-block;
-    vertical-align: top;
-}
-
-.collections .element-set {
-    width: 60%;
-}
-
-.element-set:nth-of-type(2),
-.half-view:nth-of-type(2) {
-    padding-left: 35px;
-}
-
-.half-view:nth-of-type(2n+1) {
-    padding-top: 16px;
 }
 
 // Hide transciptions from metadata section
@@ -61,18 +41,6 @@
 // don't want output formats to show
 .browse #outputs {
     display: none;
-}
-
-// Adjust width in browse items list
-.browse .item-description,
-.collections .item-description {
-    width: 45em;
-}
-
-// Adjust headings
-.browse .collection h2,
-.browse .item h2 {
-    width: 18em;
 }
 
 .show h1 {
