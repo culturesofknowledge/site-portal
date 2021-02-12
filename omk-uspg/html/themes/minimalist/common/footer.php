@@ -12,13 +12,16 @@
                     <p><?php echo $copyright; ?></p>
                 <?php endif; ?>
                 <a href="https://www.leeds.ac.uk/">
-                    <img src="/exhibition/uspg/files/original/leeds.jpeg" />
+                    <img src="/exhibition/uspg/files/original/leeds.jpeg" 
+                         alt="University of Leeds logo"/>
                 </a>
                 <a href="https://www.uspg.org.uk/">
-                    <img src="/exhibition/uspg/files/original/uspg.jpeg" />
+                    <img src="/exhibition/uspg/files/original/uspg.jpeg"
+                         alt="USPG logo"/>
                 </a>
                 <a href="http://www.culturesofknowledge.org/">
-                    <img src="/exhibition/uspg/files/original/cofk.jpeg" />
+                    <img src="/exhibition/uspg/files/original/cofk.jpeg"
+                         alt="Cultures of Knowledge logo"/>
                 </a>
                 <p><?php echo __('Proudly powered by <a href="http://omeka.org">Omeka</a>.'); ?></p>
             </div>

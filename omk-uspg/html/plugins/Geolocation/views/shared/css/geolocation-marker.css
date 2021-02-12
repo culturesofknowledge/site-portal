@@ -37,12 +37,12 @@ div#geolocation {
     font-weight:bold;
     font-size:18px;
     margin-bottom:0px;
+    line-height:1.2;
 }
 .geolocation_balloon_type {
-    font-weight:bold;
-    font-size:14px;
-    margin-bottom:0px;
-    margin-left:6px;
+    font-size:13px;
+    line-height:1.em;
+    margin-bottom:4px;
 }
 
 img.leaflet-tile,
