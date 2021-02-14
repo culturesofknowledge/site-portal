@@ -25,6 +25,10 @@ jQuery(function($) {
 
             items.hide()
             .slice(showFrom, showTo).show();
+            // Hack to get openLayerZoom showing properly after Full Screen
+            if (window.transPages[pageNumber]) {
+                window.transPages[pageNumber].map.handleResize_();
+            }
         }
     });
     function checkFragment() {

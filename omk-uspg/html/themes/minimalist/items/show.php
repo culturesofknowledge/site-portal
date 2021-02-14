@@ -20,6 +20,15 @@
     <?php echo all_element_texts('item'); ?>
 </div>
 
+<?php // number of extra steps to zoom in images for better fit
+      // transPages used to map between pages and zooming images
+      // as we need to reset on page turn
+ ?> 
+<script>
+var extrazoom = 0;
+var transPages = {};
+</script>
+
 <!-- Section for paged transcriptions and images -->
 <div class="spliter">
     <h2><?php echo __($trans_title . ' and MS'); ?></h2>
@@ -31,16 +40,18 @@
 
         <div id="trans-pagination" data-theme="light-theme"></div>
        
-        <?php //number of extra steps to zoom in images for better fit ?> 
-        <script>var extrazoom = 0; </script>
     <?php
         if ($transcription_array) {
-            forEach( $transcription_array as $key => $transcription ) { ?>
+            $pageNo = 0;
+            forEach( $transcription_array as $key => $transcription ) { 
+            $pageNo += 1;
+     ?>
                 <div class="transcription-page">
                     <div id="transcription-<?php echo $key; ?>" class="half-view element-text">
                         <?php echo $transcription; ?>
                     </div>
-    
+
+                    <script> var pageno = <?php echo $pageNo;?>;</script>
                     <div id="image-<?php echo $key; ?>" class="half-view element">
                         <?php $zoomin = $this->openLayersZoom()->zoom($files[$key]);
                         if( $zoomin == "" ) { ?>

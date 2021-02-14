@@ -50,4 +50,12 @@ function open_layers_zoom(target, imgWidth, imgHeight, url)
     if (window.extrazoom) {
         view.setZoom(view.getZoom() + window.extrazoom);
     }
+    
+    // Workaround interaction between OpenLayerZoom and FilePaginator
+    // store map where we can find it to reset on page turn 
+    if (window.pageno && window.transPages) {
+        window.transPages[window.pageno] = {extent: extent, map: map};
+    }
+
+    return map;
 }

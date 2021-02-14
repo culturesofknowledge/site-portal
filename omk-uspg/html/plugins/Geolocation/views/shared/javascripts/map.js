@@ -181,8 +181,8 @@ OmekaMapBrowse.prototype = {
         var longitude = coordinates[0];
         var latitude = coordinates[1];
         var style = placeMark.find('styleUrl').text(); 
-        var markertype = "origin";
-        if (style) { markertype = "destination"; }
+        var markertype = "Origin";
+        if (style) { markertype = "Destination"; }
         // Use the KML formatting (do some string sub magic)
         var balloon = this.browseBalloon;
         balloon = balloon.replace('$[namewithlink]', titleWithLink).replace('$[description]', body).replace('$[Snippet]', snippet).replace('$[markertype]',markertype);
