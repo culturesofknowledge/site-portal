@@ -181,8 +181,10 @@ OmekaMapBrowse.prototype = {
         var longitude = coordinates[0];
         var latitude = coordinates[1];
         var style = placeMark.find('styleUrl').text(); 
+        var address = placeMark.find('address').text(); 
         var markertype = "Origin";
         if (style) { markertype = "Destination"; }
+        if (address) { markertype += ": " + address; }
         // Use the KML formatting (do some string sub magic)
         var balloon = this.browseBalloon;
         balloon = balloon.replace('$[namewithlink]', titleWithLink).replace('$[description]', body).replace('$[Snippet]', snippet).replace('$[markertype]',markertype);
@@ -257,8 +259,8 @@ function OmekaMapExtra(mapDivId, center, extraPin, options, pinIcon) {
     jQuery.extend(true, this, omekaMap);
     this.initMap();
     //var title = "Destination: (" + extraPin.latitude + "," + extraPin.longitude + ")";
-    var title = "Destination";
-    this.addMarker([extraPin.latitude, extraPin.longitude],{title: title, icon: pinIcon}, center.markerHtml);
+    //var title = "Destination";
+    this.addMarker([extraPin.latitude, extraPin.longitude],{title: extraPin.title, icon: pinIcon}, center.markerHtml);
     this.fitMarkers();
 }
 

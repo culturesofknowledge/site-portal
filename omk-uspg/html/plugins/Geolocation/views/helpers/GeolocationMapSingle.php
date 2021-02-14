@@ -17,11 +17,13 @@ class Geolocation_View_Helper_GeolocationMapSingle extends Zend_View_Helper_Abst
         // Only set the center of the map if this item actually has a location
         // associated with it
         if ($location) {
+            $address = $location->address;
             $center['latitude']     = $location->latitude;
             $center['longitude']    = $location->longitude;
             $center['zoomLevel']    = $location->zoom_level;
             $center['show']         = true;
-            $center['title']        = 'Origin';
+            if ($address) { $center['title'] = 'Origin: ' . $address; }
+               else { $center['title']        = 'Origin'; }
             if ($hasBalloonForMarker) {
                 $titleLink = link_to_item(metadata($item, array('Dublin Core', 'Title'), array(), $item), array(), 'show', $item);
                 $thumbnailLink = !(item_image('thumbnail')) ? '' : link_to_item(item_image('thumbnail',array(), 0, $item), array(), 'show', $item);
@@ -51,8 +53,11 @@ class Geolocation_View_Helper_GeolocationMapSingle extends Zend_View_Helper_Abst
             // hack to ensure ref to extracIcon in JS
             $center = str_replace('"EXTRAICON"', 'extraIcon', $center);
             if ($location1) {
+                $address1 = $location1->address;
                 $center1['latitude']     = $location1->latitude;
                 $center1['longitude']    = $location1->longitude;
+                if ($address1) { $center1['title'] = 'Destination: ' . $address1; }
+                   else { $center1['title'] = 'Destination'; }
                 $center1 = js_escape($center1);
 
                 $js .= "OmekaMapSingle = new OmekaMapExtra(" . js_escape($divId) . ", $center, $center1, $options, extraIcon); ";
