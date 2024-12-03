@@ -1,124 +1,125 @@
 # Setup the MYSQL_ROOT_PASSWORD
 # export MYSQL_ROOT_PASSWORD="PASSWORD-HERE"
 #
-mysql:
-  build: ./mysql-emlo
-  restart: always
-
-  environment:
-    MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-
-  volumes:
-    - ./vol-mysql/data:/var/lib/mysql
-
-omk-baxter:
-  build: ./omk-baxter
-  restart: always
-
-  environment:
-    OMEKA_WEB_ROOT: /exhibition/baxter/
-    OMEKA_DB_USER: root
-    OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-    OMEKA_DB_PREFIX: omeka_baxter_
-
-  links:
-    - mysql
-
-  volumes:
-    - ./omk-baxter/html:/var/www/html/exhibition/baxter
-
-
-omk-wemlo:
-  build: ./omk-wemlo
-  restart: always
-
-  environment:
-    OMEKA_WEB_ROOT: /wemlo/
-    OMEKA_DB_USER: root
-    OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-    OMEKA_DB_PREFIX: omeka_wemlo_
-
-  links:
-    - mysql
-
-  volumes:
-    - ./omk-wemlo/html:/var/www/html/wemlo
-
-omk-uspg:
-  build: ./omk-uspg
-  restart: always
-
-  environment:
-    OMEKA_WEB_ROOT: /exhibition/uspg/
-    OMEKA_DB_USER: root
-    OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-    OMEKA_DB_PREFIX: omeka_uspg_
-
-  links:
-    - mysql
-
-  volumes:
-    - ./omk-uspg/html:/var/www/html/exhibition/uspg
-
-omk-sw:
-  build: ./omk-sw
-  restart: always
+services:
+  mysql:
+    build: ./mysql-emlo
+    restart: always
   
-  environment:
-    OMEKA_WEB_ROOT: /exhibition/sw/
-    OMEKA_DB_USER: root
-    OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-    OMEKA_DB_PREFIX: omeka_sw_
-
-  links:
-    - mysql
-
-  volumes:
-    - ./omk-sw/html:/var/www/html/exhibition/sw
-
-omeka-s:
-  build: ./omeka-s
-
-  environment:
-    OMEKA_DB_USER: root
-    OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-
-  links:
-    - mysql
-
-  volumes:
-    - ./omeka-s/omeka-s:/var/www/html/exhibitions
-
-wp-catalogues:
-  build: ./wp-emlo-catalogues
-  restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
   
-  ports:
-    - "8081:80"
-
-  links:
-    - mysql
-
-  environment:
-    WORDPRESS_DB_HOST: mysql
-    WORDPRESS_DB_USER: root
-    WORDPRESS_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-    WORDPRESS_DB_NAME: wordpress
-
-  volumes:
-    - ./wp-emlo-catalogues/wp-catalogues:/var/www/html/collections
-
-nginx:
-  build: ./nginx-emlo
-  restart: always
-
-  links:
-    - wp-catalogues
-    - omk-baxter
-    - omk-sw
-    - omk-wemlo
-    - omk-uspg
-    - omeka-s
-
-  ports:
-    - "80:80"
+    volumes:
+      - ./vol-mysql/data:/var/lib/mysql
+  
+  omk-baxter:
+    build: ./omk-baxter
+    restart: always
+  
+    environment:
+      OMEKA_WEB_ROOT: /exhibition/baxter/
+      OMEKA_DB_USER: root
+      OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      OMEKA_DB_PREFIX: omeka_baxter_
+  
+    links:
+      - mysql
+  
+    volumes:
+      - ./omk-baxter/html:/var/www/html/exhibition/baxter
+  
+  
+  omk-wemlo:
+    build: ./omk-wemlo
+    restart: always
+  
+    environment:
+      OMEKA_WEB_ROOT: /wemlo/
+      OMEKA_DB_USER: root
+      OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      OMEKA_DB_PREFIX: omeka_wemlo_
+  
+    links:
+      - mysql
+  
+    volumes:
+      - ./omk-wemlo/html:/var/www/html/wemlo
+  
+  omk-uspg:
+    build: ./omk-uspg
+    restart: always
+  
+    environment:
+      OMEKA_WEB_ROOT: /exhibition/uspg/
+      OMEKA_DB_USER: root
+      OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      OMEKA_DB_PREFIX: omeka_uspg_
+  
+    links:
+      - mysql
+  
+    volumes:
+      - ./omk-uspg/html:/var/www/html/exhibition/uspg
+  
+  omk-sw:
+    build: ./omk-sw
+    restart: always
+    
+    environment:
+      OMEKA_WEB_ROOT: /exhibition/sw/
+      OMEKA_DB_USER: root
+      OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      OMEKA_DB_PREFIX: omeka_sw_
+  
+    links:
+      - mysql
+  
+    volumes:
+      - ./omk-sw/html:/var/www/html/exhibition/sw
+  
+  omeka-s:
+    build: ./omeka-s
+  
+    environment:
+      OMEKA_DB_USER: root
+      OMEKA_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+  
+    links:
+      - mysql
+  
+    volumes:
+      - ./omeka-s/omeka-s:/var/www/html/exhibitions
+  
+  wp-catalogues:
+    build: ./wp-emlo-catalogues
+    restart: always
+    
+    ports:
+      - "8081:80"
+  
+    links:
+      - mysql
+  
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      WORDPRESS_DB_NAME: wordpress
+  
+    volumes:
+      - ./wp-emlo-catalogues/wp-catalogues:/var/www/html/collections
+  
+  nginx:
+    build: ./nginx-emlo
+    restart: always
+  
+    links:
+      - wp-catalogues
+      - omk-baxter
+      - omk-sw
+      - omk-wemlo
+      - omk-uspg
+      - omeka-s
+  
+    ports:
+      - "80:80"
