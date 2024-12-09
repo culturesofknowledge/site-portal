@@ -30,7 +30,7 @@
     // Or, when no collection is set, the list of item ids.
     $item_ids = array();
     // Or, when collection and items are not set, images of all the items.
-    $all = false;
+    $all = true;
 
     // Process selected files, except these ones. This may be usefull when a
     // collection is selected, or when all files are selected.

@@ -43,9 +43,13 @@
         <?php // Change menu items
               // Omeka interface doesn't seem flexible enough in config interface
               // so patch up here
+              // li:eq(2) = Maps menu heading: don't link just open menu
+              // li:eq(4) = Senex map link directly to neatline map page
+              // li:eq(6) = Institution and Archive menu heading: don't link
         ?>
-        jQuery('.nav-menu li:eq(3) > a').removeAttr('href'); 
-        jQuery('.nav-menu li:eq(5) > a').attr('href', '/exhibition/uspg/neatline/show/senex-new-map-of-london'); 
+        jQuery('.nav-menu li:eq(2) > a').removeAttr('href'); 
+        jQuery('.nav-menu li:eq(4) > a').attr('href', '/exhibition/uspg/neatline/show/senex-new-map-of-london'); 
+        jQuery('.nav-menu li:eq(5) > a').removeAttr('href'); 
     });
     </script>
 </body>

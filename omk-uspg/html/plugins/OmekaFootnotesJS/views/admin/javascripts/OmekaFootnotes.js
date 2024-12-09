@@ -1,125 +1,102 @@
 jQuery(document).ready(function() {
-    // This block adds custom styles to the text edit form on exhibit pages.
-    // Add classes to this menu and put the style declarations in style.css
-    // -AM 2/10/17
-    Omeka.wysiwyg(params);
-    updateFootnotes();
+  displayFootnotes();
 });
 
 jQuery(window).load(function() {
-    Omeka.wysiwyg(params);
-    updateFootnotes();
+  displayFootnotes();
 });
 
-params = {
-  toolbar: [
-    "bold italic underline | alignleft aligncenter alignright | bullist numlist | link formatselect | styleselect | code ",
-    "addFootnoteButton | deleteFootnotesButton | updateFootnotesButton | addTranscriptionLinkButton"
-],
-  style_formats: [{
-      title: 'Highlight1 - gray w/bar',
-      block: 'p',
-      classes: 'medium-block-1'
-    }, {
-      title: 'Highlight2 - white w/bar',
-      block: 'p',
-      classes: 'medium-block-3'
-    }, {
-      title: 'Quote1 - double gray',
-      block: 'p',
-      classes: 'medium-block-2'
-    }, {
-      title: 'Quote2 - single green',
-      block: 'p',
-      classes: 'medium-block-4'
-    }, {
-      title: 'Pull quote',
-      block: 'p',
-      classes: 'pull-quote'
-    }, {
-      title: 'Transcription',
-      block: 'div',
-      classes: 'transcription'
-    // }, {
-    //   title: 'Transcription link',
-    //   selector: 'a',
-    //   classes: 'show-transcription'
-    }],
-  setup: function (editor) {
-  editor.addButton('addFootnoteButton', {
-      text: 'Add Footnote',
-      onclick: function () {
-        // Add the new footnote link
-        var tinymceBody = getTinyMCEDOMObject();
-        addFootnoteLinkClassToFootnoteLinks(tinymceBody);
-        updateFootnotes();
-        var fnNextNum = getFnNextNum(tinymceBody);
-        addNewFootnoteLink(editor, fnNextNum);
-        var tinymceBody = getTinyMCEDOMObject();
-        // Add the new footnote citation
-        if(getNumberOfFootnoteDivs(tinymceBody) == 0){
-          addFootnoteDiv(tinymceBody);
-        }
-        addFootnoteCitation(tinymceBody, fnNextNum);
-        // Move cursor to bottom of the editor
-        tinyMCE.activeEditor.selection.select(tinyMCE.activeEditor.getBody(), true);
-        tinyMCE.activeEditor.selection.collapse(false);
-        updateFootnotes();
-      }
-    });
-  editor.addButton('updateFootnotesButton', {
-      text: 'Update Footnotes',
-      onclick: function () {
-        var currentTinymceBody = getTinyMCEDOMObject();
-        if(!(currentTinymceBody.getAttribute("data-id").toString().includes("block"))){
-          alert("Click inside the box you are editing before using buttons.");
-        } else{
+function displayFootnotes() {
+  var selector;
+  if (jQuery('#simple-pages-use-tiny-mce').is(':checked')) {
+    selector = '#simple-pages-text';
+  } else if (jQuery('#simple-pages-use-tiny-mce').is(":not(:checked)")) {
+    selector = false;
+  } else {
+    selector = 'textarea';
+  }
+  params = {
+    selector: selector,
+    menubar: 'edit view insert format table',
+    toolbar: [
+      "bold italic underline | alignleft aligncenter alignright | bullist numlist | link formatselect  | code ",
+      "addFootnoteButton | deleteFootnotesButton | updateFootnotesButton"
+    ],
+    setup: function (editor) {
+    editor.addButton('addFootnoteButton', {
+        text: 'Add Footnote',
+        onclick: function () {
+          // Add the new footnote link
+          var tinymceBody = getTinyMCEDOMObject();
+          addFootnoteLinkClassToFootnoteLinks(tinymceBody);
+          updateFootnotes();
+          var fnNextNum = getFnNextNum(tinymceBody);
+          addNewFootnoteLink(editor, fnNextNum);
+          var tinymceBody = getTinyMCEDOMObject();
+          // Add the new footnote citation
+          if(getNumberOfFootnoteDivs(tinymceBody) == 0){
+            addFootnoteDiv(tinymceBody);
+          }
+          addFootnoteCitation(tinymceBody, fnNextNum);
+          // Move cursor to bottom of the editor
+          tinyMCE.activeEditor.selection.select(tinyMCE.activeEditor.getBody(), true);
+          tinyMCE.activeEditor.selection.collapse(false);
           updateFootnotes();
         }
-      }
-    });
-  editor.addButton('deleteFootnotesButton', {
-        text: 'Delete Selected Footnotes',
+      });
+    editor.addButton('updateFootnotesButton', {
+        text: 'Update Footnotes',
         onclick: function () {
             updateFootnotes();
-            var tinymceBody = getTinyMCEDOMObject();
-            node = editor.selection.getNode();
-            parent = node.parentNode;
-            var selectedHTML = editor.selection.getContent({format : 'html'}).toString();
-            if(selectedHTML.length <= 1){
-              //if the highlighted text is the single number of the footnote, the outerHTML will let us access the whole node.
-              //Note: we can't just use the single number of innerHTML because then any time someone highlights a regular text number,
-              //  the footnote with that number will be deleted
-              selectedHTML = editor.selection.getNode().outerHTML.toString();
-            }
-            var idsFootnotesToDelete = getListOfFootnotesToDelete(selectedHTML);
-            var fnLinks = getFnLinks(tinymceBody);
-            var fnCitations = getFnCitations(tinymceBody);
-            for(j = 0; j < idsFootnotesToDelete.length; j++){
-              var fnLinkIDs = getFnLinkIDs(fnLinks);
-              var indexDel = fnLinkIDs.indexOf(idsFootnotesToDelete[j]);
-              fnLinkToDelete = fnLinks.item(indexDel);
-              fnLinkParent = fnLinkToDelete.parentNode;
-              fnLinkParent.removeChild(fnLinkToDelete);
-              if(fnCitations.length == 1){
-                tinymceBody.removeChild(getExistingFootnoteDiv(tinymceBody));
-              } else {
-                fnCitToDelete = fnCitations.item(indexDel);
-                fnCitParent = fnCitToDelete.parentNode;
-                fnCitParent.removeChild(fnCitToDelete);
+        }
+      });
+    editor.addButton('deleteFootnotesButton', {
+          text: 'Delete Selected Footnotes',
+          onclick: function () {
+              updateFootnotes();
+              var tinymceBody = getTinyMCEDOMObject();
+              node = editor.selection.getNode();
+              parent = node.parentNode;
+              var selectedHTML = editor.selection.getContent({format : 'html'}).toString();
+              if(selectedHTML.length <= 1){
+                //if the highlighted text is the single number of the footnote, the outerHTML will let us access the whole node.
+                //Note: we can't just use the single number of innerHTML because then any time someone highlights a regular text number,
+                //  the footnote with that number will be deleted
+                selectedHTML = editor.selection.getNode().outerHTML.toString();
               }
-            }
-            updateFootnotes();
-      }
-    });
-  editor.addButton('addTranscriptionLinkButton', {
-        text: 'Add Transcription Link',
-        onclick: function () {
-            var tinymceBody = getTinyMCEDOMObject();
-            editor.insertContent("<p><a class='show-transcription' href='#'>Show Transcription</a></p>");
-      }
-    });
-  },
+              var idsFootnotesToDelete = getListOfFootnotesToDelete(selectedHTML);
+              var fnLinks = getFnLinks(tinymceBody);
+              var fnCitations = getFnCitations(tinymceBody);
+              for(j = 0; j < idsFootnotesToDelete.length; j++){
+                var fnLinkIDs = getFnLinkIDs(fnLinks);
+                var indexDel = fnLinkIDs.indexOf(idsFootnotesToDelete[j]);
+                fnLinkToDelete = fnLinks.item(indexDel);
+                fnLinkParent = fnLinkToDelete.parentNode;
+                fnLinkParent.removeChild(fnLinkToDelete);
+                if(fnCitations.length == 1){
+                  tinymceBody.removeChild(getExistingFootnoteDiv(tinymceBody));
+                } else {
+                  fnCitToDelete = fnCitations.item(indexDel);
+                  fnCitParent = fnCitToDelete.parentNode;
+                  fnCitParent.removeChild(fnCitToDelete);
+                }
+              }
+              updateFootnotes();
+          }
+      });
+    },
+  }
+  if (typeof tinyMCE != "undefined") {
+    tinyMCE.remove();
+  }
+  Omeka.wysiwyg(params);
+  updateFootnotes();
+
+  // adds footnote functionality to new exhibit builder text blocks
+  jQuery(document).on('exhibit-builder-refresh-wysiwyg', function () {
+    Omeka.wysiwyg(params);
+    updateFootnotes();
+  });
 }
 
 function getListOfFootnotesToDelete(selectedHTML){
@@ -271,11 +248,11 @@ function getFnCitations(tinymceBody){
 function getLinkHTML(fnNextNum){
   var str1 = '<sup class="footnote link" id="fnref:';
   var str2 = fnNextNum.toString();
-  var str3 = '"> <a href="#fn:';
+  var str3 = '"><a href="#fn:';
   var str4 = fnNextNum.toString();
   var str5 = '">';
   var str6 = fnNextNum.toString();
-  var str7 = '</a>  </sup>.';
+  var str7 = '</a></sup> ';
   var linkHTML = str1.concat(str2).concat(str3).concat(str4).concat(str5).concat(str6).concat(str7);
   return linkHTML;
 }
