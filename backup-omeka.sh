@@ -19,10 +19,11 @@ fi
 DEST=/data/backups/omeka
 
 DATABASE="omeka"
+CONTAINER=emlo-portal-compose-mysql-1
 
 echo "Database " $DATABASE " saving to: " $DEST/$DATABASE".gz"
 
-docker exec emloportalcompose_mysql_1 sh -c 'exec mysqldump -uroot -p"$MYSQL_ROOT_PASSWORD" '$DATABASE | gzip --best > $DEST/$DATABASE.gz
+docker exec $CONTAINER sh -c 'exec mysqldump -uroot -p"$MYSQL_ROOT_PASSWORD" '$DATABASE | gzip --best > $DEST/$DATABASE.gz
 sleep 5
 
 backup_rotate_hourly $DEST $DATABASE.gz
