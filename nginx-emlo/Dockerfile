@@ -8,7 +8,10 @@
 #     development
 #        docker run --name nginx-emlo-dev -p 80:80 --link=pylons-emlo-dev:pylons nginx-emlo:0.1.1
 #
-FROM nginx:1.11
-COPY nginx.conf /etc/nginx/nginx.conf
+FROM nginx:1.28                                                                              
+                                                                                             
+RUN mkdir /etc/nginx/ssl                                                                     
+COPY ssl/ssl.key /etc/nginx/ssl/                                                             
+COPY ssl/ssl.crt /etc/nginx/ssl/                                                             
 
-LABEL version="0.1.1"
+COPY nginx.conf /etc/nginx/nginx.conf                                                        

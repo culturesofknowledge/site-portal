@@ -90,6 +90,10 @@ services:
     volumes:
       - ./omeka-s/omeka-s:/var/www/html/exhibitions
   
+
+  rs-viz:
+    build: ./rs_viz
+
   wp-catalogues:
     build: ./wp-emlo-catalogues
     restart: always
@@ -120,6 +124,11 @@ services:
       - omk-wemlo
       - omk-uspg
       - omeka-s
+      - rs-viz
   
+    volumes:
+      - ./static-files:/static
+
     ports:
       - "80:80"
+      - "443:443"
