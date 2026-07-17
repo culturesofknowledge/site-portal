@@ -30,7 +30,7 @@
     <nav class="top-bar yellow-bg" data-topbar>
         <ul class="title-area">
             <li class="name">
-                <h1><a class="no-decoration" href="/" accesskey="1"><img src="http://emlo.bodleian.ox.ac.uk/img/emlo_logo.png" alt="EMLO logo" class="show-for-large-up menu-name"/></a>
+                <h1><a class="no-decoration" href="/" accesskey="1"><img src="<?php echo $GLOBALS['emlo_front_url'];?>/img/emlo_logo.png" alt="EMLO logo" class="show-for-large-up menu-name"/></a>
                 <strong><a class="no-decoration hide-for-large-up" href="/" accesskey="1">EMLO  &nbsp;&nbsp;</a></strong>
                 </h1>
             </li>
@@ -41,18 +41,18 @@
             <!-- Left Nav Section -->
             <ul class="left yellow-bg">
                     
-                <li class="active "><a href="http://emlo.bodleian.ox.ac.uk/home" accesskey="1">Home</a></li>                 
-                <li class=""><a href="http://emlo.bodleian.ox.ac.uk/advanced" accesskey="2">Search+</a></li>                 
-                <li class=""><a href="http://emlo.bodleian.ox.ac.uk/browse/people" accesskey="3">Browse</a></li>                 
-                <li class=""><a href="http://emlo.bodleian.ox.ac.uk/blog/?page_id=480" accesskey="4">Collections</a></li>                    
-                <li class=""><a href="http://emlo.bodleian.ox.ac.uk/contribute" accesskey="5">Contribute</a></li>                    
-                <li class="red "><a href="http://emlo.bodleian.ox.ac.uk/about" accesskey="6">About</a></li>          </ul>
+		<li class="active "><a href="<?php echo $GLOBALS['emlo_front_url'];?>/home" accesskey="1">Home</a></li>                 
+		<li class=""><a href="<?php echo $GLOBALS['emlo_front_url'];?>/advanced" accesskey="2">Search+</a></li>                 
+		<li class=""><a href="<?php echo $GLOBALS['emlo_front_url'];?>/browse/people" accesskey="3">Browse</a></li>                 
+		<li class=""><a href="<?php echo $GLOBALS['emlo_front_url'];?>/blog/?page_id=480" accesskey="4">Collections</a></li>                    
+		<li class=""><a href="<?php echo $GLOBALS['emlo_front_url'];?>/contribute" accesskey="5">Contribute</a></li>                    
+                <li class="red "><a href="<?php echo $GLOBALS['emlo_front_url'];?>/about" accesskey="6">About</a></li>          </ul>
 
             <!-- Right Nav Section -->
             <ul class="right yellow-bg">
                 <!-- search bar -->
                 <li class="has-form">
-                    <form action="http://emlo.bodleian.ox.ac.uk/forms/quick" method="get" id="circle-search">
+                    <form action="<?php echo $GLOBALS['emlo_front_url'];?>/forms/quick" method="get" id="circle-search">
                         <div class="row collapse">
                             <input name="everything" type="search" placeholder="Keywords..."/>
                             <input name="search_type" type="hidden" value="quick"/>
@@ -82,5 +82,4 @@
             <?php } // end if ?>            
 
         <div class="content_container">
-    
             <section class="content_wrap row" role="document">

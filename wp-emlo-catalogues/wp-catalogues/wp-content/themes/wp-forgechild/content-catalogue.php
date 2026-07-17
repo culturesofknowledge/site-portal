@@ -202,7 +202,7 @@
 
 		echo "", the_field('catalogue_link'),"";
 
-		echo "<div data-alert='' class='alert-box secondary radius text-center'>Please see our <a href='http://emlo.bodleian.ox.ac.uk/about#citation' target='_blank'>citation guidelines</a> for instructions on how to cite this catalogue. </div>";
+		echo "<div data-alert='' class='alert-box secondary radius text-center'>Please see our <a href='", $GLOBALS['emlo_front_url'],"/about#citation' target='_blank'>citation guidelines</a> for instructions on how to cite this catalogue. </div>";
 		
 
 		//check if 'footnotes' has contents, if not, doesn't display
@@ -227,7 +227,7 @@ var foundation_strings = {"nav_back":"Back"};
 /* ]]> */
 </script>
 
-<script src="http://emlo.bodleian.ox.ac.uk/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="<?php echo $GLOBALS['emlo_front_url'];?>/bower_components/jquery/dist/jquery.min.js"></script>
 <script type='text/javascript' src='http://emlo-portal.bodleian.ox.ac.uk/collections/wp-content/themes/wp-forge/js/foundation.min.js'></script>
 
 <script>

@@ -13,4 +13,6 @@ function json_api_encode_acf($post) {
     return $post;
 
 }
+
+$emlo_front_url = getenv('EMLO_FRONT_URL') ?: 'https://emlo.bodleian.ox.ac.uk';
 ?>
